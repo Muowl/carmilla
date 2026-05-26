@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmilla · Tema escuro boudoir/vinho</title>
+    <meta name="description" content="Carmilla — tema escuro autoral de identidade boudoir/vinho: fundo rosado-vinho e accents quentes. Calor de cripta para noites de código.">
+
+    <!-- Open Graph / social cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carmilla · Tema escuro boudoir/vinho">
+    <meta property="og:description" content="Tema escuro autoral de identidade boudoir/vinho — fundo rosado-vinho e accents quentes. Calor de cripta para noites de código.">
+    <meta property="og:url" content="https://muowl.github.io/carmilla/">
+    <meta property="og:image" content="https://muowl.github.io/carmilla/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carmilla · Tema escuro boudoir/vinho">
+    <meta name="twitter:description" content="Tema escuro autoral de identidade boudoir/vinho. Calor de cripta para noites de código.">
+    <meta name="twitter:image" content="https://muowl.github.io/carmilla/og-image.png">
+
+    <!-- Favicon (🥀 inline, sem arquivo extra) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A5%80</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --crypt:        #16101A;
+            --boudoir:      #2E1B2D;
+            --velvet:       #3A2438;
+            --selection:    #4A3245;
+            --pearl:        #F4ECE3;
+            --carmine:      #FF5FA2;
+            --wisteria:     #D5A6FF;
+            --verdigris:    #7AD9C2;
+            --absinthe:     #7AE0A6;
+            --champagne:    #F3E2AB;
+            --peach-velvet: #FFAE8A;
+            --pomegranate:  #E84B6E;
+            --ash-mauve:    #9E83A4;
+
+            --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+            --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono:    'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--crypt);
+            font-family: var(--font-body);
+            color: var(--pearl);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Grão sutil — atmosfera de filme antigo */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+            mix-blend-mode: overlay;
+        }
+
+        /* Glow ambiente */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 0%, rgba(255,95,162,0.10), transparent 60%),
+                radial-gradient(ellipse 50% 40% at 80% 100%, rgba(213,166,255,0.08), transparent 60%);
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 6rem;
+        }
+
+        /* ============== HERO ============== */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 5rem;
+            position: relative;
+        }
+
+        .hero .eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            color: var(--ash-mauve);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 12vw, 8.5rem);
+            font-weight: 500;
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            background: linear-gradient(180deg, var(--pearl) 0%, var(--carmine) 60%, var(--wisteria) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 80px rgba(255,95,162,0.15);
+        }
+
+        .hero .subtitle {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+            color: var(--wisteria);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.92;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem auto;
+            color: var(--carmine);
+            font-size: 1.2rem;
+        }
+        .ornament::before, .ornament::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--carmine), transparent);
+        }
+
+        .hero .lead {
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            max-width: 580px;
+            margin: 0 auto;
+            color: rgba(244,236,227,0.78);
+            line-height: 1.7;
+        }
+
+        .hero .cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            font-family: var(--font-body);
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--carmine);
+            color: var(--crypt);
+            box-shadow: 0 8px 30px -8px rgba(255,95,162,0.5);
+        }
+        .btn-primary:hover {
+            background: #FF80B8;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 38px -8px rgba(255,95,162,0.65);
+        }
+
+        .cta .soon {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--ash-mauve);
+        }
+
+        /* ============== SEÇÕES ============== */
+        section {
+            margin-top: 6rem;
+        }
+
+        .section-head {
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+        }
+
+        .section-num {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--carmine);
+            min-width: 50px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: var(--pearl);
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            margin-left: 66px;
+            color: var(--ash-mauve);
+            font-style: italic;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ============== PALETA ============== */
+        .palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .swatch {
+            background: var(--velvet);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            border: 1px solid rgba(255,95,162,0.12);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+        }
+
+        .swatch:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,95,162,0.45);
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,95,162,0.15);
+        }
+
+        .swatch-color {
+            height: 140px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+        }
+
+        .swatch-hex {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            backdrop-filter: blur(8px);
+            background: rgba(22,16,26,0.55);
+            color: var(--pearl);
+            border: 1px solid rgba(244,236,227,0.18);
+            letter-spacing: 0.5px;
+        }
+
+        .swatch-meta {
+            padding: 1rem 1.1rem 1.2rem;
+        }
+
+        .swatch-name {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--pearl);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .swatch-role {
+            font-size: 0.78rem;
+            color: var(--ash-mauve);
+            line-height: 1.4;
+        }
+
+        /* ============== EDITOR MOCKUP ============== */
+        .editor {
+            background: var(--boudoir);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow:
+                0 50px 100px -20px rgba(0,0,0,0.7),
+                0 30px 60px -30px rgba(0,0,0,0.8),
+                0 0 0 1px rgba(255,95,162,0.18),
+                inset 0 1px 0 rgba(244,236,227,0.04);
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            margin-top: 1rem;
+        }
+
+        .editor-titlebar {
+            background: var(--crypt);
+            padding: 0.65rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(255,95,162,0.10);
+        }
+
+        .traffic {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .traffic.r { background: #FF5F57; }
+        .traffic.y { background: #FEBC2E; }
+        .traffic.g { background: #28C840; }
+
+        .editor-titlebar .file {
+            margin-left: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--ash-mauve);
+        }
+
+        .editor-titlebar .file strong {
+            color: var(--pearl);
+            font-weight: 500;
+        }
+
+        .editor-tabs {
+            background: #1F141E;
+            display: flex;
+            border-bottom: 1px solid rgba(255,95,162,0.08);
+            padding-left: 0.5rem;
+        }
+
+        .editor-tab {
+            padding: 0.7rem 1.1rem;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--ash-mauve);
+            border-right: 1px solid rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .editor-tab.active {
+            background: var(--boudoir);
+            color: var(--pearl);
+            border-top: 2px solid var(--carmine);
+            padding-top: calc(0.7rem - 2px);
+        }
+
+        .editor-tab .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--wisteria);
+        }
+
+        .editor-body {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            min-height: 480px;
+        }
+
+        .gutter {
+            background: var(--crypt);
+            padding: 1.2rem 0;
+            text-align: right;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: rgba(158,131,164,0.5);
+            user-select: none;
+            line-height: 1.65;
+        }
+
+        .gutter .ln {
+            padding: 0 0.7rem;
+            position: relative;
+        }
+        .gutter .ln.modified::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--wisteria);
+        }
+        .gutter .ln.added::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--absinthe);
+        }
+        .gutter .ln.active {
+            color: var(--peach-velvet);
+        }
+
+        .code-area {
+            padding: 1.2rem 1.2rem 1.2rem 0.5rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        pre {
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--pearl);
+            tab-size: 4;
+        }
+
+        /* current-line highlight via background data-line  */
+        .code-area pre {
+            position: relative;
+        }
+        .current-line {
+            background: rgba(74,50,69,0.55);
+            display: block;
+            margin: 0 -1.2rem 0 -0.5rem;
+            padding: 0 1.2rem 0 0.5rem;
+            border-left: 2px solid var(--carmine);
+            padding-left: calc(0.5rem - 2px);
+        }
+
+        /* Syntax */
+        .c    { color: var(--ash-mauve); font-style: italic; }
+        .k    { color: var(--carmine); }
+        .i    { color: var(--wisteria); font-style: italic; }
+        .t    { color: var(--verdigris); }
+        .f    { color: var(--absinthe); }
+        .s    { color: var(--champagne); }
+        .n    { color: var(--peach-velvet); }
+        .err  { color: var(--pomegranate); }
+        .p    { color: var(--pearl); }
+        .punc { color: rgba(244,236,227,0.65); }
+
+        .editor-statusbar {
+            background: var(--velvet);
+            padding: 0.35rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--pearl);
+            border-top: 1px solid rgba(255,95,162,0.12);
+        }
+        .editor-statusbar .branch {
+            color: var(--carmine);
+        }
+        .editor-statusbar .right {
+            margin-left: auto;
+            display: flex;
+            gap: 1.2rem;
+            color: var(--ash-mauve);
+        }
+        .editor-statusbar .right span strong {
+            color: var(--pearl);
+            font-weight: 500;
+        }
+
+        /* ============== TOKEN MAP ============== */
+        .token-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.6rem;
+            background: var(--velvet);
+            padding: 1.5rem;
+            border-radius: 1.2rem;
+            border: 1px solid rgba(255,95,162,0.10);
+        }
+        .token-row {
+            display: grid;
+            grid-template-columns: 14px 110px 1fr;
+            gap: 0.8rem;
+            align-items: center;
+            padding: 0.5rem 0.7rem;
+            border-radius: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+        .token-row:hover {
+            background: rgba(255,95,162,0.06);
+        }
+        .token-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+        }
+        .token-name {
+            color: var(--ash-mauve);
+        }
+        .token-sample {
+            color: var(--pearl);
+        }
+
+        /* ============== FOOTER ============== */
+        footer {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,95,162,0.15);
+        }
+        footer .signature {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 2.5rem;
+            color: var(--carmine);
+            opacity: 0.85;
+            margin-bottom: 0.5rem;
+        }
+        footer .meta {
+            color: var(--ash-mauve);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+        footer .meta code {
+            font-family: var(--font-mono);
+            background: var(--velvet);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            color: var(--champagne);
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 680px) {
+            .wrap { padding: 2rem 1rem 4rem; }
+            .hero { padding: 2rem 0 3rem; }
+            section { margin-top: 4rem; }
+            .section-title { font-size: 1.8rem; }
+            .section-subtitle { margin-left: 0; }
+            .section-head { flex-direction: column; gap: 0.5rem; }
+            .section-num { min-width: auto; }
+            .palette { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .swatch-color { height: 100px; }
+            .editor-body { grid-template-columns: 32px 1fr; }
+            .gutter .ln { padding: 0 0.4rem; font-size: 0.7rem; }
+            pre { font-size: 0.72rem; }
+            .editor-statusbar { flex-wrap: wrap; gap: 0.6rem; font-size: 0.65rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <!-- ============== HERO ============== -->
+    <header class="hero">
+        <div class="eyebrow">Tema escuro · Paleta autoral · v1</div>
+        <h1>Carmilla</h1>
+        <div class="subtitle">calor de cripta para noites de código</div>
+        <div class="ornament">❦</div>
+        <p class="lead">
+            Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. Identidade própria, atmosfera de cripta vampírica.
+        </p>
+        <div class="cta">
+            <a class="btn btn-primary" href="https://github.com/Muowl/carmilla">
+                <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                Ver no GitHub
+            </a>
+            <span class="soon">em breve no VS Code Marketplace</span>
+        </div>
+    </header>
+
+    <!-- ============== PALETA ============== -->
+    <section>
+        <div class="section-head">
+            <div class="section-num">I.</div>
+            <h2 class="section-title">A paleta</h2>
+        </div>
+        <p class="section-subtitle">treze tons, um humor</p>
+
+        <div class="palette">
+            <div class="swatch">
+                <div class="swatch-color" style="background:#16101A"><span class="swatch-hex">#16101A</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name">Crypt</div>
+                    <div class="swatch-role">background mais profundo — página, gutter</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#2E1B2D"><span class="swatch-hex">#2E1B2D</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name">Boudoir</div>
+                    <div class="swatch-role">background principal — editor, painéis</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#3A2438"><span class="swatch-hex">#3A2438</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name">Velvet</div>
+                    <div class="swatch-role">superfície elevada — cards, status bar</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#4A3245"><span class="swatch-hex">#4A3245</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name">Selection</div>
+                    <div class="swatch-role">linha atual, seleção, ranges</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#FF5FA2"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#FF5FA2</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#FF5FA2">Carmine</div>
+                    <div class="swatch-role">keywords, storage — <code style="font-family:var(--font-mono);font-size:0.72rem;color:var(--carmine)">const, let, class, if, return</code></div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#D5A6FF"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#D5A6FF</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#D5A6FF">Wisteria</div>
+                    <div class="swatch-role">instâncias — <code style="font-family:var(--font-mono);font-size:0.72rem;color:var(--wisteria)">this, super, null</code></div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#7AD9C2"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#7AD9C2</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#7AD9C2">Verdigris</div>
+                    <div class="swatch-role">classes, tipos, suporte</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#7AE0A6"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#7AE0A6</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#7AE0A6">Absinthe</div>
+                    <div class="swatch-role">funções, métodos</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#F3E2AB"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#F3E2AB</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#F3E2AB">Champagne</div>
+                    <div class="swatch-role">strings, template literals</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#FFAE8A"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#FFAE8A</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#FFAE8A">Peach Velvet</div>
+                    <div class="swatch-role">números, booleanos</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#E84B6E"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#E84B6E</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#E84B6E">Pomegranate</div>
+                    <div class="swatch-role">erros, deleções, alertas</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#9E83A4"><span class="swatch-hex">#9E83A4</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#9E83A4">Ash Mauve</div>
+                    <div class="swatch-role">comentários — mauve quente que dialoga com o fundo</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" style="background:#F4ECE3"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#F4ECE3</span></div>
+                <div class="swatch-meta">
+                    <div class="swatch-name" style="color:#F4ECE3">Pearl</div>
+                    <div class="swatch-role">texto principal, foreground</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== EDITOR MOCKUP ============== -->
+    <section>
+        <div class="section-head">
+            <div class="section-num">II.</div>
+            <h2 class="section-title">No editor</h2>
+        </div>
+        <p class="section-subtitle">como ela se comporta em código real</p>
+
+        <div class="editor">
+            <div class="editor-titlebar">
+                <span class="traffic r"></span>
+                <span class="traffic y"></span>
+                <span class="traffic g"></span>
+                <span class="file">carmilla / <strong>countess.ts</strong></span>
+            </div>
+            <div class="editor-tabs">
+                <div class="editor-tab active"><span class="dot"></span> countess.ts</div>
+                <div class="editor-tab">palette.css</div>
+                <div class="editor-tab">README.md</div>
+            </div>
+            <div class="editor-body">
+                <div class="gutter">
+<div class="ln">1</div>
+<div class="ln">2</div>
+<div class="ln">3</div>
+<div class="ln">4</div>
+<div class="ln modified">5</div>
+<div class="ln modified">6</div>
+<div class="ln">7</div>
+<div class="ln">8</div>
+<div class="ln">9</div>
+<div class="ln">10</div>
+<div class="ln">11</div>
+<div class="ln">12</div>
+<div class="ln">13</div>
+<div class="ln">14</div>
+<div class="ln">15</div>
+<div class="ln">16</div>
+<div class="ln">17</div>
+<div class="ln">18</div>
+<div class="ln">19</div>
+<div class="ln">20</div>
+<div class="ln active">21</div>
+<div class="ln">22</div>
+<div class="ln">23</div>
+<div class="ln">24</div>
+<div class="ln added">25</div>
+<div class="ln added">26</div>
+<div class="ln added">27</div>
+<div class="ln added">28</div>
+<div class="ln added">29</div>
+                </div>
+                <div class="code-area">
+<pre><span class="c">// Carmilla — paleta autoral, accents quentes sobre vinho</span>
+<span class="c">// Comentários em ash-mauve dialogam com o boudoir do fundo.</span>
+
+<span class="k">import</span> { <span class="t">Slayer</span> } <span class="k">from</span> <span class="s">"./hunters"</span><span class="punc">;</span>
+
+<span class="k">class</span> <span class="t">Countess</span> <span class="k">extends</span> <span class="t">Immortal</span> <span class="punc">{</span>
+    <span class="k">private readonly</span> <span class="p">name</span><span class="punc">:</span> <span class="t">string</span><span class="punc">;</span>
+    <span class="k">private</span> <span class="p">centuriesLived</span><span class="punc">:</span> <span class="t">number</span><span class="punc">;</span>
+
+    <span class="f">constructor</span><span class="punc">(</span><span class="p">name</span><span class="punc">:</span> <span class="t">string</span><span class="punc">,</span> <span class="p">age</span><span class="punc">:</span> <span class="t">number</span><span class="punc">)</span> <span class="punc">{</span>
+        <span class="k">super</span><span class="punc">()</span><span class="punc">;</span>
+        <span class="i">this</span><span class="punc">.</span><span class="p">name</span> <span class="punc">=</span> <span class="p">name</span><span class="punc">;</span>
+        <span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">=</span> <span class="p">age</span><span class="punc">;</span>
+    <span class="punc">}</span>
+
+    <span class="f">whisper</span><span class="punc">(</span><span class="p">guest</span><span class="punc">:</span> <span class="t">string</span><span class="punc">)</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span>
+        <span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">+=</span> <span class="n">0.01</span><span class="punc">;</span>
+        <span class="k">return</span> <span class="s">`🥀 ${</span><span class="i">this</span><span class="punc">.</span><span class="p">name</span><span class="s">} sussurra ao ouvido de ${</span><span class="p">guest</span><span class="s">}`</span><span class="punc">;</span>
+    <span class="punc">}</span>
+
+    <span class="f">getEra</span><span class="punc">()</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span><div class="current-line">        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">5</span><span class="punc">)</span> <span class="k">return</span> <span class="s">"🕯️ Antiga das antigas"</span><span class="punc">;</span></div>        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">1</span><span class="punc">)</span> <span class="k">return</span> <span class="s">"🌙 Imortal madura"</span><span class="punc">;</span>
+        <span class="k">return</span> <span class="s">"🩸 Recém-virada"</span><span class="punc">;</span>
+    <span class="punc">}</span>
+<span class="punc">}</span>
+
+<span class="k">const</span> <span class="p">carmilla</span> <span class="punc">=</span> <span class="k">new</span> <span class="t">Countess</span><span class="punc">(</span><span class="s">"Mircalla Karnstein"</span><span class="punc">,</span> <span class="n">3</span><span class="punc">)</span><span class="punc">;</span>
+<span class="k">const</span> <span class="p">awake</span><span class="punc">:</span> <span class="t">boolean</span> <span class="punc">=</span> <span class="n">true</span><span class="punc">;</span>
+<span class="k">if</span> <span class="punc">(</span><span class="p">awake</span><span class="punc">)</span> <span class="p">console</span><span class="punc">.</span><span class="f">log</span><span class="punc">(</span><span class="p">carmilla</span><span class="punc">.</span><span class="f">getEra</span><span class="punc">()</span><span class="punc">)</span><span class="punc">;</span>
+<span class="k">else</span> <span class="p">console</span><span class="punc">.</span><span class="err">error</span><span class="punc">(</span><span class="s">"❌ ainda repousa no caixão"</span><span class="punc">)</span><span class="punc">;</span></pre>
+                </div>
+            </div>
+            <div class="editor-statusbar">
+                <span class="branch">⎇ main</span>
+                <span>↑ 2 ↓ 0</span>
+                <span style="color:var(--pomegranate);">● 0 errors</span>
+                <span style="color:var(--peach-velvet);">▲ 1 warning</span>
+                <div class="right">
+                    <span>Ln <strong>21</strong>, Col <strong>9</strong></span>
+                    <span>Spaces: <strong>4</strong></span>
+                    <span>UTF-8</span>
+                    <span><strong>TypeScript</strong></span>
+                    <span>🥀 <strong style="color:var(--carmine);">Carmilla</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== TOKEN MAP ============== -->
+    <section>
+        <div class="section-head">
+            <div class="section-num">III.</div>
+            <h2 class="section-title">Anatomia</h2>
+        </div>
+        <p class="section-subtitle">cada token, sua cor, seu papel</p>
+
+        <div class="token-map">
+            <div class="token-row"><span class="token-dot" style="background:#FF5FA2"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:#FF5FA2">const</span> x <span style="color:#FF5FA2">=</span> <span style="color:#F3E2AB">"…"</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#D5A6FF"></span><span class="token-name">variable.lang</span><span class="token-sample"><span style="color:#D5A6FF;font-style:italic">this</span>.name</span></div>
+            <div class="token-row"><span class="token-dot" style="background:#7AD9C2"></span><span class="token-name">entity.type</span><span class="token-sample">: <span style="color:#7AD9C2">string</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#7AE0A6"></span><span class="token-name">entity.function</span><span class="token-sample"><span style="color:#7AE0A6">log</span>()</span></div>
+            <div class="token-row"><span class="token-dot" style="background:#F3E2AB"></span><span class="token-name">string</span><span class="token-sample"><span style="color:#F3E2AB">"Carmilla"</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#FFAE8A"></span><span class="token-name">constant.numeric</span><span class="token-sample"><span style="color:#FFAE8A">42</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#E84B6E"></span><span class="token-name">invalid</span><span class="token-sample"><span style="color:#E84B6E">undefined_var</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#9E83A4"></span><span class="token-name">comment</span><span class="token-sample"><span style="color:#9E83A4;font-style:italic">// ash mauve</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#F4ECE3"></span><span class="token-name">variable</span><span class="token-sample"><span style="color:#F4ECE3">guest</span></span></div>
+        </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer>
+        <div class="ornament">❦</div>
+        <div class="signature">Carmilla</div>
+        <div class="meta">
+            v1 · 13 tokens · pronto para empacotar como tema VS Code <br>
+            <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>

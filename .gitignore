@@ -1,0 +1,12 @@
+# Empacotamento da extensão VS Code
+node_modules/
+*.vsix
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+.vscode-test/
+
+# Notas internas de desenvolvimento (guard-rail anti-reskin + configs locais)
+CLAUDE.md
+.claude/
