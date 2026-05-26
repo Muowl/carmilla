@@ -50,13 +50,19 @@ Veja [ao vivo](https://muowl.github.io/carmilla/) (requer GitHub Pages habilitad
 
 Especificação completa, rationale de design e mapeamento TextMate em [`PALETTE.md`](PALETTE.md).
 
-## Como testar no VS Code
+## Instalação
 
-Enquanto não está no Marketplace, dá para rodar localmente:
+Enquanto não está no Marketplace, o projeto já é uma extensão empacotável.
 
-1. Instale o gerador de extensões: `npm install -g yo generator-code`
-2. Rode `yo code` → **New Color Theme** → escolha importar e cole o conteúdo de [`carmilla.json`](carmilla.json).
-3. Pressione `F5` para abrir uma janela de teste com o tema aplicado.
+### Via arquivo `.vsix`
+
+1. Gere o pacote: `npm run package` (usa o [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, gera `carmilla-1.0.0.vsix`).
+2. No VS Code: paleta de comandos (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → selecione o `.vsix` gerado.
+3. Ative em **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
+
+### Para desenvolvimento
+
+Abra esta pasta no VS Code e pressione `F5` para abrir uma janela *Extension Development Host* com o tema já carregado.
 
 ## Arquivos
 
@@ -64,6 +70,7 @@ Enquanto não está no Marketplace, dá para rodar localmente:
 |------------------|------------------------------------------------------------------|
 | `PALETTE.md`     | Fonte da verdade — especificação portável e rationale            |
 | `carmilla.json`  | Tema VS Code (UI + sintaxe + terminal ANSI + git)                |
+| `package.json`   | Manifesto da extensão (`contributes.themes`)                     |
 | `index.html`     | Showcase visual                                                  |
 
 ## Licença

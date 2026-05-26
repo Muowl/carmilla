@@ -1,0 +1,42 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="72%">
+      <stop offset="0%" stop-color="#3A2438"/>
+      <stop offset="60%" stop-color="#2E1B2D"/>
+      <stop offset="100%" stop-color="#16101A"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF5FA2" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF5FA2" stop-opacity="0"/>
+    </radialGradient>
+    <!-- one outer petal pointing up from the flower centre (64,64) -->
+    <path id="petal" d="M64,64 C53,55 51,37 64,25 C77,37 75,55 64,64 Z"/>
+    <path id="petalInner" d="M64,64 C57,58 56,45 64,39 C72,45 71,58 64,64 Z"/>
+  </defs>
+
+  <rect x="0" y="0" width="128" height="128" rx="28" ry="28" fill="url(#bg)"/>
+  <circle cx="64" cy="62" r="42" fill="url(#glow)"/>
+
+  <!-- outer petals: 6, carmine -->
+  <g fill="#FF5FA2">
+    <use href="#petal" transform="rotate(0 64 64)"/>
+    <use href="#petal" transform="rotate(60 64 64)"/>
+    <use href="#petal" transform="rotate(120 64 64)"/>
+    <use href="#petal" transform="rotate(180 64 64)"/>
+    <use href="#petal" transform="rotate(240 64 64)"/>
+    <use href="#petal" transform="rotate(300 64 64)"/>
+  </g>
+
+  <!-- inner petals: 6, lighter carmine, offset 30deg -->
+  <g fill="#FF80B8">
+    <use href="#petalInner" transform="rotate(30 64 64)"/>
+    <use href="#petalInner" transform="rotate(90 64 64)"/>
+    <use href="#petalInner" transform="rotate(150 64 64)"/>
+    <use href="#petalInner" transform="rotate(210 64 64)"/>
+    <use href="#petalInner" transform="rotate(270 64 64)"/>
+    <use href="#petalInner" transform="rotate(330 64 64)"/>
+  </g>
+
+  <!-- heart of the bloom -->
+  <circle cx="64" cy="64" r="6.5" fill="#F3E2AB"/>
+</svg>

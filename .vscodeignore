@@ -1,0 +1,23 @@
+# Pastas de dev / VCS
+.vscode/**
+.git/**
+.gitignore
+node_modules/**
+*.vsix
+
+# Notas internas (guard-rail anti-reskin, não vão pro pacote)
+CLAUDE.md
+.claude/**
+
+# Material só do showcase web — não precisa dentro da extensão
+index.html
+og-image.png
+icon.svg
+
+# preview.png fica de fora do pacote (2 MB). O vsce reescreve o link
+# relativo do README pro GitHub raw, então a imagem ainda aparece no Marketplace.
+preview.png
+
+# Lixo de SO
+**/.DS_Store
+**/Thumbs.db
