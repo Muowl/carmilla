@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -547,6 +547,42 @@
             font-size: 0.78rem;
         }
 
+        /* ============== TOGGLE DE IDIOMA / LANGUAGE TOGGLE ============== */
+        [data-lang="pt"] .lang-en { display: none; }
+        [data-lang="en"] .lang-pt { display: none; }
+
+        .lang-switch {
+            position: fixed;
+            top: 1.1rem;
+            right: 1.1rem;
+            z-index: 200;
+            display: flex;
+            gap: 0.15rem;
+            padding: 0.2rem;
+            border-radius: 999px;
+            background: rgba(58,36,56,0.72);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,95,162,0.18);
+        }
+        .lang-switch button {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--ash-mauve);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.32rem 0.7rem;
+            border-radius: 999px;
+            transition: color 0.2s, background 0.2s;
+        }
+        .lang-switch button:hover { color: var(--pearl); }
+        .lang-switch button.active {
+            background: var(--carmine);
+            color: var(--crypt);
+        }
+
         @media (max-width: 680px) {
             .wrap { padding: 2rem 1rem 4rem; }
             .hero { padding: 2rem 0 3rem; }
@@ -565,23 +601,27 @@
     </style>
 </head>
 <body>
+<div class="lang-switch" role="group" aria-label="Idioma / Language">
+    <button type="button" data-set-lang="pt">PT</button>
+    <button type="button" data-set-lang="en">EN</button>
+</div>
 <div class="wrap">
 
     <!-- ============== HERO ============== -->
     <header class="hero">
-        <div class="eyebrow">Tema escuro · Paleta autoral · v1</div>
+        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1</span><span class="lang-en">Dark theme · Original palette · v1</span></div>
         <h1>Carmilla</h1>
-        <div class="subtitle">calor de cripta para noites de código</div>
+        <div class="subtitle"><span class="lang-pt">calor de cripta para noites de código</span><span class="lang-en">crypt warmth for nights of code</span></div>
         <div class="ornament">❦</div>
         <p class="lead">
-            Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. Identidade própria, atmosfera de cripta vampírica.
+            <span class="lang-pt">Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. Identidade própria, atmosfera de cripta vampírica.</span><span class="lang-en">Thirteen colours distilled around a rosé-wine background. Warm accents — carmine, wisteria, absinthe mint, peach velvet, champagne — over <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. An identity of its own, the atmosphere of a vampire crypt.</span>
         </p>
         <div class="cta">
             <a class="btn btn-primary" href="https://github.com/Muowl/carmilla">
                 <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                Ver no GitHub
+                <span class="lang-pt">Ver no GitHub</span><span class="lang-en">View on GitHub</span>
             </a>
-            <span class="soon">em breve no VS Code Marketplace</span>
+            <span class="soon"><span class="lang-pt">em breve no VS Code Marketplace</span><span class="lang-en">coming soon to the VS Code Marketplace</span></span>
         </div>
     </header>
 
@@ -589,37 +629,37 @@
     <section>
         <div class="section-head">
             <div class="section-num">I.</div>
-            <h2 class="section-title">A paleta</h2>
+            <h2 class="section-title"><span class="lang-pt">A paleta</span><span class="lang-en">The palette</span></h2>
         </div>
-        <p class="section-subtitle">treze tons, um humor</p>
+        <p class="section-subtitle"><span class="lang-pt">treze tons, um humor</span><span class="lang-en">thirteen tones, one mood</span></p>
 
         <div class="palette">
             <div class="swatch">
                 <div class="swatch-color" style="background:#16101A"><span class="swatch-hex">#16101A</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Crypt</div>
-                    <div class="swatch-role">background mais profundo — página, gutter</div>
+                    <div class="swatch-role"><span class="lang-pt">background mais profundo — página, gutter</span><span class="lang-en">deepest background — page, gutter</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#2E1B2D"><span class="swatch-hex">#2E1B2D</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Boudoir</div>
-                    <div class="swatch-role">background principal — editor, painéis</div>
+                    <div class="swatch-role"><span class="lang-pt">background principal — editor, painéis</span><span class="lang-en">main background — editor, panels</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#3A2438"><span class="swatch-hex">#3A2438</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Velvet</div>
-                    <div class="swatch-role">superfície elevada — cards, status bar</div>
+                    <div class="swatch-role"><span class="lang-pt">superfície elevada — cards, status bar</span><span class="lang-en">elevated surface — cards, status bar</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#4A3245"><span class="swatch-hex">#4A3245</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Selection</div>
-                    <div class="swatch-role">linha atual, seleção, ranges</div>
+                    <div class="swatch-role"><span class="lang-pt">linha atual, seleção, ranges</span><span class="lang-en">current line, selection, ranges</span></div>
                 </div>
             </div>
             <div class="swatch">
@@ -633,21 +673,21 @@
                 <div class="swatch-color" style="background:#D5A6FF"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#D5A6FF</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#D5A6FF">Wisteria</div>
-                    <div class="swatch-role">instâncias — <code style="font-family:var(--font-mono);font-size:0.72rem;color:var(--wisteria)">this, super, null</code></div>
+                    <div class="swatch-role"><span class="lang-pt">instâncias</span><span class="lang-en">language instances</span> — <code style="font-family:var(--font-mono);font-size:0.72rem;color:var(--wisteria)">this, super, null</code></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#7AD9C2"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#7AD9C2</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#7AD9C2">Verdigris</div>
-                    <div class="swatch-role">classes, tipos, suporte</div>
+                    <div class="swatch-role"><span class="lang-pt">classes, tipos, suporte</span><span class="lang-en">classes, types, support</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#7AE0A6"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#7AE0A6</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#7AE0A6">Absinthe</div>
-                    <div class="swatch-role">funções, métodos</div>
+                    <div class="swatch-role"><span class="lang-pt">funções, métodos</span><span class="lang-en">functions, methods</span></div>
                 </div>
             </div>
             <div class="swatch">
@@ -661,28 +701,28 @@
                 <div class="swatch-color" style="background:#FFAE8A"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#FFAE8A</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#FFAE8A">Peach Velvet</div>
-                    <div class="swatch-role">números, booleanos</div>
+                    <div class="swatch-role"><span class="lang-pt">números, booleanos</span><span class="lang-en">numbers, booleans</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#E84B6E"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#E84B6E</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#E84B6E">Pomegranate</div>
-                    <div class="swatch-role">erros, deleções, alertas</div>
+                    <div class="swatch-role"><span class="lang-pt">erros, deleções, alertas</span><span class="lang-en">errors, deletions, alerts</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#9E83A4"><span class="swatch-hex">#9E83A4</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#9E83A4">Ash Mauve</div>
-                    <div class="swatch-role">comentários — mauve quente que dialoga com o fundo</div>
+                    <div class="swatch-role"><span class="lang-pt">comentários — mauve quente que dialoga com o fundo</span><span class="lang-en">comments — a warm mauve that converses with the background</span></div>
                 </div>
             </div>
             <div class="swatch">
                 <div class="swatch-color" style="background:#F4ECE3"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#F4ECE3</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name" style="color:#F4ECE3">Pearl</div>
-                    <div class="swatch-role">texto principal, foreground</div>
+                    <div class="swatch-role"><span class="lang-pt">texto principal, foreground</span><span class="lang-en">primary text, foreground</span></div>
                 </div>
             </div>
         </div>
@@ -692,9 +732,9 @@
     <section>
         <div class="section-head">
             <div class="section-num">II.</div>
-            <h2 class="section-title">No editor</h2>
+            <h2 class="section-title"><span class="lang-pt">No editor</span><span class="lang-en">In the editor</span></h2>
         </div>
-        <p class="section-subtitle">como ela se comporta em código real</p>
+        <p class="section-subtitle"><span class="lang-pt">como ela se comporta em código real</span><span class="lang-en">how it behaves in real code</span></p>
 
         <div class="editor">
             <div class="editor-titlebar">
@@ -741,8 +781,8 @@
 <div class="ln added">29</div>
                 </div>
                 <div class="code-area">
-<pre><span class="c">// Carmilla — paleta autoral, accents quentes sobre vinho</span>
-<span class="c">// Comentários em ash-mauve dialogam com o boudoir do fundo.</span>
+<pre><span class="c lang-pt">// Carmilla — paleta autoral, accents quentes sobre vinho</span><span class="c lang-en">// Carmilla — an original palette, warm accents over wine</span>
+<span class="c lang-pt">// Comentários em ash-mauve dialogam com o boudoir do fundo.</span><span class="c lang-en">// Comments in ash-mauve converse with the boudoir background.</span>
 
 <span class="k">import</span> { <span class="t">Slayer</span> } <span class="k">from</span> <span class="s">"./hunters"</span><span class="punc">;</span>
 
@@ -758,18 +798,18 @@
 
     <span class="f">whisper</span><span class="punc">(</span><span class="p">guest</span><span class="punc">:</span> <span class="t">string</span><span class="punc">)</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span>
         <span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">+=</span> <span class="n">0.01</span><span class="punc">;</span>
-        <span class="k">return</span> <span class="s">`🥀 ${</span><span class="i">this</span><span class="punc">.</span><span class="p">name</span><span class="s">} sussurra ao ouvido de ${</span><span class="p">guest</span><span class="s">}`</span><span class="punc">;</span>
+        <span class="k">return</span> <span class="s">`🥀 ${</span><span class="i">this</span><span class="punc">.</span><span class="p">name</span><span class="s lang-pt">} sussurra ao ouvido de ${</span><span class="s lang-en">} whispers to ${</span><span class="p">guest</span><span class="s">}`</span><span class="punc">;</span>
     <span class="punc">}</span>
 
-    <span class="f">getEra</span><span class="punc">()</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span><div class="current-line">        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">5</span><span class="punc">)</span> <span class="k">return</span> <span class="s">"🕯️ Antiga das antigas"</span><span class="punc">;</span></div>        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">1</span><span class="punc">)</span> <span class="k">return</span> <span class="s">"🌙 Imortal madura"</span><span class="punc">;</span>
-        <span class="k">return</span> <span class="s">"🩸 Recém-virada"</span><span class="punc">;</span>
+    <span class="f">getEra</span><span class="punc">()</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span><div class="current-line">        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">5</span><span class="punc">)</span> <span class="k">return</span> <span class="s lang-pt">"🕯️ Antiga das antigas"</span><span class="s lang-en">"🕯️ Ancient of ancients"</span><span class="punc">;</span></div>        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">1</span><span class="punc">)</span> <span class="k">return</span> <span class="s lang-pt">"🌙 Imortal madura"</span><span class="s lang-en">"🌙 A mature immortal"</span><span class="punc">;</span>
+        <span class="k">return</span> <span class="s lang-pt">"🩸 Recém-virada"</span><span class="s lang-en">"🩸 Newly turned"</span><span class="punc">;</span>
     <span class="punc">}</span>
 <span class="punc">}</span>
 
 <span class="k">const</span> <span class="p">carmilla</span> <span class="punc">=</span> <span class="k">new</span> <span class="t">Countess</span><span class="punc">(</span><span class="s">"Mircalla Karnstein"</span><span class="punc">,</span> <span class="n">3</span><span class="punc">)</span><span class="punc">;</span>
 <span class="k">const</span> <span class="p">awake</span><span class="punc">:</span> <span class="t">boolean</span> <span class="punc">=</span> <span class="n">true</span><span class="punc">;</span>
 <span class="k">if</span> <span class="punc">(</span><span class="p">awake</span><span class="punc">)</span> <span class="p">console</span><span class="punc">.</span><span class="f">log</span><span class="punc">(</span><span class="p">carmilla</span><span class="punc">.</span><span class="f">getEra</span><span class="punc">()</span><span class="punc">)</span><span class="punc">;</span>
-<span class="k">else</span> <span class="p">console</span><span class="punc">.</span><span class="err">error</span><span class="punc">(</span><span class="s">"❌ ainda repousa no caixão"</span><span class="punc">)</span><span class="punc">;</span></pre>
+<span class="k">else</span> <span class="p">console</span><span class="punc">.</span><span class="err">error</span><span class="punc">(</span><span class="s lang-pt">"❌ ainda repousa no caixão"</span><span class="s lang-en">"❌ still resting in the coffin"</span><span class="punc">)</span><span class="punc">;</span></pre>
                 </div>
             </div>
             <div class="editor-statusbar">
@@ -792,9 +832,9 @@
     <section>
         <div class="section-head">
             <div class="section-num">III.</div>
-            <h2 class="section-title">Anatomia</h2>
+            <h2 class="section-title"><span class="lang-pt">Anatomia</span><span class="lang-en">Anatomy</span></h2>
         </div>
-        <p class="section-subtitle">cada token, sua cor, seu papel</p>
+        <p class="section-subtitle"><span class="lang-pt">cada token, sua cor, seu papel</span><span class="lang-en">each token, its colour, its role</span></p>
 
         <div class="token-map">
             <div class="token-row"><span class="token-dot" style="background:#FF5FA2"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:#FF5FA2">const</span> x <span style="color:#FF5FA2">=</span> <span style="color:#F3E2AB">"…"</span></span></div>
@@ -814,11 +854,30 @@
         <div class="ornament">❦</div>
         <div class="signature">Carmilla</div>
         <div class="meta">
-            v1 · 13 tokens · pronto para empacotar como tema VS Code <br>
+            <span class="lang-pt">v1 · 13 tokens · pronto para empacotar como tema VS Code</span><span class="lang-en">v1 · 13 tokens · ready to package as a VS Code theme</span> <br>
             <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
         </div>
     </footer>
 
 </div>
+
+<script>
+    (function () {
+        var root = document.documentElement;
+        var buttons = document.querySelectorAll('.lang-switch button');
+        apply(localStorage.getItem('carmilla-lang') || 'pt');
+        buttons.forEach(function (b) {
+            b.addEventListener('click', function () { apply(b.dataset.setLang); });
+        });
+        function apply(lang) {
+            root.dataset.lang = lang;
+            root.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+            localStorage.setItem('carmilla-lang', lang);
+            buttons.forEach(function (b) {
+                b.classList.toggle('active', b.dataset.setLang === lang);
+            });
+        }
+    })();
+</script>
 </body>
 </html>
