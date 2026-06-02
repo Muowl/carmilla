@@ -11,9 +11,14 @@
   <a href="https://muowl.github.io/carmilla/"><strong>🔗 See the live showcase</strong></a>
 </p>
 
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/visual-studio-marketplace/v/muowl.carmilla?style=flat-square&label=Marketplace&color=FF5FA2" alt="VS Code Marketplace version"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/visual-studio-marketplace/i/muowl.carmilla?style=flat-square&color=D5A6FF" alt="Installs"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/visual-studio-marketplace/r/muowl.carmilla?style=flat-square&color=F3E2AB" alt="Rating"></a>
+</p>
+
 ---
 
-> **Status:** v1 in development, heading toward publication (VS Code Marketplace and other editors).
 > The name *Carmilla* is a tribute to Sheridan Le Fanu's gothic novella (1872), a classic of vampire literature.
 
 ## Why it exists
@@ -52,7 +57,15 @@ Full specification, design rationale and TextMate mapping in [`PALETTE.md`](PALE
 
 ## Installation
 
-While it's not on the Marketplace yet, the project is already a packageable extension.
+### From the Marketplace
+
+Open the Extensions view in VS Code (`Ctrl+Shift+X`), search for **Carmilla**, and click **Install** — or run:
+
+```sh
+code --install-extension muowl.carmilla
+```
+
+Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### From a `.vsix` file
 
