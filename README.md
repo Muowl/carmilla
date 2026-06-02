@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://muowl.github.io/carmilla/"><strong>🔗 See the live showcase</strong></a>
+  <a href="https://muowl.dev/"><strong>🔗 See the live showcase</strong></a>
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
   <img src="preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
 </p>
 
-See it [live](https://muowl.github.io/carmilla/) or open [`index.html`](index.html) locally in your browser.
+See it [live](https://muowl.dev/) or open [`index.html`](index.html) locally in your browser.
 
 ## Palette
 

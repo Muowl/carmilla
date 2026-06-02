@@ -13,6 +13,7 @@ CLAUDE.md
 index.html
 og-image.png
 icon.svg
+CNAME
 
 # preview.png fica de fora do pacote (2 MB). O vsce reescreve o link
 # relativo do README pro GitHub raw, então a imagem ainda aparece no Marketplace.
