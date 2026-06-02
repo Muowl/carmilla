@@ -12,9 +12,8 @@
 </p>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/visual-studio-marketplace/v/muowl.carmilla?style=flat-square&label=Marketplace&color=FF5FA2" alt="VS Code Marketplace version"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/visual-studio-marketplace/i/muowl.carmilla?style=flat-square&color=D5A6FF" alt="Installs"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/visual-studio-marketplace/r/muowl.carmilla?style=flat-square&color=F3E2AB" alt="Rating"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/badge/VS_Code-Install_Carmilla-FF5FA2?style=flat-square&logo=visualstudiocode&logoColor=white&labelColor=2E1B2D" alt="Install from the VS Code Marketplace"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-D5A6FF?style=flat-square&labelColor=2E1B2D" alt="MIT license"></a>
 </p>
 
 ---
