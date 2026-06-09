@@ -5,7 +5,7 @@
 node_modules/**
 *.vsix
 
-# Notas internas (guard-rail anti-reskin, não vão pro pacote)
+# Notas internas de desenvolvimento (não vão pro pacote)
 CLAUDE.md
 .claude/**
 

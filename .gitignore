@@ -7,7 +7,7 @@ node_modules/
 Thumbs.db
 .vscode-test/
 
-# Notas internas de desenvolvimento (guard-rail anti-reskin + configs locais)
+# Notas internas de desenvolvimento e configs locais
 CLAUDE.md
 .claude/
 

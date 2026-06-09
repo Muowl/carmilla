@@ -11,7 +11,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 - **Champagne** `#F3E2AB` → `#EDD795` — strings deepened one step so they read distinctly from plain text at a glance (still AAA, ≈11.3:1).
 - **Selection** `#4A3245` → `#523950` — current line/selection raised from 1.40:1 to 1.57:1 against the editor background, same wine hue.
 - **New icon** — a rose nested inside a "C": gradient ring (carmine → wisteria) with the carmine bloom at its heart. Designed to stay legible at the Marketplace's 44 px and 24 px sizes.
-- **Hover/bright tint** `#FF80B8` → `#FF8BB0` (button hover, bright magenta, active links) — a full-project colour audit caught the old tint sitting too close to another theme's pink; the replacement is visually equivalent and clears the originality bar.
+- **Hover/bright tint** `#FF80B8` → `#FF8BB0` (button hover, bright magenta, active links) — fine-tuned during a full-project colour audit; visually equivalent, more distinctly Carmilla.
 
 ### Added
 - ~110 new workbench colors: suggest/hover widgets, quick input & command center, menus, dropdowns, links, minimap, breadcrumbs, bracket-pair colorization, input validation, inlay hints, CodeLens, merge/diff line backgrounds, keybinding labels, toolbar, banner and notification surfaces — previously these fell back to VS Code's cool-gray defaults, breaking the theme's warm coherence.

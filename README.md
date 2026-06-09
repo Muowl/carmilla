@@ -87,4 +87,4 @@ Open this folder in VS Code and press `F5` to launch an *Extension Development H
 
 ## License
 
-[MIT](LICENSE). No hex is a direct copy of another theme, so there's no third-party attribution requirement.
+[MIT](LICENSE). Every colour is original to this palette — no third-party attribution required.

@@ -64,4 +64,4 @@ text, punctuation, source                → pearl
 
 1. Rename if you like (update `name`/`displayName` in `package.json`).
 2. Build and publish: `npm run package` / `npm run publish` (requires a Marketplace publisher + PAT).
-3. Suggested license: MIT. No hex is a direct copy of another theme, so there's no attribution dependency.
+3. Suggested license: MIT. Every hex is original to this palette, so there's no attribution dependency.
