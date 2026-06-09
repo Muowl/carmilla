@@ -41,13 +41,13 @@ See it [live](https://muowl.dev/) or open [`index.html`](index.html) locally in 
 | Crypt          | `#16101A`  | Deepest background — page, gutter                |
 | Boudoir        | `#2E1B2D`  | Main background — editor, panels                 |
 | Velvet         | `#3A2438`  | Elevated surface — cards, status bar             |
-| Selection      | `#4A3245`  | Current line, selection, ranges                  |
-| Pearl          | `#F4ECE3`  | Primary text / foreground                        |
+| Selection      | `#523950`  | Current line, selection, ranges                  |
+| Pearl          | `#F5EADA`  | Primary text / foreground                        |
 | Carmine        | `#FF5FA2`  | Keywords, storage (`const`, `class`, `return`)   |
 | Wisteria       | `#D5A6FF`  | Language instances (`this`, `super`, `null`)     |
-| Verdigris      | `#7AD9C2`  | Classes, types, support                          |
+| Verdigris      | `#5ED0D8`  | Classes, types, support                          |
 | Absinthe       | `#7AE0A6`  | Functions, methods                               |
-| Champagne      | `#F3E2AB`  | Strings, template literals                       |
+| Champagne      | `#EDD795`  | Strings, template literals                       |
 | Peach Velvet   | `#FFAE8A`  | Numbers, booleans                                |
 | Pomegranate    | `#E84B6E`  | Errors, deletions, alerts                        |
 | Ash Mauve      | `#9E83A4`  | Comments, disabled code                          |

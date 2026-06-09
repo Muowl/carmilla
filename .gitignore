@@ -10,3 +10,6 @@ Thumbs.db
 # Notas internas de desenvolvimento (guard-rail anti-reskin + configs locais)
 CLAUDE.md
 .claude/
+
+# Página local de antes/depois usada nas rodadas de refino — não publicar
+comparison.html

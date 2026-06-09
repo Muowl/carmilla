@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#16101A">
     <title>Carmilla · Boudoir/wine dark theme</title>
     <meta name="description" content="Carmilla — an original dark theme with a boudoir/wine identity: rosé-wine background and warm accents. Crypt warmth for nights of code.">
 
@@ -17,8 +18,9 @@
     <meta name="twitter:description" content="An original dark theme with a boudoir/wine identity. Crypt warmth for nights of code.">
     <meta name="twitter:image" content="https://muowl.dev/og-image.png">
 
-    <!-- Favicon (🥀 inline, sem arquivo extra) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A5%80</text></svg>">
+    <!-- Favicon — o ícone oficial da extensão (flor dentro do C) -->
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,13 +30,13 @@
             --crypt:        #16101A;
             --boudoir:      #2E1B2D;
             --velvet:       #3A2438;
-            --selection:    #4A3245;
-            --pearl:        #F4ECE3;
+            --selection:    #523950;
+            --pearl:        #F5EADA;
             --carmine:      #FF5FA2;
             --wisteria:     #D5A6FF;
-            --verdigris:    #7AD9C2;
+            --verdigris:    #5ED0D8;
             --absinthe:     #7AE0A6;
-            --champagne:    #F3E2AB;
+            --champagne:    #EDD795;
             --peach-velvet: #FFAE8A;
             --pomegranate:  #E84B6E;
             --ash-mauve:    #9E83A4;
@@ -151,7 +153,7 @@
             font-size: 1.05rem;
             max-width: 580px;
             margin: 0 auto;
-            color: rgba(244,236,227,0.78);
+            color: rgba(245,234,218,0.78);
             line-height: 1.7;
         }
 
@@ -166,16 +168,16 @@
 
         .btn {
             font-family: var(--font-body);
-            font-size: 0.92rem;
+            font-size: 1rem;
             font-weight: 600;
             letter-spacing: 0.01em;
-            padding: 0.8rem 1.6rem;
+            padding: 0.95rem 1.9rem;
             border-radius: 999px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.55rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            gap: 0.6rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
 
         .btn-primary {
@@ -184,16 +186,25 @@
             box-shadow: 0 8px 30px -8px rgba(255,95,162,0.5);
         }
         .btn-primary:hover {
-            background: #FF80B8;
+            background: #FF8BB0;
             transform: translateY(-2px);
             box-shadow: 0 12px 38px -8px rgba(255,95,162,0.65);
         }
 
-        .cta .soon {
-            font-family: var(--font-display);
-            font-style: italic;
-            font-size: 1.05rem;
-            color: var(--ash-mauve);
+        .btn-ghost {
+            color: var(--pearl);
+            background: rgba(58,36,56,0.35);
+            border: 1px solid rgba(255,95,162,0.4);
+        }
+        .btn-ghost:hover {
+            border-color: var(--carmine);
+            background: rgba(58,36,56,0.7);
+            transform: translateY(-2px);
+        }
+
+        /* monitores grandes: o CTA acompanha a escala do hero */
+        @media (min-width: 1500px) {
+            .btn { font-size: 1.12rem; padding: 1.05rem 2.3rem; }
         }
 
         /* ============== SEÇÕES ============== */
@@ -273,7 +284,7 @@
             backdrop-filter: blur(8px);
             background: rgba(22,16,26,0.55);
             color: var(--pearl);
-            border: 1px solid rgba(244,236,227,0.18);
+            border: 1px solid rgba(245,234,218,0.18);
             letter-spacing: 0.5px;
         }
 
@@ -305,7 +316,7 @@
                 0 50px 100px -20px rgba(0,0,0,0.7),
                 0 30px 60px -30px rgba(0,0,0,0.8),
                 0 0 0 1px rgba(255,95,162,0.18),
-                inset 0 1px 0 rgba(244,236,227,0.04);
+                inset 0 1px 0 rgba(245,234,218,0.04);
             display: grid;
             grid-template-rows: auto auto 1fr auto;
             margin-top: 1rem;
@@ -437,7 +448,7 @@
             position: relative;
         }
         .current-line {
-            background: rgba(74,50,69,0.55);
+            background: rgba(82,57,80,0.55);
             display: block;
             margin: 0 -1.2rem 0 -0.5rem;
             padding: 0 1.2rem 0 0.5rem;
@@ -455,7 +466,7 @@
         .n    { color: var(--peach-velvet); }
         .err  { color: var(--pomegranate); }
         .p    { color: var(--pearl); }
-        .punc { color: rgba(244,236,227,0.65); }
+        .punc { color: rgba(245,234,218,0.65); }
 
         .editor-statusbar {
             background: var(--velvet);
@@ -609,7 +620,7 @@
 
     <!-- ============== HERO ============== -->
     <header class="hero">
-        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1</span><span class="lang-en">Dark theme · Original palette · v1</span></div>
+        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.1</span><span class="lang-en">Dark theme · Original palette · v1.1</span></div>
         <h1>Carmilla</h1>
         <div class="subtitle"><span class="lang-pt">calor de cripta para noites de código</span><span class="lang-en">crypt warmth for nights of code</span></div>
         <div class="ornament">❦</div>
@@ -617,11 +628,14 @@
             <span class="lang-pt">Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. Identidade própria, atmosfera de cripta vampírica.</span><span class="lang-en">Thirteen colours distilled around a rosé-wine background. Warm accents — carmine, wisteria, absinthe mint, peach velvet, champagne — over <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. An identity of its own, the atmosphere of a vampire crypt.</span>
         </p>
         <div class="cta">
-            <a class="btn btn-primary" href="https://github.com/Muowl/carmilla">
+            <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla">
+                <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                <span class="lang-pt">Instalar — VS Code Marketplace</span><span class="lang-en">Install — VS Code Marketplace</span>
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/Muowl/carmilla">
                 <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
                 <span class="lang-pt">Ver no GitHub</span><span class="lang-en">View on GitHub</span>
             </a>
-            <a class="soon" href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla" style="text-decoration:none;color:var(--carmine);"><span class="lang-pt">disponível no VS Code Marketplace ↗</span><span class="lang-en">available on the VS Code Marketplace ↗</span></a>
         </div>
     </header>
 
@@ -656,7 +670,7 @@
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#4A3245"><span class="swatch-hex">#4A3245</span></div>
+                <div class="swatch-color" style="background:#523950"><span class="swatch-hex">#523950</span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Selection</div>
                     <div class="swatch-role"><span class="lang-pt">linha atual, seleção, ranges</span><span class="lang-en">current line, selection, ranges</span></div>
@@ -677,9 +691,9 @@
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#7AD9C2"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#7AD9C2</span></div>
+                <div class="swatch-color" style="background:#5ED0D8"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#5ED0D8</span></div>
                 <div class="swatch-meta">
-                    <div class="swatch-name" style="color:#7AD9C2">Verdigris</div>
+                    <div class="swatch-name" style="color:#5ED0D8">Verdigris</div>
                     <div class="swatch-role"><span class="lang-pt">classes, tipos, suporte</span><span class="lang-en">classes, types, support</span></div>
                 </div>
             </div>
@@ -691,9 +705,9 @@
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#F3E2AB"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#F3E2AB</span></div>
+                <div class="swatch-color" style="background:#EDD795"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#EDD795</span></div>
                 <div class="swatch-meta">
-                    <div class="swatch-name" style="color:#F3E2AB">Champagne</div>
+                    <div class="swatch-name" style="color:#EDD795">Champagne</div>
                     <div class="swatch-role">strings, template literals</div>
                 </div>
             </div>
@@ -719,9 +733,9 @@
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#F4ECE3"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#F4ECE3</span></div>
+                <div class="swatch-color" style="background:#F5EADA"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#F5EADA</span></div>
                 <div class="swatch-meta">
-                    <div class="swatch-name" style="color:#F4ECE3">Pearl</div>
+                    <div class="swatch-name" style="color:#F5EADA">Pearl</div>
                     <div class="swatch-role"><span class="lang-pt">texto principal, foreground</span><span class="lang-en">primary text, foreground</span></div>
                 </div>
             </div>
@@ -837,15 +851,15 @@
         <p class="section-subtitle"><span class="lang-pt">cada token, sua cor, seu papel</span><span class="lang-en">each token, its colour, its role</span></p>
 
         <div class="token-map">
-            <div class="token-row"><span class="token-dot" style="background:#FF5FA2"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:#FF5FA2">const</span> x <span style="color:#FF5FA2">=</span> <span style="color:#F3E2AB">"…"</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#FF5FA2"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:#FF5FA2">const</span> x <span style="color:#FF5FA2">=</span> <span style="color:#EDD795">"…"</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#D5A6FF"></span><span class="token-name">variable.lang</span><span class="token-sample"><span style="color:#D5A6FF;font-style:italic">this</span>.name</span></div>
-            <div class="token-row"><span class="token-dot" style="background:#7AD9C2"></span><span class="token-name">entity.type</span><span class="token-sample">: <span style="color:#7AD9C2">string</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#5ED0D8"></span><span class="token-name">entity.type</span><span class="token-sample">: <span style="color:#5ED0D8">string</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#7AE0A6"></span><span class="token-name">entity.function</span><span class="token-sample"><span style="color:#7AE0A6">log</span>()</span></div>
-            <div class="token-row"><span class="token-dot" style="background:#F3E2AB"></span><span class="token-name">string</span><span class="token-sample"><span style="color:#F3E2AB">"Carmilla"</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#EDD795"></span><span class="token-name">string</span><span class="token-sample"><span style="color:#EDD795">"Carmilla"</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#FFAE8A"></span><span class="token-name">constant.numeric</span><span class="token-sample"><span style="color:#FFAE8A">42</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#E84B6E"></span><span class="token-name">invalid</span><span class="token-sample"><span style="color:#E84B6E">undefined_var</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#9E83A4"></span><span class="token-name">comment</span><span class="token-sample"><span style="color:#9E83A4;font-style:italic">// ash mauve</span></span></div>
-            <div class="token-row"><span class="token-dot" style="background:#F4ECE3"></span><span class="token-name">variable</span><span class="token-sample"><span style="color:#F4ECE3">guest</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#F5EADA"></span><span class="token-name">variable</span><span class="token-sample"><span style="color:#F5EADA">guest</span></span></div>
         </div>
     </section>
 
@@ -854,7 +868,7 @@
         <div class="ornament">❦</div>
         <div class="signature">Carmilla</div>
         <div class="meta">
-            <span class="lang-pt">v1 · 13 tokens · disponível no VS Code Marketplace</span><span class="lang-en">v1 · 13 tokens · available on the VS Code Marketplace</span> <br>
+            <span class="lang-pt">v1.1 · 13 tokens · disponível no VS Code Marketplace</span><span class="lang-en">v1.1 · 13 tokens · available on the VS Code Marketplace</span> <br>
             <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
         </div>
     </footer>
