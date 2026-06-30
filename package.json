@@ -2,7 +2,7 @@
   "name": "carmilla",
   "displayName": "Carmilla",
   "description": "A warm dark theme with a boudoir/wine identity — rosé-vinho backgrounds and carmine, wisteria, absinthe and champagne accents.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "muowl",
   "license": "MIT",
   "icon": "icon.png",
@@ -19,6 +19,7 @@
     "dark theme",
     "pink",
     "purple",
+    "orange",
     "vampire",
     "boudoir"
   ],
@@ -40,6 +41,11 @@
         "label": "Carmilla",
         "uiTheme": "vs-dark",
         "path": "./carmilla.json"
+      },
+      {
+        "label": "Carmilla Cinnabar",
+        "uiTheme": "vs-dark",
+        "path": "./carmilla-cinnabar.json"
       }
     ]
   },

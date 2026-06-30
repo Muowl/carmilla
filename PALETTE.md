@@ -39,6 +39,24 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 
 Under **protanopia** (≈1% of men), two pairs lose most of their hue separation: Carmine × Ash Mauve (keywords vs comments) and Absinthe × Champagne (functions vs strings). Both are left as-is deliberately: comments are italicized full lines and strings are quote-delimited, so a non-color channel always disambiguates — and "fixing" them would mean sacrificing two pillars of the theme's identity.
 
+## Flavors
+
+Carmilla ships **flavors** — variants that swap only the signature accent, keeping the
+boudoir/wine atmosphere intact (backgrounds, Pearl text, and Ash-Mauve comments never change).
+
+### Cinnabar
+
+| Token            | Hex        | Replaces        |
+|------------------|------------|-----------------|
+| `cinnabar`       | `#F47C30`  | `carmine`       |
+| `cinnabar-hover` | `#FF9340`  | carmine hover   |
+
+An ember-orange accent named for the mineral pigment — same register as Carmine (cochineal)
+and Verdigris (copper patina). Tuned for **role-parity** with Carmine: matching visual weight
+(L\* 64.9 vs 63.4) and contrast (≈ 5.9:1 vs 5.7:1 on Boudoir), with the hue rotated from rosé
+to ember (~22°). It stays a clear distance from Peach-Velvet (ΔE ≈ 14) and Champagne, so
+keywords, numbers and strings remain easy to tell apart. Theme file: `carmilla-cinnabar.json`.
+
 ## TextMate mapping (summary)
 
 ```
