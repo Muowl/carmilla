@@ -28,6 +28,7 @@
     <style>
         :root {
             --crypt:        #16101A;
+            --crypt-rgb:    22, 16, 26;
             --tabstrip:     #1F141E;
             --boudoir:      #2E1B2D;
             --velvet:       #3A2438;
@@ -35,6 +36,7 @@
             --selection:    #523950;
             --selection-rgb:82, 57, 80;
             --pearl:        #F5EADA;
+            --pearl-rgb:    245, 234, 218;
             --carmine:      #FF5FA2;
             --carmine-rgb:  255, 95, 162;
             --carmine-hover:#FF8BB0;
@@ -59,12 +61,40 @@
             --carmine-rgb:  244, 124, 48;
             --carmine-hover:#FF9340;
             --crypt:        #1A1310;
+            --crypt-rgb:    26, 19, 16;
             --tabstrip:     #231714;
             --boudoir:      #2E211B;
             --velvet:       #3B2B23;
             --velvet-rgb:   59, 43, 35;
             --selection:    #534138;
             --selection-rgb:83, 65, 56;
+        }
+
+        /* Larimar — não é um flavor: é o irmão frio, com paleta própria.
+           Aqui ele re-tinge a página inteira (accent, fundos E as cores de
+           conteúdo) para o luar ardósia. Duas âncoras quentes ficam: strings
+           (areia) e números (peach), por legibilidade. */
+        :root[data-flavor="larimar"] {
+            --carmine:      #2CD3CE;
+            --carmine-rgb:  44, 211, 206;
+            --carmine-hover:#57E4DA;
+            --crypt:        #12151F;
+            --crypt-rgb:    18, 21, 31;
+            --tabstrip:     #161A26;
+            --boudoir:      #1A1F2E;
+            --velvet:       #232A3D;
+            --velvet-rgb:   35, 42, 61;
+            --selection:    #303A54;
+            --selection-rgb:48, 58, 84;
+            --pearl:        #E6E9F3;
+            --wisteria:     #C9A6F2;
+            --verdigris:    #86A8FF;
+            --absinthe:     #57DB86;
+            --champagne:    #D8C79C;
+            --peach-velvet: #EEA98F;
+            --pomegranate:  #F0576E;
+            --ash-mauve:    #74839E;
+            --pearl-rgb:    230, 233, 243;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -174,7 +204,7 @@
             font-size: 1.05rem;
             max-width: 580px;
             margin: 0 auto;
-            color: rgba(245,234,218,0.78);
+            color: rgba(var(--pearl-rgb),0.78);
             line-height: 1.7;
         }
 
@@ -303,9 +333,9 @@
             padding: 0.35rem 0.7rem;
             border-radius: 999px;
             backdrop-filter: blur(8px);
-            background: rgba(22,16,26,0.55);
+            background: rgba(var(--crypt-rgb),0.55);
             color: var(--pearl);
-            border: 1px solid rgba(245,234,218,0.18);
+            border: 1px solid rgba(var(--pearl-rgb),0.18);
             letter-spacing: 0.5px;
         }
 
@@ -337,7 +367,7 @@
                 0 50px 100px -20px rgba(0,0,0,0.7),
                 0 30px 60px -30px rgba(0,0,0,0.8),
                 0 0 0 1px rgba(var(--carmine-rgb),0.18),
-                inset 0 1px 0 rgba(245,234,218,0.04);
+                inset 0 1px 0 rgba(var(--pearl-rgb),0.04);
             display: grid;
             grid-template-rows: auto auto 1fr auto;
             margin-top: 1rem;
@@ -487,7 +517,7 @@
         .n    { color: var(--peach-velvet); }
         .err  { color: var(--pomegranate); }
         .p    { color: var(--pearl); }
-        .punc { color: rgba(245,234,218,0.65); }
+        .punc { color: rgba(var(--pearl-rgb),0.65); }
 
         .editor-statusbar {
             background: var(--velvet);
@@ -618,7 +648,7 @@
         /* ============== FLAVORS ============== */
         .flavors {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1rem;
         }
         .flavor-card {
@@ -688,6 +718,7 @@
             .section-head { flex-direction: column; gap: 0.5rem; }
             .section-num { min-width: auto; }
             .palette { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .flavors { grid-template-columns: 1fr; }
             .swatch-color { height: 100px; }
             .editor-body { grid-template-columns: 32px 1fr; }
             .gutter .ln { padding: 0 0.4rem; font-size: 0.7rem; }
@@ -705,7 +736,7 @@
 
     <!-- ============== HERO ============== -->
     <header class="hero">
-        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.2</span><span class="lang-en">Dark theme · Original palette · v1.2</span></div>
+        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.3</span><span class="lang-en">Dark theme · Original palette · v1.3</span></div>
         <h1>Carmilla</h1>
         <div class="subtitle"><span class="lang-pt">calor de cripta para noites de código</span><span class="lang-en">crypt warmth for nights of code</span></div>
         <div class="ornament">❦</div>
@@ -856,6 +887,16 @@
 <code class="flavor-code" style="background:#2E211B"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
 <span style="color:#F47C30">const</span> v <span style="color:#F47C30">=</span> <span style="color:#EDD795">"…"</span></code>
             </button>
+            <button type="button" class="flavor-card" data-set-flavor="larimar" style="--c:#2CD3CE;--card-bg:#232A3D;--card-rgb:44,211,206">
+                <span class="flavor-swatch"></span>
+                <span class="flavor-meta">
+                    <span class="flavor-name">Carmilla Larimar</span>
+                    <span class="flavor-accent">Larimar · #2CD3CE</span>
+                    <span class="flavor-tag"><span class="lang-pt">turquesa-luar — o irmão frio</span><span class="lang-en">moonlit turquoise — the cool sibling</span></span>
+                </span>
+<code class="flavor-code" style="background:#1A1F2E"><span style="color:#74839E;font-style:italic">// boudoir</span>
+<span style="color:#2CD3CE">const</span> v <span style="color:#2CD3CE">=</span> <span style="color:#D8C79C">"…"</span></code>
+            </button>
         </div>
         <p class="flavor-hint"><span class="lang-pt">escolha um — o hero e o editor acompanham</span><span class="lang-en">pick one — the hero and the editor follow</span></p>
     </section>
@@ -986,7 +1027,7 @@
         <div class="ornament">❦</div>
         <div class="signature">Carmilla</div>
         <div class="meta">
-            <span class="lang-pt">v1.2 · 13 tokens · 2 flavors · disponível no VS Code Marketplace</span><span class="lang-en">v1.2 · 13 tokens · 2 flavors · available on the VS Code Marketplace</span> <br>
+            <span class="lang-pt">v1.3 · 13 tokens · 3 temas · disponível no VS Code Marketplace</span><span class="lang-en">v1.3 · 13 tokens · 3 themes · available on the VS Code Marketplace</span> <br>
             <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
         </div>
     </footer>

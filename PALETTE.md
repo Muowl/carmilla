@@ -66,6 +66,38 @@ ember (~22°). The backgrounds keep the wine family's lightness, rotated to the 
 temperature, so Pearl holds AAA (≈ 13:1) and every syntax hue keeps its contrast. Theme file:
 `carmilla-cinnabar.json`.
 
+### Larimar — a cool sibling (not a flavor)
+
+Where the flavors keep the content colours constant and only re-temperature the accent +
+backgrounds, **Larimar** is a *moonlit* reading of Carmilla that carries its **own full 13-token
+palette**. It is a deliberate exception to the theme's thermal-coherence rule — the base and its
+flavors stay warm; Larimar is the one cool member of the family. Theme file: `carmilla-larimar.json`.
+
+| Token         | Hex        | Role (Larimar)                                    |
+|---------------|------------|---------------------------------------------------|
+| `crypt`       | `#12151F`  | Deepest background (gutter, activity bar)         |
+| `boudoir`     | `#1A1F2E`  | Main background (editor, panel)                   |
+| `velvet`      | `#232A3D`  | Elevated surface (status bar, popups)             |
+| `selection`   | `#303A54`  | Current line, selection                           |
+| `pearl`       | `#E6E9F3`  | Primary text (cooled toward moonlight)            |
+| `larimar`     | `#2CD3CE`  | **Signature** — keywords/storage, cursor, badges  |
+| `larimar` hov | `#57E4DA`  | Hover/bright tint (buttons, links, bright cyan)   |
+| `lilac`       | `#C9A6F2`  | Language instances (`this`, `super`, `null`)      |
+| `cornflower`  | `#86A8FF`  | Classes, types, support                           |
+| `mint`        | `#57DB86`  | Functions, methods                                |
+| `sand`        | `#D8C79C`  | Strings (a warm anchor, kept on purpose)          |
+| `peach`       | `#EEA98F`  | Numbers, booleans (heirloom from base Carmilla)   |
+| `crimson`     | `#F0576E`  | Errors, deletions, alerts                         |
+| `gloam`       | `#74839E`  | Comments (a slate-grey that recedes)              |
+
+**Design notes.** A cool-only scheme crowds its hues between ~140° and ~270°, so the two **warm
+anchors** — Sand strings and Peach numbers — are retained deliberately to keep the syntax roles
+legible (and Peach threads a line of continuity back to the base). Keyword-turquoise vs
+function-mint sit ~37° apart (below the 45° target), disambiguated by lightness and the `()` after
+calls — the same non-colour channel the base relies on. Contrast holds AAA (Pearl ≈ 13.5:1 on
+Boudoir, Larimar ≈ 8.9:1); comments are ~4.2:1, subtle by design. Terminal ANSI follows the family
+convention (the signature accent occupies the magenta slot).
+
 ## TextMate mapping (summary)
 
 ```

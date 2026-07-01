@@ -1,8 +1,8 @@
 {
   "name": "carmilla",
   "displayName": "Carmilla",
-  "description": "A warm dark theme with a boudoir/wine identity — rosé-vinho backgrounds and carmine, wisteria, absinthe and champagne accents.",
-  "version": "1.2.0",
+  "description": "A warm dark theme with a boudoir/wine identity — rosé-vinho backgrounds and carmine, wisteria, absinthe and champagne accents. Ships warm flavors (Carmine, Cinnabar) and a cool moonlit sibling (Larimar).",
+  "version": "1.3.0",
   "publisher": "muowl",
   "license": "MIT",
   "icon": "icon.png",
@@ -20,6 +20,8 @@
     "pink",
     "purple",
     "orange",
+    "teal",
+    "blue",
     "vampire",
     "boudoir"
   ],
@@ -46,6 +48,11 @@
         "label": "Carmilla Cinnabar",
         "uiTheme": "vs-dark",
         "path": "./carmilla-cinnabar.json"
+      },
+      {
+        "label": "Carmilla Larimar",
+        "uiTheme": "vs-dark",
+        "path": "./carmilla-larimar.json"
       }
     ]
   },

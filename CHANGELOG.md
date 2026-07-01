@@ -3,6 +3,11 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.3.0] — 2026-07-01
+
+### Added
+- **Carmilla Larimar** — a cool, moonlit sibling to the warm base. Unlike the flavors, Larimar carries its own full 13-token palette: a slate-blue background family (Crypt `#12151F`, Boudoir `#1A1F2E`, Velvet `#232A3D`, Selection `#303A54`), a vibrant turquoise signature **Larimar** `#2CD3CE` (hover `#57E4DA`) driving keywords, cursor, badges and active borders, and a spectral lilac `#C9A6F2` for `this`/`super`/`null`. Types move to cornflower `#86A8FF`, functions to mint `#57DB86`. Two warm anchors are kept on purpose for legibility — strings in sand `#D8C79C` and numbers in the original Carmilla peach `#EEA98F` — so a cool-only scheme never collapses its syntax roles. Contrast holds AAA (Pearl ≈ 13.5:1, turquoise ≈ 8.9:1); comments stay deliberately subtle. Selectable under **Color Theme** → **Carmilla Larimar**.
+
 ## [1.2.0] — 2026-06-30
 
 ### Added
