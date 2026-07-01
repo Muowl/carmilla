@@ -41,21 +41,30 @@ Under **protanopia** (≈1% of men), two pairs lose most of their hue separation
 
 ## Flavors
 
-Carmilla ships **flavors** — variants that swap only the signature accent, keeping the
-boudoir/wine atmosphere intact (backgrounds, Pearl text, and Ash-Mauve comments never change).
+Carmilla ships **flavors** — variants that swap the signature accent **and** pull the neutral
+backgrounds toward that accent's temperature. The content colours (Pearl, the syntax hues, and
+Ash-Mauve comments) stay constant across every flavor, so a flavor reads as the same theme in a
+different light — not a different theme.
 
 ### Cinnabar
 
-| Token            | Hex        | Replaces        |
-|------------------|------------|-----------------|
-| `cinnabar`       | `#F47C30`  | `carmine`       |
-| `cinnabar-hover` | `#FF9340`  | carmine hover   |
+An ember-orange reading of Carmilla — a *hearth* boudoir rather than a wine one.
 
-An ember-orange accent named for the mineral pigment — same register as Carmine (cochineal)
-and Verdigris (copper patina). Tuned for **role-parity** with Carmine: matching visual weight
-(L\* 64.9 vs 63.4) and contrast (≈ 5.9:1 vs 5.7:1 on Boudoir), with the hue rotated from rosé
-to ember (~22°). It stays a clear distance from Peach-Velvet (ΔE ≈ 14) and Champagne, so
-keywords, numbers and strings remain easy to tell apart. Theme file: `carmilla-cinnabar.json`.
+| Role         | Base (Carmine)    | Cinnabar          |
+|--------------|-------------------|-------------------|
+| Accent       | `#FF5FA2` carmine | `#F47C30` cinnabar|
+| Accent hover | `#FF8BB0`         | `#FF9340`         |
+| Crypt        | `#16101A`         | `#1A1310`         |
+| Boudoir      | `#2E1B2D`         | `#2E211B`         |
+| Velvet       | `#3A2438`         | `#3B2B23`         |
+| Selection    | `#523950`         | `#534138`         |
+
+The accent is named for the mineral pigment — same register as Carmine (cochineal) and
+Verdigris (copper patina) — and tuned for **role-parity** with Carmine: matching visual weight
+(L\* 64.9 vs 63.4) and contrast (≈ 5.8:1 on its Boudoir), with the hue rotated from rosé to
+ember (~22°). The backgrounds keep the wine family's lightness, rotated to the same ember
+temperature, so Pearl holds AAA (≈ 13:1) and every syntax hue keeps its contrast. Theme file:
+`carmilla-cinnabar.json`.
 
 ## TextMate mapping (summary)
 

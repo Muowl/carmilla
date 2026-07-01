@@ -30,7 +30,9 @@
             --crypt:        #16101A;
             --boudoir:      #2E1B2D;
             --velvet:       #3A2438;
+            --velvet-rgb:   58, 36, 56;
             --selection:    #523950;
+            --selection-rgb:82, 57, 80;
             --pearl:        #F5EADA;
             --carmine:      #FF5FA2;
             --carmine-rgb:  255, 95, 162;
@@ -48,12 +50,19 @@
             --font-mono:    'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
         }
 
-        /* Flavors — variantes que trocam só a cor-assinatura. O resto da
-           paleta (fundos, Pearl, Ash Mauve nos comentários) não muda. */
+        /* Flavors — cada variante troca a cor-assinatura E puxa os fundos
+           neutros para a temperatura do accent. As cores de conteúdo (Pearl,
+           sintaxe, Ash Mauve nos comentários) permanecem constantes. */
         :root[data-flavor="cinnabar"] {
             --carmine:      #F47C30;
             --carmine-rgb:  244, 124, 48;
             --carmine-hover:#FF9340;
+            --crypt:        #1A1310;
+            --boudoir:      #2E211B;
+            --velvet:       #3B2B23;
+            --velvet-rgb:   59, 43, 35;
+            --selection:    #534138;
+            --selection-rgb:83, 65, 56;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -203,12 +212,12 @@
 
         .btn-ghost {
             color: var(--pearl);
-            background: rgba(58,36,56,0.35);
+            background: rgba(var(--velvet-rgb),0.35);
             border: 1px solid rgba(var(--carmine-rgb),0.4);
         }
         .btn-ghost:hover {
             border-color: var(--carmine);
-            background: rgba(58,36,56,0.7);
+            background: rgba(var(--velvet-rgb),0.7);
             transform: translateY(-2px);
         }
 
@@ -458,7 +467,7 @@
             position: relative;
         }
         .current-line {
-            background: rgba(82,57,80,0.55);
+            background: rgba(var(--selection-rgb),0.55);
             display: block;
             margin: 0 -1.2rem 0 -0.5rem;
             padding: 0 1.2rem 0 0.5rem;
@@ -581,7 +590,7 @@
             gap: 0.15rem;
             padding: 0.2rem;
             border-radius: 999px;
-            background: rgba(58,36,56,0.72);
+            background: rgba(var(--velvet-rgb),0.72);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(var(--carmine-rgb),0.18);
         }
@@ -822,7 +831,7 @@
             <div class="section-num">II.</div>
             <h2 class="section-title"><span class="lang-pt">Flavors</span><span class="lang-en">Flavors</span></h2>
         </div>
-        <p class="section-subtitle"><span class="lang-pt">a mesma alma, outro accent</span><span class="lang-en">the same soul, another accent</span></p>
+        <p class="section-subtitle"><span class="lang-pt">a mesma alma, outra temperatura</span><span class="lang-en">the same soul, another temperature</span></p>
 
         <div class="flavors" role="group" aria-label="Carmilla flavors">
             <button type="button" class="flavor-card" data-set-flavor="carmine" style="--c:#FF5FA2">
@@ -832,7 +841,7 @@
                     <span class="flavor-accent">Carmine · #FF5FA2</span>
                     <span class="flavor-tag"><span class="lang-pt">rosé-magenta — o original</span><span class="lang-en">rosé-magenta — the original</span></span>
                 </span>
-<code class="flavor-code"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
+<code class="flavor-code" style="background:#2E1B2D"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
 <span style="color:#FF5FA2">const</span> v <span style="color:#FF5FA2">=</span> <span style="color:#EDD795">"…"</span></code>
             </button>
             <button type="button" class="flavor-card" data-set-flavor="cinnabar" style="--c:#F47C30">
@@ -842,7 +851,7 @@
                     <span class="flavor-accent">Cinnabar · #F47C30</span>
                     <span class="flavor-tag"><span class="lang-pt">laranja-brasa — quente como vinho</span><span class="lang-en">ember-orange — warm as wine</span></span>
                 </span>
-<code class="flavor-code"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
+<code class="flavor-code" style="background:#2E211B"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
 <span style="color:#F47C30">const</span> v <span style="color:#F47C30">=</span> <span style="color:#EDD795">"…"</span></code>
             </button>
         </div>

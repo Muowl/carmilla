@@ -56,13 +56,14 @@ Full specification, design rationale and TextMate mapping in [`PALETTE.md`](PALE
 
 ## Flavors
 
-Carmilla ships in **flavors** — variants that swap only the signature accent while the
-boudoir/wine atmosphere stays put (backgrounds, Pearl text and Ash Mauve comments never change).
+Carmilla ships in **flavors** — variants that swap the signature accent **and** warm the
+backgrounds to match it, while the content colours (Pearl, the syntax hues and Ash Mauve
+comments) stay constant. Same theme, a different light.
 
-| Flavor                | Accent                              |
-|-----------------------|-------------------------------------|
-| **Carmilla**          | Carmine `#FF5FA2` — rosé            |
-| **Carmilla Cinnabar** | Cinnabar `#F47C30` — ember-orange  |
+| Flavor                | Accent                             | Backgrounds |
+|-----------------------|------------------------------------|-------------|
+| **Carmilla**          | Carmine `#FF5FA2` — rosé           | wine        |
+| **Carmilla Cinnabar** | Cinnabar `#F47C30` — ember-orange  | ember       |
 
 Pick either under **Color Theme** (`Ctrl+K Ctrl+T`). See [`PALETTE.md`](PALETTE.md) for the rationale.
 

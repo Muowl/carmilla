@@ -6,8 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 ## [1.2.0] — 2026-06-30
 
 ### Added
-- **Flavors** — Carmilla now ships variants that swap only the signature accent while keeping the boudoir/wine atmosphere (backgrounds, Pearl text and Ash Mauve comments unchanged).
-- **Carmilla Cinnabar** — the first flavor: an ember-orange accent **Cinnabar** `#F47C30` (with hover/bright tint `#FF9340`) in place of Carmine. Tuned for equal visual weight (≈ 5.9:1 on Boudoir) so it reads as a true sibling of the base theme. Selectable under **Color Theme** → **Carmilla Cinnabar**.
+- **Flavors** — Carmilla now ships variants that swap the signature accent **and** shift the neutral backgrounds to match its temperature. The content colours (Pearl, the syntax hues and Ash Mauve comments) stay constant, so a flavor reads as the same theme in a different light.
+- **Carmilla Cinnabar** — the first flavor: an ember-orange accent **Cinnabar** `#F47C30` (hover/bright tint `#FF9340`) in place of Carmine, over a warmed *hearth* background family (Crypt `#1A1310`, Boudoir `#2E211B`, Velvet `#3B2B23`, Selection `#534138`). Tuned for equal visual weight (Pearl stays AAA ≈ 13:1, accent ≈ 5.8:1) so it reads as a true sibling of the base theme. Selectable under **Color Theme** → **Carmilla Cinnabar**.
 
 ## [1.1.0] — 2026-06-09
 
