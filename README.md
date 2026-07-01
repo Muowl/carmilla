@@ -63,7 +63,7 @@ comments) stay constant. Same theme, a different light.
 | Flavor                | Accent                             | Backgrounds |
 |-----------------------|------------------------------------|-------------|
 | **Carmilla**          | Carmine `#FF5FA2` — rosé           | wine        |
-| **Carmilla Cinnabar** | Cinnabar `#F47C30` — ember-orange  | ember       |
+| **Carmilla Cinnabar** | Cinnabar `#E86F24` — ember-orange  | ember       |
 
 **Carmilla Larimar** breaks the mould on purpose: a cool, **moonlit sibling** with its own full
 palette — a slate-blue background, a vibrant turquoise signature `#2CD3CE` and spectral lilac `this` —
@@ -86,7 +86,7 @@ Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**, **Car
 
 ### From a `.vsix` file
 
-1. Build the package: `npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.3.0.vsix`).
+1. Build the package: `npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.4.0.vsix`).
 2. In VS Code: command palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → pick the generated `.vsix`.
 3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**, **Carmilla Cinnabar** or **Carmilla Larimar**.
 

@@ -3,6 +3,14 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.4.0] — 2026-07-01
+
+### Changed
+- **Cinnabar accent darkened** `#F47C30` → `#E86F24` (hover `#FF9340` → `#F5842E`). The parity-exact orange read neon next to the rest of the palette; one step darker it keeps AA on its Boudoir (≈ 5.0:1) and widens the lightness gap against Peach-Velvet numbers, which share nearly the same hue in an orange flavor.
+
+### Fixed
+- **Cinnabar** — three wine-mauve leftovers from the base theme (`#6B4F6A`: line numbers, dimmed line numbers, git-ignored files) re-tempered to an ember mauve `#6F5142`, matching the flavor's hearth backgrounds at the same lightness and subtlety.
+
 ## [1.3.0] — 2026-07-01
 
 ### Added

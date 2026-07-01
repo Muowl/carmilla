@@ -52,19 +52,28 @@ An ember-orange reading of Carmilla — a *hearth* boudoir rather than a wine on
 
 | Role         | Base (Carmine)    | Cinnabar          |
 |--------------|-------------------|-------------------|
-| Accent       | `#FF5FA2` carmine | `#F47C30` cinnabar|
-| Accent hover | `#FF8BB0`         | `#FF9340`         |
+| Accent       | `#FF5FA2` carmine | `#E86F24` cinnabar|
+| Accent hover | `#FF8BB0`         | `#F5842E`         |
 | Crypt        | `#16101A`         | `#1A1310`         |
 | Boudoir      | `#2E1B2D`         | `#2E211B`         |
 | Velvet       | `#3A2438`         | `#3B2B23`         |
 | Selection    | `#523950`         | `#534138`         |
 
 The accent is named for the mineral pigment — same register as Carmine (cochineal) and
-Verdigris (copper patina) — and tuned for **role-parity** with Carmine: matching visual weight
-(L\* 64.9 vs 63.4) and contrast (≈ 5.8:1 on its Boudoir), with the hue rotated from rosé to
-ember (~22°). The backgrounds keep the wine family's lightness, rotated to the same ember
-temperature, so Pearl holds AAA (≈ 13:1) and every syntax hue keeps its contrast. Theme file:
-`carmilla-cinnabar.json`.
+Verdigris (copper patina). It sits **one deliberate step darker** than strict role-parity with
+Carmine (L\* 60.5 vs 63.4; ≈ 5.0:1 on its Boudoir, AA) — the parity-exact orange read neon,
+and darkening it widens the lightness gap against Peach-Velvet numbers (see the limitation
+below). The backgrounds keep the wine family's lightness, rotated to the ember temperature,
+so Pearl holds AAA (≈ 13:1) and every syntax hue keeps its contrast. The wine-mauve line
+numbers/ignored-file grey is re-tempered to an ember mauve `#6F5142` (same lightness and
+subtlety as the base's `#6B4F6A`). Theme file: `carmilla-cinnabar.json`.
+
+**Known limitation (Cinnabar).** An orange accent lands almost on Peach-Velvet's hue
+(OKLCH ≈ 47° vs 45°), so keywords vs numbers lose the hue separation the base enjoys (~47°
+apart there). They stay distinguishable by lightness (accent L 0.68 vs Peach 0.82) and by
+context — numbers are numeric literals — and the darkened accent exists partly to protect that
+lightness gap. The same peach also serves as the warning colour, which in Cinnabar reads
+closer to a faded accent; accepted, since the flavor contract keeps content colours constant.
 
 ### Larimar — a cool sibling (not a flavor)
 
@@ -96,7 +105,10 @@ legible (and Peach threads a line of continuity back to the base). Keyword-turqu
 function-mint sit ~37° apart (below the 45° target), disambiguated by lightness and the `()` after
 calls — the same non-colour channel the base relies on. Contrast holds AAA (Pearl ≈ 13.5:1 on
 Boudoir, Larimar ≈ 8.9:1); comments are ~4.2:1, subtle by design. Terminal ANSI follows the family
-convention (the signature accent occupies the magenta slot).
+convention (the signature accent occupies the magenta slot) — which in Larimar means the
+magenta slot renders turquoise and the cyan slot renders cornflower blue, a visible semantic
+shift for colour-keyed terminal programs (`ls --color`, htop). Accepted: convention over
+slot semantics, as everywhere else in the family.
 
 ## TextMate mapping (summary)
 
