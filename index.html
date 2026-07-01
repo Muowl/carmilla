@@ -28,6 +28,7 @@
     <style>
         :root {
             --crypt:        #16101A;
+            --tabstrip:     #1F141E;
             --boudoir:      #2E1B2D;
             --velvet:       #3A2438;
             --velvet-rgb:   58, 36, 56;
@@ -58,6 +59,7 @@
             --carmine-rgb:  244, 124, 48;
             --carmine-hover:#FF9340;
             --crypt:        #1A1310;
+            --tabstrip:     #231714;
             --boudoir:      #2E211B;
             --velvet:       #3B2B23;
             --velvet-rgb:   59, 43, 35;
@@ -373,7 +375,7 @@
         }
 
         .editor-tabs {
-            background: #1F141E;
+            background: var(--tabstrip);
             display: flex;
             border-bottom: 1px solid rgba(var(--carmine-rgb),0.08);
             padding-left: 0.5rem;
@@ -626,8 +628,8 @@
             gap: 0.6rem 1.1rem;
             align-items: center;
             text-align: left;
-            background: var(--velvet);
-            border: 1px solid rgba(var(--carmine-rgb), 0.12);
+            background: var(--card-bg);
+            border: 1px solid rgba(var(--card-rgb), 0.12);
             border-radius: 1.2rem;
             padding: 1.5rem;
             cursor: pointer;
@@ -834,7 +836,7 @@
         <p class="section-subtitle"><span class="lang-pt">a mesma alma, outra temperatura</span><span class="lang-en">the same soul, another temperature</span></p>
 
         <div class="flavors" role="group" aria-label="Carmilla flavors">
-            <button type="button" class="flavor-card" data-set-flavor="carmine" style="--c:#FF5FA2">
+            <button type="button" class="flavor-card" data-set-flavor="carmine" style="--c:#FF5FA2;--card-bg:#3A2438;--card-rgb:255,95,162">
                 <span class="flavor-swatch"></span>
                 <span class="flavor-meta">
                     <span class="flavor-name">Carmilla</span>
@@ -844,7 +846,7 @@
 <code class="flavor-code" style="background:#2E1B2D"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
 <span style="color:#FF5FA2">const</span> v <span style="color:#FF5FA2">=</span> <span style="color:#EDD795">"…"</span></code>
             </button>
-            <button type="button" class="flavor-card" data-set-flavor="cinnabar" style="--c:#F47C30">
+            <button type="button" class="flavor-card" data-set-flavor="cinnabar" style="--c:#F47C30;--card-bg:#3B2B23;--card-rgb:244,124,48">
                 <span class="flavor-swatch"></span>
                 <span class="flavor-meta">
                     <span class="flavor-name">Carmilla Cinnabar</span>
