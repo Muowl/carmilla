@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang="pt" data-flavor="carmine">
+<html lang="pt-BR" data-lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,50 +51,6 @@
             --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
             --font-body:    'Inter', system-ui, -apple-system, sans-serif;
             --font-mono:    'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
-        }
-
-        /* Flavors — cada variante troca a cor-assinatura E puxa os fundos
-           neutros para a temperatura do accent. As cores de conteúdo (Pearl,
-           sintaxe, Ash Mauve nos comentários) permanecem constantes. */
-        :root[data-flavor="cinnabar"] {
-            --carmine:      #E86F24;
-            --carmine-rgb:  232, 111, 36;
-            --carmine-hover:#F5842E;
-            --crypt:        #1A1310;
-            --crypt-rgb:    26, 19, 16;
-            --tabstrip:     #231714;
-            --boudoir:      #2E211B;
-            --velvet:       #3B2B23;
-            --velvet-rgb:   59, 43, 35;
-            --selection:    #534138;
-            --selection-rgb:83, 65, 56;
-        }
-
-        /* Larimar — não é um flavor: é o irmão frio, com paleta própria.
-           Aqui ele re-tinge a página inteira (accent, fundos E as cores de
-           conteúdo) para o luar ardósia. Duas âncoras quentes ficam: strings
-           (areia) e números (peach), por legibilidade. */
-        :root[data-flavor="larimar"] {
-            --carmine:      #2CD3CE;
-            --carmine-rgb:  44, 211, 206;
-            --carmine-hover:#57E4DA;
-            --crypt:        #12151F;
-            --crypt-rgb:    18, 21, 31;
-            --tabstrip:     #161A26;
-            --boudoir:      #1A1F2E;
-            --velvet:       #232A3D;
-            --velvet-rgb:   35, 42, 61;
-            --selection:    #303A54;
-            --selection-rgb:48, 58, 84;
-            --pearl:        #E6E9F3;
-            --wisteria:     #C9A6F2;
-            --verdigris:    #86A8FF;
-            --absinthe:     #57DB86;
-            --champagne:    #D8C79C;
-            --peach-velvet: #EEA98F;
-            --pomegranate:  #F0576E;
-            --ash-mauve:    #74839E;
-            --pearl-rgb:    230, 233, 243;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -645,70 +601,6 @@
             color: var(--crypt);
         }
 
-        /* ============== FLAVORS ============== */
-        .flavors {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1rem;
-        }
-        .flavor-card {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            grid-template-areas: "swatch meta" "code code";
-            gap: 0.6rem 1.1rem;
-            align-items: center;
-            text-align: left;
-            background: var(--card-bg);
-            border: 1px solid rgba(var(--card-rgb), 0.12);
-            border-radius: 1.2rem;
-            padding: 1.5rem;
-            cursor: pointer;
-            font-family: var(--font-body);
-            color: var(--pearl);
-            transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-        }
-        .flavor-card:hover { transform: translateY(-3px); border-color: var(--c); }
-        .flavor-card[aria-pressed="true"] {
-            border-color: var(--c);
-            box-shadow: 0 0 0 1px var(--c), 0 20px 44px -22px rgba(0,0,0,0.7);
-        }
-        .flavor-swatch {
-            grid-area: swatch;
-            width: 54px; height: 54px;
-            border-radius: 999px;
-            background: var(--c);
-            box-shadow: 0 8px 24px -6px var(--c);
-        }
-        .flavor-meta { grid-area: meta; display: flex; flex-direction: column; gap: 0.25rem; }
-        .flavor-name {
-            font-family: var(--font-display);
-            font-size: 1.5rem; font-weight: 600; line-height: 1.05;
-            color: var(--pearl);
-        }
-        .flavor-accent {
-            font-family: var(--font-mono);
-            font-size: 0.72rem; letter-spacing: 0.02em;
-            color: var(--c);
-        }
-        .flavor-tag { font-size: 0.82rem; color: var(--ash-mauve); }
-        .flavor-code {
-            grid-area: code;
-            font-family: var(--font-mono);
-            font-size: 0.78rem; line-height: 1.7;
-            white-space: pre;
-            background: var(--boudoir);
-            border-radius: 0.6rem;
-            padding: 0.7rem 0.9rem;
-            margin-top: 0.3rem;
-        }
-        .flavor-hint {
-            text-align: center;
-            margin-top: 1.1rem;
-            font-size: 0.8rem;
-            font-style: italic;
-            color: var(--ash-mauve);
-        }
-
         @media (max-width: 680px) {
             .wrap { padding: 2rem 1rem 4rem; }
             .hero { padding: 2rem 0 3rem; }
@@ -718,7 +610,6 @@
             .section-head { flex-direction: column; gap: 0.5rem; }
             .section-num { min-width: auto; }
             .palette { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .flavors { grid-template-columns: 1fr; }
             .swatch-color { height: 100px; }
             .editor-body { grid-template-columns: 32px 1fr; }
             .gutter .ln { padding: 0 0.4rem; font-size: 0.7rem; }
@@ -736,7 +627,7 @@
 
     <!-- ============== HERO ============== -->
     <header class="hero">
-        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.4</span><span class="lang-en">Dark theme · Original palette · v1.4</span></div>
+        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.5</span><span class="lang-en">Dark theme · Original palette · v1.5</span></div>
         <h1>Carmilla</h1>
         <div class="subtitle"><span class="lang-pt">calor de cripta para noites de código</span><span class="lang-en">crypt warmth for nights of code</span></div>
         <div class="ornament">❦</div>
@@ -858,53 +749,10 @@
         </div>
     </section>
 
-    <!-- ============== FLAVORS ============== -->
-    <section>
-        <div class="section-head">
-            <div class="section-num">II.</div>
-            <h2 class="section-title"><span class="lang-pt">Flavors</span><span class="lang-en">Flavors</span></h2>
-        </div>
-        <p class="section-subtitle"><span class="lang-pt">a mesma alma, outra temperatura</span><span class="lang-en">the same soul, another temperature</span></p>
-
-        <div class="flavors" role="group" aria-label="Carmilla flavors">
-            <button type="button" class="flavor-card" data-set-flavor="carmine" style="--c:#FF5FA2;--card-bg:#3A2438;--card-rgb:255,95,162">
-                <span class="flavor-swatch"></span>
-                <span class="flavor-meta">
-                    <span class="flavor-name">Carmilla</span>
-                    <span class="flavor-accent">Carmine · #FF5FA2</span>
-                    <span class="flavor-tag"><span class="lang-pt">rosé-magenta — o original</span><span class="lang-en">rosé-magenta — the original</span></span>
-                </span>
-<code class="flavor-code" style="background:#2E1B2D"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
-<span style="color:#FF5FA2">const</span> v <span style="color:#FF5FA2">=</span> <span style="color:#EDD795">"…"</span></code>
-            </button>
-            <button type="button" class="flavor-card" data-set-flavor="cinnabar" style="--c:#E86F24;--card-bg:#3B2B23;--card-rgb:232,111,36">
-                <span class="flavor-swatch"></span>
-                <span class="flavor-meta">
-                    <span class="flavor-name">Carmilla Cinnabar</span>
-                    <span class="flavor-accent">Cinnabar · #E86F24</span>
-                    <span class="flavor-tag"><span class="lang-pt">laranja-brasa — quente como vinho</span><span class="lang-en">ember-orange — warm as wine</span></span>
-                </span>
-<code class="flavor-code" style="background:#2E211B"><span style="color:#9E83A4;font-style:italic">// boudoir</span>
-<span style="color:#E86F24">const</span> v <span style="color:#E86F24">=</span> <span style="color:#EDD795">"…"</span></code>
-            </button>
-            <button type="button" class="flavor-card" data-set-flavor="larimar" style="--c:#2CD3CE;--card-bg:#232A3D;--card-rgb:44,211,206">
-                <span class="flavor-swatch"></span>
-                <span class="flavor-meta">
-                    <span class="flavor-name">Carmilla Larimar</span>
-                    <span class="flavor-accent">Larimar · #2CD3CE</span>
-                    <span class="flavor-tag"><span class="lang-pt">turquesa-luar — o irmão frio</span><span class="lang-en">moonlit turquoise — the cool sibling</span></span>
-                </span>
-<code class="flavor-code" style="background:#1A1F2E"><span style="color:#74839E;font-style:italic">// boudoir</span>
-<span style="color:#2CD3CE">const</span> v <span style="color:#2CD3CE">=</span> <span style="color:#D8C79C">"…"</span></code>
-            </button>
-        </div>
-        <p class="flavor-hint"><span class="lang-pt">escolha um — o hero e o editor acompanham</span><span class="lang-en">pick one — the hero and the editor follow</span></p>
-    </section>
-
     <!-- ============== EDITOR MOCKUP ============== -->
     <section>
         <div class="section-head">
-            <div class="section-num">III.</div>
+            <div class="section-num">II.</div>
             <h2 class="section-title"><span class="lang-pt">No editor</span><span class="lang-en">In the editor</span></h2>
         </div>
         <p class="section-subtitle"><span class="lang-pt">como ela se comporta em código real</span><span class="lang-en">how it behaves in real code</span></p>
@@ -1004,7 +852,7 @@
     <!-- ============== TOKEN MAP ============== -->
     <section>
         <div class="section-head">
-            <div class="section-num">IV.</div>
+            <div class="section-num">III.</div>
             <h2 class="section-title"><span class="lang-pt">Anatomia</span><span class="lang-en">Anatomy</span></h2>
         </div>
         <p class="section-subtitle"><span class="lang-pt">cada token, sua cor, seu papel</span><span class="lang-en">each token, its colour, its role</span></p>
@@ -1027,7 +875,7 @@
         <div class="ornament">❦</div>
         <div class="signature">Carmilla</div>
         <div class="meta">
-            <span class="lang-pt">v1.4 · 13 tokens · 3 temas · disponível no VS Code Marketplace</span><span class="lang-en">v1.4 · 13 tokens · 3 themes · available on the VS Code Marketplace</span> <br>
+            <span class="lang-pt">v1.5 · 13 tokens · disponível no VS Code Marketplace</span><span class="lang-en">v1.5 · 13 tokens · available on the VS Code Marketplace</span> <br>
             <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
         </div>
     </footer>
@@ -1053,19 +901,6 @@
             });
         }
 
-        // Flavor — re-tinge a página trocando só a cor-assinatura
-        var flavorButtons = document.querySelectorAll('[data-set-flavor]');
-        applyFlavor(localStorage.getItem('carmilla-flavor') || 'carmine');
-        flavorButtons.forEach(function (b) {
-            b.addEventListener('click', function () { applyFlavor(b.dataset.setFlavor); });
-        });
-        function applyFlavor(flavor) {
-            root.dataset.flavor = flavor;
-            localStorage.setItem('carmilla-flavor', flavor);
-            flavorButtons.forEach(function (b) {
-                b.setAttribute('aria-pressed', String(b.dataset.setFlavor === flavor));
-            });
-        }
     })();
 </script>
 </body>

@@ -54,24 +54,6 @@ See it [live](https://muowl.dev/) or open [`index.html`](index.html) locally in 
 
 Full specification, design rationale and TextMate mapping in [`PALETTE.md`](PALETTE.md).
 
-## Flavors
-
-Carmilla ships in **flavors** — variants that swap the signature accent **and** warm the
-backgrounds to match it, while the content colours (Pearl, the syntax hues and Ash Mauve
-comments) stay constant. Same theme, a different light.
-
-| Flavor                | Accent                             | Backgrounds |
-|-----------------------|------------------------------------|-------------|
-| **Carmilla**          | Carmine `#FF5FA2` — rosé           | wine        |
-| **Carmilla Cinnabar** | Cinnabar `#E86F24` — ember-orange  | ember       |
-
-**Carmilla Larimar** breaks the mould on purpose: a cool, **moonlit sibling** with its own full
-palette — a slate-blue background, a vibrant turquoise signature `#2CD3CE` and spectral lilac `this` —
-rather than a re-temperatured flavor. Two warm anchors (sand strings, peach numbers) are kept for
-legibility. It's the one cool member of the family.
-
-Pick any of the three under **Color Theme** (`Ctrl+K Ctrl+T`). See [`PALETTE.md`](PALETTE.md) for the rationale.
-
 ## Installation
 
 ### From the Marketplace
@@ -82,13 +64,13 @@ Open the Extensions view in VS Code (`Ctrl+Shift+X`), search for **Carmilla**, a
 code --install-extension muowl.carmilla
 ```
 
-Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**, **Carmilla Cinnabar** or **Carmilla Larimar**.
+Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### From a `.vsix` file
 
-1. Build the package: `npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.4.0.vsix`).
+1. Build the package: `npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.5.0.vsix`).
 2. In VS Code: command palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → pick the generated `.vsix`.
-3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**, **Carmilla Cinnabar** or **Carmilla Larimar**.
+3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### For development
 
@@ -100,8 +82,6 @@ Open this folder in VS Code and press `F5` to launch an *Extension Development H
 |------------------|------------------------------------------------------------------|
 | `PALETTE.md`     | Source of truth — portable spec and rationale                    |
 | `carmilla.json`  | VS Code theme (UI + syntax + ANSI terminal + git)                |
-| `carmilla-cinnabar.json` | Cinnabar flavor — base palette with an ember-orange accent |
-| `carmilla-larimar.json` | Larimar — cool moonlit sibling with its own slate-blue/turquoise palette |
 | `package.json`   | Extension manifest (`contributes.themes`)                        |
 | `index.html`     | Visual showcase                                                  |
 

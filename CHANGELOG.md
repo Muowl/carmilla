@@ -3,6 +3,11 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.5.0] — 2026-07-04
+
+### Removed
+- **Carmilla Cinnabar** and **Carmilla Larimar** temporarily withdrawn — the extension ships only the base Carmilla theme for now. The variants are preserved in full on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch and may return in a future release. If you had one of them active, VS Code will fall back to a default theme; pick **Carmilla** under **Color Theme** (`Ctrl+K Ctrl+T`).
+
 ## [1.4.0] — 2026-07-01
 
 ### Changed
