@@ -5,6 +5,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [1.5.0] — 2026-07-04
 
+### Added
+- **AI chat & inline chat coverage** — 27 new workbench colors for the chat/agent panels (VS Code Copilot Chat, Cursor and other forks inherit the same keys): request bubbles on the wine ladder (Boudoir → Velvet, Selection on hover), carmine avatar and slash-command pills, a carmine shimmer on the "thinking…" label, Wisteria edited-file names with Absinthe/Pomegranate added/removed line pills, plus the full `inlineChat.*` widget (input, focus border, diff previews) and `interactive.*` code-cell borders. Previously these surfaces fell back to VS Code's cool-gray defaults, breaking the theme's warm coherence.
+
 ### Removed
 - **Carmilla Cinnabar** and **Carmilla Larimar** temporarily withdrawn — the extension ships only the base Carmilla theme for now. The variants are preserved in full on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch and may return in a future release. If you had one of them active, VS Code will fall back to a default theme; pick **Carmilla** under **Color Theme** (`Ctrl+K Ctrl+T`).
 
