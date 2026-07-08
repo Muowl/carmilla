@@ -3,6 +3,14 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased]
+
+### Changed
+- **Repository reorganized into a monorepo layout** to host ports for other platforms (Zed, Alacritty, Chrome, GNOME Shell are planned). The VS Code extension moved to `ports/vscode/`, the palette spec to `palette/PALETTE.md`, and the showcase site to `docs/`. No theme colours changed.
+
+### Added
+- `palette/carmilla.toml` — machine-readable palette (the 13 core tokens plus the 16-color ANSI terminal set), the source of truth for future ports and tooling.
+
 ## [1.5.0] — 2026-07-04
 
 ### Added

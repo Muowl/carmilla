@@ -29,10 +29,25 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
 ## Preview
 
 <p align="center">
-  <img src="preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
+  <img src="assets/preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
 </p>
 
-See it [live](https://muowl.dev/) or open [`index.html`](index.html) locally in your browser.
+See it [live](https://muowl.dev/) or open [`docs/index.html`](docs/index.html) locally in your browser.
+
+## Ports
+
+Carmilla is one palette, ported to many platforms. Each port lives in its own directory under [`ports/`](ports/).
+
+| Platform | Status       | Directory / install                                                                 |
+|----------|--------------|--------------------------------------------------------------------------------------|
+| VS Code  | ✅ Published | [`ports/vscode`](ports/vscode) — [Marketplace](https://marketplace.visualstudio.com/items?itemName=muowl.carmilla) |
+| Zed      | 🕯️ Planned   | —                                                                                      |
+| Alacritty| 🕯️ Planned   | —                                                                                      |
+| Chrome   | 🕯️ Planned   | —                                                                                      |
+| GNOME Shell | 🕯️ Planned | —                                                                                     |
+
+Want Carmilla somewhere else? [Open an issue](https://github.com/Muowl/carmilla/issues) — or port it yourself
+from [`palette/carmilla.toml`](palette/carmilla.toml) and send a PR.
 
 ## Palette
 
@@ -52,9 +67,10 @@ See it [live](https://muowl.dev/) or open [`index.html`](index.html) locally in 
 | Pomegranate    | `#E84B6E`  | Errors, deletions, alerts                        |
 | Ash Mauve      | `#9E83A4`  | Comments, disabled code                          |
 
-Full specification, design rationale and TextMate mapping in [`PALETTE.md`](PALETTE.md).
+Full specification, design rationale and TextMate mapping in [`palette/PALETTE.md`](palette/PALETTE.md).
+The machine-readable source of truth (core tokens + ANSI terminal colors) is [`palette/carmilla.toml`](palette/carmilla.toml).
 
-## Installation
+## Installation (VS Code)
 
 ### From the Marketplace
 
@@ -68,22 +84,23 @@ Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### From a `.vsix` file
 
-1. Build the package: `npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.5.0.vsix`).
+1. Build the package from the port directory: `cd ports/vscode && npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.5.0.vsix`).
 2. In VS Code: command palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → pick the generated `.vsix`.
 3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### For development
 
-Open this folder in VS Code and press `F5` to launch an *Extension Development Host* window with the theme already loaded.
+Open [`ports/vscode/`](ports/vscode) in VS Code and press `F5` to launch an *Extension Development Host* window with the theme already loaded.
 
-## Files
+## Repository structure
 
-| File             | Role                                                             |
-|------------------|------------------------------------------------------------------|
-| `PALETTE.md`     | Source of truth — portable spec and rationale                    |
-| `carmilla.json`  | VS Code theme (UI + syntax + ANSI terminal + git)                |
-| `package.json`   | Extension manifest (`contributes.themes`)                        |
-| `index.html`     | Visual showcase                                                  |
+| Path                    | Role                                                              |
+|-------------------------|-------------------------------------------------------------------|
+| `palette/PALETTE.md`    | Human source of truth — portable spec and design rationale        |
+| `palette/carmilla.toml` | Machine-readable palette — core tokens + ANSI terminal colors     |
+| `ports/vscode/`         | VS Code extension (UI + syntax + ANSI terminal + git)             |
+| `docs/`                 | Visual showcase site (GitHub Pages → [muowl.dev](https://muowl.dev/)) |
+| `assets/`               | Shared brand assets (preview image)                               |
 
 ## License
 

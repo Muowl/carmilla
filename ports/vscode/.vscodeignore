@@ -1,0 +1,8 @@
+# Pastas de dev / VCS
+.vscode/**
+node_modules/**
+*.vsix
+
+# Lixo de SO
+**/.DS_Store
+**/Thumbs.db
