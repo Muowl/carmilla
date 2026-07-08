@@ -1,0 +1,54 @@
+# Carmilla — machine-readable palette
+# Source of truth for ports and tooling. Human rationale lives in PALETTE.md.
+# Hex values are uppercase RRGGBB with a leading '#'.
+
+[meta]
+name = "Carmilla"
+description = "A warm dark theme with a boudoir/wine identity"
+author = "muowl"
+license = "MIT"
+homepage = "https://muowl.dev/"
+repository = "https://github.com/Muowl/carmilla"
+palette-version = "1.5.0"
+
+# The 13 core tokens (see PALETTE.md for design rationale and WCAG figures).
+[colors]
+crypt = "#16101A"          # deepest background — page, gutter
+boudoir = "#2E1B2D"        # main background — editor, panels
+velvet = "#3A2438"         # elevated surface — cards, status bar
+selection = "#523950"      # current line, selection, ranges
+pearl = "#F5EADA"          # primary text / foreground / punctuation
+carmine = "#FF5FA2"        # keywords, storage
+wisteria = "#D5A6FF"       # language instances (this, super, null)
+verdigris = "#5ED0D8"      # classes, types, support
+absinthe = "#7AE0A6"       # functions, methods
+champagne = "#EDD795"      # strings, template literals
+peach-velvet = "#FFAE8A"   # numbers, booleans
+pomegranate = "#E84B6E"    # errors, deletions, alerts
+ash-mauve = "#9E83A4"      # comments, disabled code
+
+# 16-color ANSI terminal palette (matches the VS Code port's terminal.ansi*).
+# Ready to feed terminal ports: Alacritty, kitty, Windows Terminal, etc.
+[terminal]
+background = "#16101A"     # crypt
+foreground = "#F5EADA"     # pearl
+
+[terminal.normal]
+black = "#16101A"          # crypt
+red = "#E84B6E"            # pomegranate
+green = "#7AE0A6"          # absinthe
+yellow = "#EDD795"         # champagne
+blue = "#D5A6FF"           # wisteria
+magenta = "#FF5FA2"        # carmine
+cyan = "#5ED0D8"           # verdigris
+white = "#F5EADA"          # pearl
+
+[terminal.bright]
+black = "#9E83A4"          # ash-mauve
+red = "#FF6B8C"
+green = "#94EEBC"
+yellow = "#F7E8B5"
+blue = "#E2BFFF"
+magenta = "#FF8BB0"
+cyan = "#94E5D2"
+white = "#FFFFFF"

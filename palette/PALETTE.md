@@ -54,14 +54,16 @@ invalid, invalid.illegal                 → pomegranate
 text, punctuation, source                → pearl
 ```
 
-## Files in this directory
+## Files
 
-- `PALETTE.md` — this spec (source of truth).
-- `index.html` — visual showcase of the palette + code sample.
-- `carmilla.json` — VS Code theme (ready to package as an extension).
+- `PALETTE.md` — this spec (human-readable source of truth: rationale, contrast figures, mappings).
+- `carmilla.toml` — machine-readable palette (core tokens + ANSI terminal colors) for ports and tooling.
+- `../ports/` — one directory per platform port (VS Code, and future ones), each consuming these tokens.
+- `../docs/index.html` — visual showcase of the palette + code sample.
 
-## To publish
+When a hex changes, update **both** files here first, then propagate to every port in the same commit.
 
-1. Rename if you like (update `name`/`displayName` in `package.json`).
-2. Build and publish: `npm run package` / `npm run publish` (requires a Marketplace publisher + PAT).
-3. Suggested license: MIT. Every hex is original to this palette, so there's no attribution dependency.
+## To publish (VS Code port)
+
+1. From `ports/vscode/`: `npm run package` / `npm run publish` (requires a Marketplace publisher + PAT).
+2. License: MIT. Every hex is original to this palette, so there's no attribution dependency.
