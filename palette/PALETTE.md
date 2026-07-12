@@ -39,6 +39,65 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 
 Under **protanopia** (≈1% of men), two pairs lose most of their hue separation: Carmine × Ash Mauve (keywords vs comments) and Absinthe × Champagne (functions vs strings). Both are left as-is deliberately: comments are italicized full lines and strings are quote-delimited, so a non-color channel always disambiguates — and "fixing" them would mean sacrificing two pillars of the theme's identity.
 
+## Flavors
+
+Carmilla ships **flavors** — variants that swap the signature accent **and** pull the neutral
+backgrounds toward that accent's temperature. The content colours (Pearl, the syntax hues, and
+Ash-Mauve comments) stay constant across every flavor, so a flavor reads as the same theme in a
+different light — not a different theme.
+
+A flavor is defined by exactly eight hex substitutions, applied globally to the base theme
+(workbench, semantic tokens and TextMate scopes alike): the accent, its hover/bright tint, the
+four background tokens (Crypt, Boudoir, Velvet, Selection), the deep side-bar surface
+(`#231522`), and the structural wine-mauve (`#6B4F6A`: line numbers, ignored files). The
+machine-readable overrides live in `carmilla.toml` under `[flavors.*]`.
+
+> Two earlier variants — **Cinnabar** (ember orange) and **Larimar** (a cool sibling with its own
+> full palette) — are preserved on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors)
+> branch and may return in a future release.
+
+### Amethyst
+
+A violet reading of Carmilla — the boudoir at dusk rather than by candlelight. Designed around an
+orchid-purple inspiration of `#7A4186` (OKLCH hue ≈ 320°): that hue is kept **exact**, but the
+inspiration itself sits at only ≈ 2.2:1 on Boudoir, so the accent is the same purple lifted into
+legibility (L 0.47 → 0.68, chroma 0.124 → 0.159) rather than the raw swatch.
+
+| Role         | Base (Carmine)    | Amethyst           |
+|--------------|-------------------|--------------------|
+| Accent       | `#FF5FA2` carmine | `#C474D3` amethyst |
+| Accent hover | `#FF8BB0`         | `#D38CDC`          |
+| Crypt        | `#16101A`         | `#18101A`          |
+| Boudoir      | `#2E1B2D`         | `#2A1B2E`          |
+| Velvet       | `#3A2438`         | `#35243A`          |
+| Selection    | `#523950`         | `#4C3952`          |
+
+The accent is named for the stone — the same register as Cinnabar (mineral) and Larimar (stone),
+with the ecclesiastical, crypt-adjacent resonance the theme trades in. It sits at Cinnabar's
+deliberate lightness (OKLCH L 0.68, one step below Carmine-parity) for the same reason Cinnabar
+did: parity would read neon, and the step down protects the lightness gap against its nearest
+content colour — here Wisteria (L 0.80), which keeps ΔL ≈ 0.12 and ≈ 13° of OKLCH hue on top.
+Contrast on its Boudoir ≈ 5.2:1 (AA; family register is Cinnabar 5.0 – Carmine 5.7).
+
+The backgrounds follow the flavor method: the wine family's HSL saturation and lightness are kept
+**exactly**, with the hue rotated from wine (≈ 303°) to dusk violet (286°, the inspiration's own
+hue region) — so Pearl holds AAA (≈ 13.6:1), comments hold ≈ 4.8:1, selection-vs-editor holds the
+base's 1.56:1, and every syntax hue keeps its contrast within a rounding error of the base. The
+wine-mauve line numbers/ignored-file grey re-tempers to a violet mauve `#654F6B` (same lightness
+and subtlety as the base's `#6B4F6A`).
+
+**Known limitations (Amethyst).** A purple accent moves toward two purple neighbours at once.
+Against **Wisteria** (`this`/`super`/`null`) it keeps ΔL 0.12 + higher chroma + Wisteria's italics;
+against **Ash-Mauve comments** it shares the hue (both ≈ 320°) and separates by chroma
+(0.159 vs 0.057) plus the comments' full-line italics. Notably, that second pair is *stronger*
+here than in the base under protanopia (ΔE_OK ≈ 7.9 vs the base's 2.3 for Carmine × Ash-Mauve) —
+the flavor softens the base's worst CVD collision rather than adding a new one. In the terminal,
+the family convention (accent occupies the magenta slot) puts an orchid magenta next to Wisteria's
+lavender blue slot; colour-keyed programs disambiguate by lightness. Accepted: convention over
+slot semantics, as everywhere else in the family.
+
+Theme file: `../ports/vscode/carmilla-amethyst.json`.
+
 ## TextMate mapping (summary)
 
 ```
