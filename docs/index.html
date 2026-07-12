@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang="pt">
+<html lang="pt-BR" data-lang="pt" data-flavor="base">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,6 +52,26 @@
             --font-body:    'Inter', system-ui, -apple-system, sans-serif;
             --font-mono:    'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
         }
+
+        /* Flavor Amethyst — mesmas 8 substituições do contrato de flavor:
+           accent + hover + fundos re-temperados; cores de conteúdo constantes. */
+        :root[data-flavor="amethyst"] {
+            --crypt:        #18101A;
+            --crypt-rgb:    24, 16, 26;
+            --tabstrip:     #1C141F;
+            --boudoir:      #2A1B2E;
+            --velvet:       #35243A;
+            --velvet-rgb:   53, 36, 58;
+            --selection:    #4C3952;
+            --selection-rgb:76, 57, 82;
+            --carmine:      #C474D3;
+            --carmine-rgb:  196, 116, 211;
+            --carmine-hover:#D38CDC;
+        }
+
+        /* Conteúdo alternado por flavor (hexes, nomes) */
+        [data-flavor="base"] .fl-amethyst { display: none; }
+        [data-flavor="amethyst"] .fl-base { display: none; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -601,12 +621,130 @@
             color: var(--crypt);
         }
 
+        /* ============== TOGGLE DE FLAVOR / FLAVOR TOGGLE ============== */
+        .flavor-switch {
+            position: fixed;
+            top: 1.1rem;
+            left: 1.1rem;
+            z-index: 200;
+            display: flex;
+            gap: 0.15rem;
+            padding: 0.2rem;
+            border-radius: 999px;
+            background: rgba(var(--velvet-rgb),0.72);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(var(--carmine-rgb),0.18);
+        }
+        .flavor-switch button {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--ash-mauve);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.32rem 0.7rem;
+            border-radius: 999px;
+            transition: color 0.2s, background 0.2s;
+        }
+        .flavor-switch button:hover { color: var(--pearl); }
+        .flavor-switch button.active {
+            background: var(--carmine);
+            color: var(--crypt);
+        }
+
+        /* ============== FLAVOR CARDS (seção IV) ============== */
+        .flavors-lead {
+            margin-left: 66px;
+            max-width: 760px;
+            color: rgba(var(--pearl-rgb),0.75);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .flavors-lead code {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            background: var(--velvet);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: var(--champagne);
+        }
+        .flavors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.2rem;
+        }
+        .flavor-card {
+            text-align: left;
+            cursor: pointer;
+            background: var(--velvet);
+            border: 1px solid rgba(var(--carmine-rgb),0.12);
+            border-radius: 1.2rem;
+            padding: 1.4rem 1.5rem 1.3rem;
+            font-family: var(--font-body);
+            color: var(--pearl);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .flavor-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(var(--carmine-rgb),0.45);
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.7);
+        }
+        .flavor-card.active {
+            border-color: rgba(var(--carmine-rgb),0.65);
+            box-shadow: 0 0 0 1px rgba(var(--carmine-rgb),0.35), 0 20px 40px -20px rgba(0,0,0,0.7);
+        }
+        .flavor-card .flavor-top {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+        .flavor-card .flavor-name {
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .flavor-card .flavor-state {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--carmine);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .flavor-card.active .flavor-state { opacity: 1; }
+        .flavor-card .strip {
+            display: flex;
+            height: 36px;
+            border-radius: 9px;
+            overflow: hidden;
+            margin: 0.95rem 0 0.8rem;
+            border: 1px solid rgba(var(--pearl-rgb),0.10);
+        }
+        .flavor-card .strip span { flex: 1; }
+        .flavor-card .flavor-mood {
+            font-size: 0.85rem;
+            color: var(--ash-mauve);
+            line-height: 1.55;
+        }
+        .flavor-card .flavor-hex {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+        }
+
         @media (max-width: 680px) {
             .wrap { padding: 2rem 1rem 4rem; }
-            .hero { padding: 2rem 0 3rem; }
+            .hero { padding: 4rem 0 3rem; }
             section { margin-top: 4rem; }
             .section-title { font-size: 1.8rem; }
             .section-subtitle { margin-left: 0; }
+            .flavors-lead { margin-left: 0; }
             .section-head { flex-direction: column; gap: 0.5rem; }
             .section-num { min-width: auto; }
             .palette { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
@@ -623,16 +761,20 @@
     <button type="button" data-set-lang="pt">PT</button>
     <button type="button" data-set-lang="en">EN</button>
 </div>
+<div class="flavor-switch" role="group" aria-label="Flavor">
+    <button type="button" data-set-flavor="base">🥀 <span class="lang-pt">Vinho</span><span class="lang-en">Wine</span></button>
+    <button type="button" data-set-flavor="amethyst">◆ <span class="lang-pt">Ametista</span><span class="lang-en">Amethyst</span></button>
+</div>
 <div class="wrap">
 
     <!-- ============== HERO ============== -->
     <header class="hero">
-        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.5</span><span class="lang-en">Dark theme · Original palette · v1.5</span></div>
+        <div class="eyebrow"><span class="lang-pt">Tema escuro · Paleta autoral · v1.6</span><span class="lang-en">Dark theme · Original palette · v1.6</span></div>
         <h1>Carmilla</h1>
         <div class="subtitle"><span class="lang-pt">calor de cripta para noites de código</span><span class="lang-en">crypt warmth for nights of code</span></div>
         <div class="ornament">❦</div>
         <p class="lead">
-            <span class="lang-pt">Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. Identidade própria, atmosfera de cripta vampírica.</span><span class="lang-en">Thirteen colours distilled around a rosé-wine background. Warm accents — carmine, wisteria, absinthe mint, peach velvet, champagne — over <em>Boudoir</em> <span style="color:var(--carmine)">#2E1B2D</span>. An identity of its own, the atmosphere of a vampire crypt.</span>
+            <span class="lang-pt">Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span></span>. Identidade própria, atmosfera de cripta vampírica.</span><span class="lang-en">Thirteen colours distilled around a rosé-wine background. Warm accents — carmine, wisteria, absinthe mint, peach velvet, champagne — over <em>Boudoir</em> <span style="color:var(--carmine)"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span></span>. An identity of its own, the atmosphere of a vampire crypt.</span>
         </p>
         <div class="cta">
             <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla">
@@ -656,38 +798,38 @@
 
         <div class="palette">
             <div class="swatch">
-                <div class="swatch-color" style="background:#16101A"><span class="swatch-hex">#16101A</span></div>
+                <div class="swatch-color" style="background:var(--crypt)"><span class="swatch-hex"><span class="fl-base">#16101A</span><span class="fl-amethyst">#18101A</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Crypt</div>
                     <div class="swatch-role"><span class="lang-pt">background mais profundo — página, gutter</span><span class="lang-en">deepest background — page, gutter</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#2E1B2D"><span class="swatch-hex">#2E1B2D</span></div>
+                <div class="swatch-color" style="background:var(--boudoir)"><span class="swatch-hex"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Boudoir</div>
                     <div class="swatch-role"><span class="lang-pt">background principal — editor, painéis</span><span class="lang-en">main background — editor, panels</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#3A2438"><span class="swatch-hex">#3A2438</span></div>
+                <div class="swatch-color" style="background:var(--velvet)"><span class="swatch-hex"><span class="fl-base">#3A2438</span><span class="fl-amethyst">#35243A</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Velvet</div>
                     <div class="swatch-role"><span class="lang-pt">superfície elevada — cards, status bar</span><span class="lang-en">elevated surface — cards, status bar</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#523950"><span class="swatch-hex">#523950</span></div>
+                <div class="swatch-color" style="background:var(--selection)"><span class="swatch-hex"><span class="fl-base">#523950</span><span class="fl-amethyst">#4C3952</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Selection</div>
                     <div class="swatch-role"><span class="lang-pt">linha atual, seleção, ranges</span><span class="lang-en">current line, selection, ranges</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:#FF5FA2"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)">#FF5FA2</span></div>
+                <div class="swatch-color" style="background:var(--carmine)"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)"><span class="fl-base">#FF5FA2</span><span class="fl-amethyst">#C474D3</span></span></div>
                 <div class="swatch-meta">
-                    <div class="swatch-name" style="color:#FF5FA2">Carmine</div>
-                    <div class="swatch-role">keywords, storage — <code style="font-family:var(--font-mono);font-size:0.72rem;color:#FF5FA2">const, let, class, if, return</code></div>
+                    <div class="swatch-name" style="color:var(--carmine)"><span class="fl-base">Carmine</span><span class="fl-amethyst">Amethyst</span></div>
+                    <div class="swatch-role">keywords, storage — <code style="font-family:var(--font-mono);font-size:0.72rem;color:var(--carmine)">const, let, class, if, return</code></div>
                 </div>
             </div>
             <div class="swatch">
@@ -843,7 +985,7 @@
                     <span>Spaces: <strong>4</strong></span>
                     <span>UTF-8</span>
                     <span><strong>TypeScript</strong></span>
-                    <span>🥀 <strong style="color:var(--carmine);">Carmilla</strong></span>
+                    <span>🥀 <strong style="color:var(--carmine);">Carmilla<span class="fl-amethyst"> Amethyst</span></strong></span>
                 </div>
             </div>
         </div>
@@ -858,7 +1000,7 @@
         <p class="section-subtitle"><span class="lang-pt">cada token, sua cor, seu papel</span><span class="lang-en">each token, its colour, its role</span></p>
 
         <div class="token-map">
-            <div class="token-row"><span class="token-dot" style="background:#FF5FA2"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:#FF5FA2">const</span> x <span style="color:#FF5FA2">=</span> <span style="color:#EDD795">"…"</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:var(--carmine)"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:var(--carmine)">const</span> x <span style="color:var(--carmine)">=</span> <span style="color:#EDD795">"…"</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#D5A6FF"></span><span class="token-name">variable.lang</span><span class="token-sample"><span style="color:#D5A6FF;font-style:italic">this</span>.name</span></div>
             <div class="token-row"><span class="token-dot" style="background:#5ED0D8"></span><span class="token-name">entity.type</span><span class="token-sample">: <span style="color:#5ED0D8">string</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#7AE0A6"></span><span class="token-name">entity.function</span><span class="token-sample"><span style="color:#7AE0A6">log</span>()</span></div>
@@ -870,12 +1012,62 @@
         </div>
     </section>
 
+    <!-- ============== FLAVORS ============== -->
+    <section>
+        <div class="section-head">
+            <div class="section-num">IV.</div>
+            <h2 class="section-title"><span class="lang-pt">Os flavors</span><span class="lang-en">The flavors</span></h2>
+        </div>
+        <p class="section-subtitle"><span class="lang-pt">o mesmo tema, sob outra luz</span><span class="lang-en">the same theme in a different light</span></p>
+
+        <p class="flavors-lead">
+            <span class="lang-pt">Um flavor troca o accent de assinatura e re-temperatura os fundos neutros; as cores de conteúdo — Pearl, os tons de sintaxe, os comentários em Ash Mauve — permanecem intocadas. O <strong>Amethyst</strong> nasceu de uma inspiração orquídea <code>#7A4186</code>: o matiz foi mantido exato (OKLCH ≈ 320°) e elevado até a legibilidade — ≈ 5.2:1 (AA) sobre seu Boudoir — enquanto os fundos vinho giram de 303° para 286° com saturação e luminosidade idênticas. Escolha um flavor abaixo e veja a página inteira mudar de luz.</span><span class="lang-en">A flavor swaps the signature accent and re-temperatures the neutral backgrounds; the content colours — Pearl, the syntax hues, the Ash-Mauve comments — stay untouched. <strong>Amethyst</strong> was born from an orchid inspiration, <code>#7A4186</code>: its hue was kept exact (OKLCH ≈ 320°) and lifted into legibility — ≈ 5.2:1 (AA) on its Boudoir — while the wine backgrounds rotate from 303° to 286° at identical saturation and lightness. Pick a flavor below and watch the whole page change its light.</span>
+        </p>
+
+        <div class="flavors-grid">
+            <button type="button" class="flavor-card" data-set-flavor="base">
+                <div class="flavor-top">
+                    <span class="flavor-name">Carmilla</span>
+                    <span class="flavor-state"><span class="lang-pt">ativo</span><span class="lang-en">active</span></span>
+                </div>
+                <div class="strip" aria-hidden="true">
+                    <span style="background:#16101A"></span>
+                    <span style="background:#2E1B2D"></span>
+                    <span style="background:#3A2438"></span>
+                    <span style="background:#523950"></span>
+                    <span style="background:#FF5FA2"></span>
+                    <span style="background:#FF8BB0"></span>
+                </div>
+                <div class="flavor-mood">
+                    <span class="lang-pt">O boudoir à luz de velas — vinho rosado, accent carmim </span><span class="lang-en">The boudoir by candlelight — rosé wine, carmine accent </span><span class="flavor-hex" style="color:#FF5FA2">#FF5FA2</span>
+                </div>
+            </button>
+            <button type="button" class="flavor-card" data-set-flavor="amethyst">
+                <div class="flavor-top">
+                    <span class="flavor-name">Carmilla Amethyst</span>
+                    <span class="flavor-state"><span class="lang-pt">ativo</span><span class="lang-en">active</span></span>
+                </div>
+                <div class="strip" aria-hidden="true">
+                    <span style="background:#18101A"></span>
+                    <span style="background:#2A1B2E"></span>
+                    <span style="background:#35243A"></span>
+                    <span style="background:#4C3952"></span>
+                    <span style="background:#C474D3"></span>
+                    <span style="background:#D38CDC"></span>
+                </div>
+                <div class="flavor-mood">
+                    <span class="lang-pt">O mesmo boudoir ao crepúsculo — violeta, accent ametista </span><span class="lang-en">The same boudoir at dusk — violet, amethyst accent </span><span class="flavor-hex" style="color:#C474D3">#C474D3</span>
+                </div>
+            </button>
+        </div>
+    </section>
+
     <!-- ============== FOOTER ============== -->
     <footer>
         <div class="ornament">❦</div>
         <div class="signature">Carmilla</div>
         <div class="meta">
-            <span class="lang-pt">v1.5 · 13 tokens · disponível no VS Code Marketplace</span><span class="lang-en">v1.5 · 13 tokens · available on the VS Code Marketplace</span> <br>
+            <span class="lang-pt">v1.6 · 13 tokens · 2 flavors · disponível no VS Code Marketplace</span><span class="lang-en">v1.6 · 13 tokens · 2 flavors · available on the VS Code Marketplace</span> <br>
             <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
         </div>
     </footer>
@@ -897,7 +1089,27 @@
             root.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
             localStorage.setItem('carmilla-lang', lang);
             langButtons.forEach(function (b) {
-                b.classList.toggle('active', b.dataset.setLang === lang);
+                var on = b.dataset.setLang === lang;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+        }
+
+        // Flavor — troca as variáveis CSS da página inteira (contrato de flavor ao vivo)
+        var flavorButtons = document.querySelectorAll('[data-set-flavor]');
+        var themeMeta = document.querySelector('meta[name="theme-color"]');
+        applyFlavor(localStorage.getItem('carmilla-flavor') || 'base');
+        flavorButtons.forEach(function (b) {
+            b.addEventListener('click', function () { applyFlavor(b.dataset.setFlavor); });
+        });
+        function applyFlavor(flavor) {
+            root.dataset.flavor = flavor;
+            localStorage.setItem('carmilla-flavor', flavor);
+            if (themeMeta) themeMeta.setAttribute('content', flavor === 'amethyst' ? '#18101A' : '#16101A');
+            flavorButtons.forEach(function (b) {
+                var on = b.dataset.setFlavor === flavor;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-pressed', on ? 'true' : 'false');
             });
         }
 
