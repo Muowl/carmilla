@@ -70,6 +70,20 @@ from [`palette/carmilla.toml`](palette/carmilla.toml) and send a PR.
 Full specification, design rationale and TextMate mapping in [`palette/PALETTE.md`](palette/PALETTE.md).
 The machine-readable source of truth (core tokens + ANSI terminal colors) is [`palette/carmilla.toml`](palette/carmilla.toml).
 
+## Flavors
+
+Flavors swap the signature accent **and** re-temperature the neutral backgrounds to match; the
+content colours stay constant, so a flavor reads as the same theme in a different light.
+
+| Flavor                | Accent                | Mood                                       |
+|-----------------------|-----------------------|--------------------------------------------|
+| **Carmilla** (base)   | Carmine `#FF5FA2`     | Rosé-wine boudoir by candlelight           |
+| **Carmilla Amethyst** | Amethyst `#C474D3`    | The same boudoir at dusk — violet twilight |
+
+Both ship in the VS Code extension; pick one under **Color Theme** (`Ctrl+K Ctrl+T`).
+Design rationale, contrast figures and known limitations in [`palette/PALETTE.md`](palette/PALETTE.md#flavors).
+(Two earlier variants, Cinnabar and Larimar, are preserved on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch.)
+
 ## Installation (VS Code)
 
 ### From the Marketplace
@@ -84,7 +98,7 @@ Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### From a `.vsix` file
 
-1. Build the package from the port directory: `cd ports/vscode && npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.5.0.vsix`).
+1. Build the package from the port directory: `cd ports/vscode && npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.6.0.vsix`).
 2. In VS Code: command palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → pick the generated `.vsix`.
 3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 

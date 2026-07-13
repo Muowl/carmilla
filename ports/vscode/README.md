@@ -48,6 +48,14 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
 Full specification, design rationale and TextMate mapping in
 [`PALETTE.md`](https://github.com/Muowl/carmilla/blob/main/palette/PALETTE.md).
 
+## Flavors
+
+The extension ships two themes. **Carmilla** is the rosé-wine base. **Carmilla Amethyst** is a
+violet reading of it — the signature accent becomes an orchid purple, Amethyst `#C474D3`
+(hover `#D38CDC`), and the wine backgrounds rotate to dusk violet (editor `#2A1B2E`) at identical
+lightness, so every contrast figure carries over. The content colours stay constant across
+flavors: a flavor reads as the same theme in a different light.
+
 ## Installation
 
 Open the Extensions view in VS Code (`Ctrl+Shift+X`), search for **Carmilla**, and click **Install** — or run:

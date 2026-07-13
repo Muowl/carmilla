@@ -52,3 +52,19 @@ blue = "#E2BFFF"
 magenta = "#FF8BB0"
 cyan = "#94E5D2"
 white = "#FFFFFF"
+
+# Flavors — variants that swap the signature accent and re-temperature the
+# neutral backgrounds; content colours stay constant (rationale in PALETTE.md).
+# A flavor is exactly these eight hex substitutions, applied globally to the
+# base theme. In the terminal, the accent occupies the magenta slot and the
+# hover the bright-magenta slot (family convention); black/background follow crypt.
+[flavors.amethyst]
+name = "Carmilla Amethyst"
+accent = "#C474D3"         # amethyst — replaces carmine #FF5FA2
+accent-hover = "#D38CDC"   # replaces carmine's hover/bright tint #FF8BB0
+crypt = "#18101A"          # replaces #16101A
+boudoir = "#2A1B2E"        # replaces #2E1B2D
+velvet = "#35243A"         # replaces #3A2438
+selection = "#4C3952"      # replaces #523950
+sidebar = "#201523"        # replaces the deep side-bar surface #231522
+mauve = "#654F6B"          # replaces wine-mauve #6B4F6A (line numbers, ignored files)

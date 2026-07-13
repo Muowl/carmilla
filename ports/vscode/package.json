@@ -2,7 +2,7 @@
   "name": "carmilla",
   "displayName": "Carmilla",
   "description": "A warm dark theme with a boudoir/wine identity — rosé-vinho backgrounds and carmine, wisteria, absinthe and champagne accents.",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "publisher": "muowl",
   "license": "MIT",
   "icon": "icon.png",
@@ -19,6 +19,8 @@
     "dark theme",
     "pink",
     "purple",
+    "violet",
+    "amethyst",
     "teal",
     "vampire",
     "boudoir"
@@ -41,6 +43,11 @@
         "label": "Carmilla",
         "uiTheme": "vs-dark",
         "path": "./carmilla.json"
+      },
+      {
+        "label": "Carmilla Amethyst",
+        "uiTheme": "vs-dark",
+        "path": "./carmilla-amethyst.json"
       }
     ]
   },

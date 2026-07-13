@@ -3,13 +3,14 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [1.6.0] — 2026-07-12
+
+### Added
+- **Carmilla Amethyst** — a new flavor: a violet reading of Carmilla, the boudoir at dusk rather than by candlelight. The signature accent **Amethyst** `#C474D3` (hover/bright tint `#D38CDC`) replaces Carmine, over the wine backgrounds rotated to dusk violet at identical saturation and lightness (Crypt `#18101A`, Boudoir `#2A1B2E`, Velvet `#35243A`, Selection `#4C3952`). Designed from an orchid inspiration of `#7A4186`: the hue is kept exact (OKLCH ≈ 320°) and lifted into legibility — the raw swatch sits at ≈ 2.2:1 on Boudoir; the accent lands at ≈ 5.2:1 (AA), inside the family register (Cinnabar 5.0 – Carmine 5.7). Pearl holds AAA (≈ 13.6:1) and, as a side effect of the purple accent, the base's worst protanopia collision (keywords × comments) relaxes from ΔE ≈ 2.3 to ≈ 7.9. Full rationale and known limitations in `palette/PALETTE.md`; flavor overrides in `palette/carmilla.toml` under `[flavors.amethyst]`. Selectable under **Color Theme** → **Carmilla Amethyst**.
+- `palette/carmilla.toml` — machine-readable palette (the 13 core tokens plus the 16-color ANSI terminal set), the source of truth for future ports and tooling.
 
 ### Changed
 - **Repository reorganized into a monorepo layout** to host ports for other platforms (Zed, Alacritty, Chrome, GNOME Shell are planned). The VS Code extension moved to `ports/vscode/`, the palette spec to `palette/PALETTE.md`, and the showcase site to `docs/`. No theme colours changed.
-
-### Added
-- `palette/carmilla.toml` — machine-readable palette (the 13 core tokens plus the 16-color ANSI terminal set), the source of truth for future ports and tooling.
 
 ## [1.5.0] — 2026-07-04
 
