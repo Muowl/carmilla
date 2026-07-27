@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://muowl.dev/"><strong>🔗 See the live showcase</strong></a>
+  <a href="https://muowl.dev/themes/carmilla/"><strong>🔗 See the live showcase</strong></a>
 </p>
 
 ---

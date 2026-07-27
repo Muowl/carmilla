@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://muowl.dev/"><strong>🔗 See the live showcase</strong></a>
+  <a href="https://muowl.dev/themes/carmilla/"><strong>🔗 See the live showcase</strong></a>
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
   <img src="assets/preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
 </p>
 
-See it [live](https://muowl.dev/) or open [`docs/index.html`](docs/index.html) locally in your browser.
+See it [live](https://muowl.dev/themes/carmilla/) or open [`docs/index.html`](docs/index.html) locally in your browser.
 
 ## Ports
 
@@ -113,7 +113,7 @@ Open [`ports/vscode/`](ports/vscode) in VS Code and press `F5` to launch an *Ext
 | `palette/PALETTE.md`    | Human source of truth — portable spec and design rationale        |
 | `palette/carmilla.toml` | Machine-readable palette — core tokens + ANSI terminal colors     |
 | `ports/vscode/`         | VS Code extension (UI + syntax + ANSI terminal + git)             |
-| `docs/`                 | Visual showcase site (GitHub Pages → [muowl.dev](https://muowl.dev/)) |
+| `docs/`                 | Showcase original, arquivado — o site vive em [muowl.dev](https://muowl.dev/themes/carmilla/) |
 | `assets/`               | Shared brand assets (preview image)                               |
 
 ## License

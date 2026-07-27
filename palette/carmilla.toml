@@ -7,7 +7,7 @@ name = "Carmilla"
 description = "A warm dark theme with a boudoir/wine identity"
 author = "muowl"
 license = "MIT"
-homepage = "https://muowl.dev/"
+homepage = "https://muowl.dev/themes/carmilla/"
 repository = "https://github.com/Muowl/carmilla"
 palette-version = "1.6.0"
 
