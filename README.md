@@ -29,8 +29,11 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
 ## Preview
 
 <p align="center">
-  <img src="assets/preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
+  <img src="assets/preview.png" alt="Carmilla TextMate preview with a TypeScript sample" width="720">
+  <img src="assets/preview-amethyst.png" alt="Carmilla Amethyst TextMate preview with the same TypeScript sample" width="720">
 </p>
+
+These are generated TextMate previews, not VS Code screenshots. They use the shipped theme rules and a pinned VS Code TypeScript grammar; language servers may refine highlighting in the editor.
 
 See it [live](https://muowl.dev/themes/carmilla/) or open [`docs/index.html`](docs/index.html) locally in your browser.
 
@@ -98,13 +101,28 @@ Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### From a `.vsix` file
 
-1. Build the package from the port directory: `cd ports/vscode && npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.6.0.vsix`).
+1. With Node.js 22 or newer: `cd ports/vscode && npm ci && npm run package` (uses the pinned [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce), producing `carmilla-1.6.0.vsix` with its changelog).
 2. In VS Code: command palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → pick the generated `.vsix`.
 3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 
 ### For development
 
-Open [`ports/vscode/`](ports/vscode) in VS Code and press `F5` to launch an *Extension Development Host* window with the theme already loaded.
+Run `npm ci` in `ports/vscode/`. Edit [`palette/carmilla.toml`](palette/carmilla.toml) for colors and [`ports/vscode/theme.template.json`](ports/vscode/theme.template.json) for VS Code mappings. Then run:
+
+```sh
+npm run generate       # both themes, packaged changelog and TextMate sample
+npm test               # generated-file, contrast, palette and grammar checks
+npx playwright install chromium
+npm run test:showcase  # accessibility, mobile layout and storage behavior
+npm run preview        # regenerate both preview images
+npm run package        # validate and build the VSIX
+```
+
+Commands above run from `ports/vscode/`. Set `CHROMIUM_PATH` to use an existing Chromium executable instead of Playwright's bundled browser. Browser checks and captures block external fonts for reproducibility.
+
+Open `ports/vscode/` in VS Code and press `F5` to launch the *Extension Development Host*, then select **Carmilla** or **Carmilla Amethyst** under **Color Theme**. Generated theme JSONs and the port's changelog should be committed with their sources. CI validates them before packaging.
+
+Python's TextMate grammar gives `True`, `False` and `None` one shared scope, so they all use Wisteria; see the [documented grammar limitation](palette/PALETTE.md#known-limitations).
 
 ## Repository structure
 

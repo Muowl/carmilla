@@ -3,6 +3,19 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased]
+
+### Fixed
+- Opaque focus borders and chat placeholders restore contrast in both flavors. Selected editor text uses Pearl to keep comments and keywords readable over Selection.
+- TypeScript `null` and `undefined` now use Wisteria as specified. Boolean literals clear inherited italics; symbolic operators use Pearl consistently with semantic highlighting.
+- The VSIX now includes the root changelog. The documented F5 development workflow has an Extension Host launch configuration.
+- Archived showcase controls work when storage is blocked and recover from invalid saved preferences. Secondary text, keyboard focus, narrow layouts and reduced-motion support improved.
+
+### Added
+- A shared theme template and TOML-driven generation for both VS Code themes, with pinned build tooling and a lockfile.
+- CI checks generated files, contrast, ANSI mapping, actual TypeScript/Python TextMate tokenization, browser accessibility and VSIX contents.
+- Reproducible previews of both flavors, generated with the theme's TextMate rules. The Python grammar's shared boolean/None scope is documented explicitly.
+
 ## [1.6.0] — 2026-07-12
 
 ### Added

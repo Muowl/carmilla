@@ -37,6 +37,10 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 
 ## Known limitations
 
+The WCAG figures above describe individual foreground/background pairs, not blanket conformance of the editor. Focus borders use the opaque accent (at least 3:1 against inputs); placeholders use opaque Ash Mauve (at least 4.5:1). Selected editor text uses Pearl, temporarily replacing syntax colors to retain legibility. Decorative guides and inactive line numbers remain deliberately subdued.
+
+**Python TextMate fallback:** the bundled MagicPython grammar assigns the same `constant.language.python` scope to `True`, `False` and `None`. All three therefore use Wisteria. A color theme cannot distinguish their spelling within that shared scope. Booleans use Peach Velvet in grammars that expose `constant.language.boolean`, including TypeScript; language servers may further refine classifications. The pinned grammar fixtures and tests preserve this documented exception.
+
 Under **protanopia** (≈1% of men), two pairs lose most of their hue separation: Carmine × Ash Mauve (keywords vs comments) and Absinthe × Champagne (functions vs strings). Both are left as-is deliberately: comments are italicized full lines and strings are quote-delimited, so a non-color channel always disambiguates — and "fixing" them would mean sacrificing two pillars of the theme's identity.
 
 ## Flavors
@@ -120,9 +124,9 @@ text, punctuation, source                → pearl
 - `../ports/` — one directory per platform port (VS Code, and future ones), each consuming these tokens.
 - `../docs/index.html` — visual showcase of the palette + code sample.
 
-When a hex changes, update **both** files here first, then propagate to every port in the same commit.
+When a hex changes, update `carmilla.toml` and this specification. VS Code mappings live in `../ports/vscode/theme.template.json`: `@colors.token`, `@ui.token` and `@terminal.bright.token` reference the palette, with optional `/AA` hexadecimal opacity. Run `npm run generate` from `ports/vscode/`; do not edit the generated theme JSONs directly. Commit generated changes with their sources. `npm run check` detects drift, including the packaged changelog and the showcase's generated code sample.
 
 ## To publish (VS Code port)
 
-1. From `ports/vscode/`: `npm run package` / `npm run publish` (requires a Marketplace publisher + PAT).
+1. With Node.js 22 or newer, from `ports/vscode/`: `npm ci`, then `npm run package` / `npm run publish` (publishing requires a Marketplace publisher + PAT).
 2. License: MIT. Every hex is original to this palette, so there's no attribution dependency.

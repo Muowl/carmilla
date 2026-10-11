@@ -27,6 +27,12 @@ peach-velvet = "#FFAE8A"   # numbers, booleans
 pomegranate = "#E84B6E"    # errors, deletions, alerts
 ash-mauve = "#9E83A4"      # comments, disabled code
 
+# Structural UI tokens shared by the theme generator.
+[ui]
+sidebar = "#231522"
+mauve = "#6B4F6A"
+accent-hover = "#FF8BB0"
+
 # 16-color ANSI terminal palette (matches the VS Code port's terminal.ansi*).
 # Ready to feed terminal ports: Alacritty, kitty, Windows Terminal, etc.
 [terminal]

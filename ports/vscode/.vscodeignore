@@ -2,6 +2,8 @@
 .vscode/**
 node_modules/**
 *.vsix
+theme.template.json
+package-lock.json
 
 # Lixo de SO
 **/.DS_Store

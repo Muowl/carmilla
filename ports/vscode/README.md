@@ -24,8 +24,11 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
 ## Preview
 
 <p align="center">
-  <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
+  <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview.png" alt="Carmilla TextMate preview" width="720">
+  <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview-amethyst.png" alt="Carmilla Amethyst TextMate preview" width="720">
 </p>
+
+Generated from the shipped TextMate rules and a pinned TypeScript grammar; these are previews, not VS Code screenshots. Language servers can refine highlighting. Python's TextMate fallback gives `True`, `False` and `None` the same scope, so all three use Wisteria.
 
 ## Palette
 
