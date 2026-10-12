@@ -4,7 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const requireDev = createRequire(new URL('../ports/vscode/package.json', import.meta.url));
-export const read = path => readFileSync(root + path, 'utf8');
+// Git pode usar CRLF no Windows; os artefatos gerados usam LF em toda plataforma.
+export const read = path => readFileSync(root + path, 'utf8').replaceAll('\r\n', '\n');
 export const palette = requireDev('@iarna/toml').parse(read('palette/carmilla.toml'));
 export const manifest = JSON.parse(read('ports/vscode/package.json'));
 

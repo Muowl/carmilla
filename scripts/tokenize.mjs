@@ -18,7 +18,7 @@ export async function tokenize(theme, scope, source) {
   try {
     const grammar = await registry.loadGrammar(scope);
     let stack = tm.INITIAL;
-    return source.trimEnd().split('\n').map(line => {
+    return source.replaceAll('\r\n', '\n').trimEnd().split('\n').map(line => {
       const result = grammar.tokenizeLine2(line, stack);
       stack = result.ruleStack;
       const colors = registry.getColorMap();

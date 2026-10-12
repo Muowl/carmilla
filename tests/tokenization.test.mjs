@@ -3,6 +3,12 @@ import assert from 'node:assert/strict';
 import { buildTheme, palette } from '../scripts/lib.mjs';
 import { tokenize } from '../scripts/tokenize.mjs';
 
+test('Windows source has the same tokens as LF source', async () => {
+  const source = 'const a = null;\n// a comment\nconsole.log(a);\n';
+  const theme = buildTheme();
+  assert.deepEqual(await tokenize(theme, 'source.ts', source.replaceAll('\n', '\r\n')), await tokenize(theme, 'source.ts', source));
+});
+
 for (const flavor of [undefined, ...Object.keys(palette.flavors)]) {
   const theme = buildTheme(flavor);
   test(`${theme.name}: TypeScript language constants, functions and operators`, async () => {

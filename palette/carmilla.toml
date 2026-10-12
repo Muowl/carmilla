@@ -4,12 +4,12 @@
 
 [meta]
 name = "Carmilla"
-description = "A warm dark theme with a boudoir/wine identity"
+description = "A dark theme family with wine, amethyst and moonstone-blue backgrounds"
 author = "muowl"
 license = "MIT"
 homepage = "https://muowl.dev/themes/carmilla/"
 repository = "https://github.com/Muowl/carmilla"
-palette-version = "1.6.0"
+palette-version = "1.7.0"
 
 # The 13 core tokens (see PALETTE.md for design rationale and WCAG figures).
 [colors]

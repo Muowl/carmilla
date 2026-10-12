@@ -3,14 +3,14 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [1.7.0] — 2026-10-12
 
 ### Changed
 - **Lua icon** — a minimal crescent joins Carmine, Amethyst and Moonstone in one gradient, with subtle chromatic fringes. Updated Marketplace, README and browser assets, including a dedicated 32px favicon.
 - Repository and Marketplace READMEs now lead with installation and flavor choice, with clearer source-build availability and focused development instructions.
 
 ### Fixed
-- Opaque focus borders and chat placeholders restore contrast in both flavors. Selected editor text uses Pearl to keep comments and keywords readable over Selection.
+- Opaque focus borders and chat placeholders restore contrast in every flavor. Selected editor text uses Pearl to keep comments and keywords readable over Selection.
 - TypeScript `null` and `undefined` now use Wisteria as specified. Boolean literals clear inherited italics; symbolic operators use Pearl consistently with semantic highlighting.
 - The VSIX now includes the root changelog. The documented F5 development workflow has an Extension Host launch configuration.
 - Archived showcase controls work when storage is blocked and recover from invalid saved preferences. Secondary text, keyboard focus, narrow layouts and reduced-motion support improved.
@@ -20,6 +20,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 - A shared theme template and TOML-driven generation for all VS Code themes, with pinned build tooling and a lockfile.
 - CI checks generated files, contrast, ANSI mapping, actual TypeScript/Python TextMate tokenization, browser accessibility and VSIX contents.
 - Reproducible previews of all flavors, generated with the theme's TextMate rules. The Python grammar's shared boolean/None scope is documented explicitly.
+- Source generation normalizes Windows line endings so validation and previews match across platforms.
 
 ## [1.6.0] — 2026-07-12
 
