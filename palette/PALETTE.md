@@ -28,7 +28,7 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 
 ## Design principles
 
-1. **Thermal coherence.** Everything leans to the warm side of the spectrum — instead of the icy blue/purple that dominates most dark themes.
+1. **Thermal coherence.** The base theme leans warm. Flavors re-temperature its surfaces while preserving the cream foreground, mauve comments and content accents; Moonstone introduces a restrained cool setting for that same content palette.
 2. **Comments in mauve, not blue.** Comments at `#9E83A4` blend into the rosé background's atmosphere instead of clashing as a cold blue.
 3. **Saturated pink accent.** `#FF5FA2` (Carmine) leans toward magenta/rosé — asserting its own identity.
 4. **Less electric green.** Absinthe `#7AE0A6` is an elegant mint, far from the usual neon green.
@@ -36,6 +36,10 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 6. **Types ≠ functions, even for colorblind eyes.** Verdigris `#5ED0D8` sits at a true teal (OKLCH hue ≈ 202°), a full 45° from Absinthe's mint — the pair stays distinguishable under protanopia, deuteranopia and tritanopia, where a mint-on-mint pairing would collapse.
 
 ## Known limitations
+
+The WCAG figures above describe individual foreground/background pairs, not blanket conformance of the editor. Focus borders use the opaque accent (at least 3:1 against inputs); placeholders use opaque Ash Mauve (at least 4.5:1). Selected editor text uses Pearl, temporarily replacing syntax colors to retain legibility. Decorative guides and inactive line numbers remain deliberately subdued.
+
+**Python TextMate fallback:** the bundled MagicPython grammar assigns the same `constant.language.python` scope to `True`, `False` and `None`. All three therefore use Wisteria. A color theme cannot distinguish their spelling within that shared scope. Booleans use Peach Velvet in grammars that expose `constant.language.boolean`, including TypeScript; language servers may further refine classifications. The pinned grammar fixtures and tests preserve this documented exception.
 
 Under **protanopia** (≈1% of men), two pairs lose most of their hue separation: Carmine × Ash Mauve (keywords vs comments) and Absinthe × Champagne (functions vs strings). Both are left as-is deliberately: comments are italicized full lines and strings are quote-delimited, so a non-color channel always disambiguates — and "fixing" them would mean sacrificing two pillars of the theme's identity.
 
@@ -98,6 +102,33 @@ slot semantics, as everywhere else in the family.
 
 Theme file: `../ports/vscode/carmilla-amethyst.json`.
 
+### Moonstone
+
+A moonlit reading of Carmilla, with a sky-blue accent inspired by Rem's hair. The Van Helsing reference informed the restrained dark surfaces and cool accent; the hue comes from the supplied Rem image. Moonstone follows the same eight-token flavor contract as Amethyst. It preserves Pearl, Ash Mauve, Wisteria, Verdigris, Absinthe, Champagne, Peach Velvet and Pomegranate.
+
+**Reference and tuning.** Median sRGB channel samples from the supplied 1280 × 1024 JPEG were `#90C2F5` on the right-hand hair (rectangle x=1100–1169, y=380–539), `#9CCAF9` on the fringe (x=665–769, y=275–364), and `#A5D1FC` at the crown (x=650–759, y=35–114). These are image-specific observations, affected by lighting and JPEG encoding, rather than an official character palette. The right-hand sample gives OKLCH L≈0.7977, C≈0.0899, h≈249.50°.
+
+The accent **Moonstone `#75A6D8`** retains that hue and chroma (L≈0.7098, C≈0.0904, h≈249.69°), with lightness reduced to match Carmine's ≈0.7109. This keeps the gentle sky-blue character without giving keywords the brightness of types or language instances (both L≈0.80). Hover **`#8ABCEF`** lifts the same hue to L≈0.7790. The selected blue is distinct from Verdigris's teal and Wisteria's lavender; its low chroma keeps it soft alongside the warm syntax colors.
+
+| Role | Moonstone | Intent |
+|------|-----------|--------|
+| Accent | `#75A6D8` | Rem-inspired sky blue, Carmine-like perceptual lightness |
+| Accent hover | `#8ABCEF` | Brighter sky blue |
+| Crypt | `#0F1319` | Deep slate |
+| Boudoir | `#1D232E` | Main editor surface |
+| Velvet | `#252D3B` | Elevated slate |
+| Selection | `#384355` | Raised selection surface |
+| Sidebar | `#161B23` | Between Crypt and Boudoir |
+| Structural mauve | `#505B6C` | Slate counterpart for line numbers and ignored files |
+
+The surfaces preserve the base's **OKLCH lightness within 0.003** after 8-bit rounding, at lower chroma and approximately 260° hue. Unlike Amethyst's HSL rotation, this is a perceptual-lightness match with deliberate desaturation: a restrained slate setting for the blue accent. The warm foreground and comments provide continuity with the original boudoir palette.
+
+Measured sRGB contrast on Boudoir: **Pearl 13.26:1**, **Moonstone 6.16:1**, **Ash Mauve 4.68:1**. Pearl on Selection is **8.40:1**. These describe the stated pairs, not a whole-editor accessibility certification. `npm run colors` in `ports/vscode/` reproduces the OKLCH, contrast and color-vision simulation measurements.
+
+**Known limitations.** In a Machado severity-1.0 protanopia simulation, Moonstone and Wisteria approach one another (100 × OKLab distance ≈5.98, versus ≈14.51 without simulation). Wisteria's higher lightness and italic styling where applied provide additional cues. Moonstone versus Verdigris remains ≈9.83–11.47 in the three simulated deficiencies, but these distances are comparisons, not universal discrimination thresholds. The inherited Absinthe/Champagne ambiguity remains. As with other flavors, the accent occupies the ANSI magenta slot; software using color names as semantics will show blue there.
+
+Theme file: `../ports/vscode/carmilla-moonstone.json`. Moonstone is included in source builds for the next release; adding it to this repository does not publish it to the Marketplace.
+
 ## TextMate mapping (summary)
 
 ```
@@ -120,9 +151,9 @@ text, punctuation, source                → pearl
 - `../ports/` — one directory per platform port (VS Code, and future ones), each consuming these tokens.
 - `../docs/index.html` — visual showcase of the palette + code sample.
 
-When a hex changes, update **both** files here first, then propagate to every port in the same commit.
+When a hex changes, update `carmilla.toml` and this specification. VS Code mappings live in `../ports/vscode/theme.template.json`: `@colors.token`, `@ui.token` and `@terminal.bright.token` reference the palette, with optional `/AA` hexadecimal opacity. Run `npm run generate` from `ports/vscode/`; do not edit the generated theme JSONs directly. Commit generated changes with their sources. `npm run check` detects drift, including the packaged changelog and the showcase's generated code sample.
 
 ## To publish (VS Code port)
 
-1. From `ports/vscode/`: `npm run package` / `npm run publish` (requires a Marketplace publisher + PAT).
+1. With Node.js 22 or newer, from `ports/vscode/`: `npm ci`, then `npm run package` / `npm run publish` (publishing requires a Marketplace publisher + PAT).
 2. License: MIT. Every hex is original to this palette, so there's no attribution dependency.

@@ -1,71 +1,65 @@
-<h1 align="center">🥀 Carmilla</h1>
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Muowl/carmilla/main/ports/vscode/icon.png" alt="Carmilla Lua icon" width="96" height="96">
+</p>
+<h1 align="center">Carmilla</h1>
 <p align="center"><em>Crypt warmth for nights of code.</em></p>
-
 <p align="center">
-  An original dark theme with a <strong>boudoir/wine</strong> identity — a rosé-wine background and warm accents:
-  carmine, wisteria, absinthe mint, peach velvet and champagne.
+  Cream text, mauve comments, and a choice of wine, violet or slate-blue backgrounds.
+</p>
+<p align="center">
+  <a href="https://muowl.dev/themes/carmilla/">Explore Carmilla</a> ·
+  <a href="https://github.com/Muowl/carmilla">GitHub</a> ·
+  <a href="https://github.com/Muowl/carmilla/blob/main/CHANGELOG.md">Changelog</a>
 </p>
 
-<p align="center">
-  <a href="https://muowl.dev/themes/carmilla/"><strong>🔗 See the live showcase</strong></a>
-</p>
+Carmilla is a dark theme family with a gothic atmosphere and a warm syntax palette. Each flavor changes the accent and surrounding surfaces while preserving the cream foreground, mauve comments and familiar colors for types, functions and strings.
 
----
+## Install
 
-> The name *Carmilla* is a tribute to Sheridan Le Fanu's gothic novella (1872), a classic of vampire literature.
+Install **Carmilla** by **muowl**, then open the command palette and run **Preferences: Color Theme** to choose a flavor.
 
-## Why it exists
-
-Most dark themes lean to the cold side of the spectrum (icy blues and purples). Carmilla does the opposite:
-**thermal coherence** — everything leans warm. The detail that defines its identity is the comments in
-**Ash Mauve**, which converse with the background instead of clashing with it.
-
-## Preview
-
-<p align="center">
-  <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
-</p>
-
-## Palette
-
-| Token          | Hex        | Use                                              |
-|----------------|------------|--------------------------------------------------|
-| Crypt          | `#16101A`  | Deepest background — page, gutter                |
-| Boudoir        | `#2E1B2D`  | Main background — editor, panels                 |
-| Velvet         | `#3A2438`  | Elevated surface — cards, status bar             |
-| Selection      | `#523950`  | Current line, selection, ranges                  |
-| Pearl          | `#F5EADA`  | Primary text / foreground                        |
-| Carmine        | `#FF5FA2`  | Keywords, storage (`const`, `class`, `return`)   |
-| Wisteria       | `#D5A6FF`  | Language instances (`this`, `super`, `null`)     |
-| Verdigris      | `#5ED0D8`  | Classes, types, support                          |
-| Absinthe       | `#7AE0A6`  | Functions, methods                               |
-| Champagne      | `#EDD795`  | Strings, template literals                       |
-| Peach Velvet   | `#FFAE8A`  | Numbers, booleans                                |
-| Pomegranate    | `#E84B6E`  | Errors, deletions, alerts                        |
-| Ash Mauve      | `#9E83A4`  | Comments, disabled code                          |
-
-Full specification, design rationale and TextMate mapping in
-[`PALETTE.md`](https://github.com/Muowl/carmilla/blob/main/palette/PALETTE.md).
-
-## Flavors
-
-The extension ships two themes. **Carmilla** is the rosé-wine base. **Carmilla Amethyst** is a
-violet reading of it — the signature accent becomes an orchid purple, Amethyst `#C474D3`
-(hover `#D38CDC`), and the wine backgrounds rotate to dusk violet (editor `#2A1B2E`) at identical
-lightness, so every contrast figure carries over. The content colours stay constant across
-flavors: a flavor reads as the same theme in a different light.
-
-## Installation
-
-Open the Extensions view in VS Code (`Ctrl+Shift+X`), search for **Carmilla**, and click **Install** — or run:
+You can also install from the terminal:
 
 ```sh
 code --install-extension muowl.carmilla
 ```
 
-Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
+## Choose your light
 
-## License
+| Theme | Accent | Atmosphere |
+|-------|--------|------------|
+| **Carmilla** | Carmine `#FF5FA2` | Rosé wine by candlelight |
+| **Carmilla Amethyst** | Amethyst `#C474D3` | Soft violet dusk |
+| **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-[MIT](https://github.com/Muowl/carmilla/blob/main/LICENSE). Every colour is original to this palette — no third-party attribution required.
+Version 1.7.0 includes all three flavors and the Lua icon. Choose one under **Preferences: Color Theme** (`Ctrl+K Ctrl+T`).
+
+## Preview
+
+### Carmilla
+
+<img src="https://raw.githubusercontent.com/Muowl/carmilla/main/assets/preview.png" alt="Carmilla: carmine keywords on a wine background" width="800">
+
+### Amethyst
+
+<img src="https://raw.githubusercontent.com/Muowl/carmilla/main/assets/preview-amethyst.png" alt="Carmilla Amethyst: orchid keywords on a violet background" width="800">
+
+### Moonstone
+
+<img src="https://raw.githubusercontent.com/Muowl/carmilla/main/assets/preview-moonstone.png" alt="Carmilla Moonstone: sky-blue keywords on a slate background" width="800">
+
+Previews are generated from the theme’s TextMate rules and a TypeScript grammar. Language servers can refine highlighting in VS Code.
+
+## Thoughtful details
+
+- A consistent palette across the editor, sidebar, tabs, command palette, suggestions, notifications and chat.
+- TextMate and semantic highlighting, plus all 16 ANSI terminal colors.
+- Git decorations, diffs and merge highlights that fit the surrounding interface.
+- Focus, placeholder and selected-text colors checked for contrast in each flavor.
+- A declarative theme with no executable extension code.
+
+The [palette specification](https://github.com/Muowl/carmilla/blob/main/palette/PALETTE.md) explains the color choices, measured contrast and known limitations. Python’s TextMate fallback gives `True`, `False` and `None` the same scope, so all three use Wisteria.
+
+Named after Sheridan Le Fanu’s gothic novella *Carmilla* (1872).
+
+[Report an issue](https://github.com/Muowl/carmilla/issues) · [MIT license](https://github.com/Muowl/carmilla/blob/main/LICENSE)

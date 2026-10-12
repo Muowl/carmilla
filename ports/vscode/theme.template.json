@@ -1,0 +1,491 @@
+{
+  "name": "Carmilla",
+  "displayName": "Carmilla",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "colors": {
+    "editor.background": "@colors.boudoir",
+    "editor.foreground": "@colors.pearl",
+    "editor.lineHighlightBackground": "@colors.selection/80",
+    "editor.selectionBackground": "@colors.selection",
+    "editor.selectionHighlightBackground": "@colors.selection/60",
+    "editor.findMatchBackground": "@colors.carmine/60",
+    "editor.findMatchHighlightBackground": "@colors.carmine/30",
+    "editor.wordHighlightBackground": "@colors.carmine/25",
+    "editor.wordHighlightStrongBackground": "@colors.carmine/40",
+    "editorCursor.foreground": "@colors.carmine",
+    "editorWhitespace.foreground": "@colors.selection/80",
+    "editorIndentGuide.background1": "@colors.velvet",
+    "editorIndentGuide.activeBackground1": "@colors.ash-mauve",
+    "editorLineNumber.foreground": "@ui.mauve",
+    "editorLineNumber.activeForeground": "@colors.peach-velvet",
+    "editorBracketMatch.background": "@colors.carmine/30",
+    "editorBracketMatch.border": "@colors.carmine",
+    "editorGutter.background": "@colors.crypt",
+    "editorGutter.modifiedBackground": "@colors.wisteria",
+    "editorGutter.addedBackground": "@colors.absinthe",
+    "editorGutter.deletedBackground": "@colors.pomegranate",
+    "editorError.foreground": "@colors.pomegranate",
+    "editorWarning.foreground": "@colors.peach-velvet",
+    "editorInfo.foreground": "@colors.verdigris",
+    "diffEditor.insertedTextBackground": "@colors.absinthe/25",
+    "diffEditor.removedTextBackground": "@colors.pomegranate/25",
+    "activityBar.background": "@colors.crypt",
+    "activityBar.foreground": "@colors.pearl",
+    "activityBar.inactiveForeground": "@colors.ash-mauve",
+    "activityBarBadge.background": "@colors.carmine",
+    "activityBarBadge.foreground": "@colors.crypt",
+    "activityBar.activeBorder": "@colors.carmine",
+    "sideBar.background": "@ui.sidebar",
+    "sideBar.foreground": "@colors.pearl",
+    "sideBarTitle.foreground": "@colors.wisteria",
+    "sideBarSectionHeader.background": "@colors.boudoir",
+    "sideBarSectionHeader.foreground": "@colors.pearl",
+    "sideBarSectionHeader.border": "@colors.velvet",
+    "list.activeSelectionBackground": "@colors.selection",
+    "list.activeSelectionForeground": "@colors.pearl",
+    "list.inactiveSelectionBackground": "@colors.velvet",
+    "list.hoverBackground": "@colors.velvet/80",
+    "list.focusBackground": "@colors.selection",
+    "list.highlightForeground": "@colors.carmine",
+    "tab.activeBackground": "@colors.boudoir",
+    "tab.inactiveBackground": "@ui.sidebar",
+    "tab.activeForeground": "@colors.pearl",
+    "tab.inactiveForeground": "@colors.ash-mauve",
+    "tab.activeBorderTop": "@colors.carmine",
+    "tab.border": "@colors.crypt",
+    "tab.hoverBackground": "@colors.velvet",
+    "editorGroupHeader.tabsBackground": "@ui.sidebar",
+    "statusBar.background": "@colors.velvet",
+    "statusBar.foreground": "@colors.pearl",
+    "statusBar.noFolderBackground": "@colors.velvet",
+    "statusBar.debuggingBackground": "@colors.carmine",
+    "statusBar.debuggingForeground": "@colors.crypt",
+    "statusBarItem.remoteBackground": "@colors.wisteria",
+    "statusBarItem.remoteForeground": "@colors.crypt",
+    "titleBar.activeBackground": "@colors.crypt",
+    "titleBar.activeForeground": "@colors.pearl",
+    "titleBar.inactiveBackground": "@colors.crypt",
+    "titleBar.inactiveForeground": "@colors.ash-mauve",
+    "panel.background": "@ui.sidebar",
+    "panel.border": "@colors.velvet",
+    "panelTitle.activeForeground": "@colors.carmine",
+    "panelTitle.activeBorder": "@colors.carmine",
+    "panelTitle.inactiveForeground": "@colors.ash-mauve",
+    "terminal.background": "@colors.crypt",
+    "terminal.foreground": "@colors.pearl",
+    "terminal.ansiBlack": "@colors.crypt",
+    "terminal.ansiRed": "@colors.pomegranate",
+    "terminal.ansiGreen": "@colors.absinthe",
+    "terminal.ansiYellow": "@colors.champagne",
+    "terminal.ansiBlue": "@colors.wisteria",
+    "terminal.ansiMagenta": "@colors.carmine",
+    "terminal.ansiCyan": "@colors.verdigris",
+    "terminal.ansiWhite": "@colors.pearl",
+    "terminal.ansiBrightBlack": "@colors.ash-mauve",
+    "terminal.ansiBrightRed": "@terminal.bright.red",
+    "terminal.ansiBrightGreen": "@terminal.bright.green",
+    "terminal.ansiBrightYellow": "@terminal.bright.yellow",
+    "terminal.ansiBrightBlue": "@terminal.bright.blue",
+    "terminal.ansiBrightMagenta": "@ui.accent-hover",
+    "terminal.ansiBrightCyan": "@terminal.bright.cyan",
+    "terminal.ansiBrightWhite": "@terminal.bright.white",
+    "button.background": "@colors.carmine",
+    "button.foreground": "@colors.crypt",
+    "button.hoverBackground": "@ui.accent-hover",
+    "input.background": "@ui.sidebar",
+    "input.foreground": "@colors.pearl",
+    "input.border": "@colors.velvet",
+    "inputOption.activeBorder": "@colors.carmine",
+    "focusBorder": "@colors.carmine",
+    "scrollbarSlider.background": "@colors.selection/80",
+    "scrollbarSlider.hoverBackground": "@colors.selection",
+    "scrollbarSlider.activeBackground": "@colors.carmine/60",
+    "notifications.background": "@colors.velvet",
+    "notifications.foreground": "@colors.pearl",
+    "notificationsErrorIcon.foreground": "@colors.pomegranate",
+    "notificationsWarningIcon.foreground": "@colors.peach-velvet",
+    "notificationsInfoIcon.foreground": "@colors.verdigris",
+    "badge.background": "@colors.carmine",
+    "badge.foreground": "@colors.crypt",
+    "peekView.border": "@colors.carmine",
+    "peekViewEditor.background": "@ui.sidebar",
+    "peekViewResult.background": "@ui.sidebar",
+    "peekViewTitle.background": "@colors.velvet",
+    "gitDecoration.modifiedResourceForeground": "@colors.wisteria",
+    "gitDecoration.addedResourceForeground": "@colors.absinthe",
+    "gitDecoration.deletedResourceForeground": "@colors.pomegranate",
+    "gitDecoration.untrackedResourceForeground": "@colors.champagne",
+    "gitDecoration.ignoredResourceForeground": "@ui.mauve",
+    "gitDecoration.conflictingResourceForeground": "@colors.peach-velvet",
+    "editorWidget.background": "@ui.sidebar",
+    "editorWidget.border": "@colors.velvet",
+    "widget.shadow": "@colors.crypt/99",
+    "editorSuggestWidget.background": "@ui.sidebar",
+    "editorSuggestWidget.border": "@colors.velvet",
+    "editorSuggestWidget.foreground": "@colors.pearl",
+    "editorSuggestWidget.selectedBackground": "@colors.selection",
+    "editorSuggestWidget.highlightForeground": "@colors.carmine",
+    "editorSuggestWidget.focusHighlightForeground": "@ui.accent-hover",
+    "editorHoverWidget.background": "@ui.sidebar",
+    "editorHoverWidget.border": "@colors.velvet",
+    "chat.requestBackground": "@colors.boudoir",
+    "chat.requestBorder": "@colors.velvet",
+    "chat.requestBubbleBackground": "@colors.velvet",
+    "chat.requestBubbleHoverBackground": "@colors.selection",
+    "chat.requestCodeBorder": "@colors.selection",
+    "chat.slashCommandBackground": "@colors.carmine/26",
+    "chat.slashCommandForeground": "@ui.accent-hover",
+    "chat.avatarBackground": "@colors.carmine",
+    "chat.avatarForeground": "@colors.crypt",
+    "chat.editedFileForeground": "@colors.wisteria",
+    "chat.linesAddedForeground": "@colors.absinthe",
+    "chat.linesRemovedForeground": "@colors.pomegranate",
+    "chat.checkpointSeparator": "@colors.selection",
+    "chat.thinkingShimmer": "@colors.carmine/4D",
+    "chatManagement.sashBorder": "@colors.velvet",
+    "inlineChat.background": "@ui.sidebar",
+    "inlineChat.foreground": "@colors.pearl",
+    "inlineChat.border": "@colors.velvet",
+    "inlineChat.shadow": "@colors.crypt/99",
+    "inlineChatInput.background": "@ui.sidebar",
+    "inlineChatInput.border": "@colors.velvet",
+    "inlineChatInput.focusBorder": "@colors.carmine",
+    "inlineChatInput.placeholderForeground": "@colors.ash-mauve",
+    "inlineChatDiff.inserted": "@colors.absinthe/25",
+    "inlineChatDiff.removed": "@colors.pomegranate/25",
+    "interactive.activeCodeBorder": "@colors.carmine",
+    "interactive.inactiveCodeBorder": "@colors.velvet",
+    "quickInput.background": "@ui.sidebar",
+    "quickInput.foreground": "@colors.pearl",
+    "quickInputList.focusBackground": "@colors.selection",
+    "quickInputList.focusForeground": "@colors.pearl",
+    "pickerGroup.foreground": "@colors.wisteria",
+    "pickerGroup.border": "@colors.velvet",
+    "commandCenter.background": "@colors.crypt",
+    "commandCenter.foreground": "@colors.ash-mauve",
+    "commandCenter.activeBackground": "@colors.boudoir",
+    "commandCenter.activeForeground": "@colors.pearl",
+    "commandCenter.border": "@colors.velvet",
+    "menu.background": "@ui.sidebar",
+    "menu.foreground": "@colors.pearl",
+    "menu.selectionBackground": "@colors.selection",
+    "menu.selectionForeground": "@colors.pearl",
+    "menu.separatorBackground": "@colors.velvet",
+    "menubar.selectionBackground": "@colors.velvet",
+    "dropdown.background": "@ui.sidebar",
+    "dropdown.listBackground": "@ui.sidebar",
+    "dropdown.foreground": "@colors.pearl",
+    "dropdown.border": "@colors.velvet",
+    "checkbox.background": "@ui.sidebar",
+    "checkbox.foreground": "@colors.pearl",
+    "checkbox.border": "@colors.velvet",
+    "textLink.foreground": "@colors.carmine",
+    "textLink.activeForeground": "@ui.accent-hover",
+    "editorLink.activeForeground": "@ui.accent-hover",
+    "minimap.background": "@colors.boudoir",
+    "minimap.selectionHighlight": "@colors.selection",
+    "minimap.findMatchHighlight": "@colors.carmine/60",
+    "breadcrumb.background": "@colors.boudoir",
+    "breadcrumb.foreground": "@colors.ash-mauve",
+    "breadcrumb.focusForeground": "@colors.pearl",
+    "breadcrumb.activeSelectionForeground": "@colors.carmine",
+    "breadcrumbPicker.background": "@ui.sidebar",
+    "inputValidation.errorBackground": "@colors.velvet",
+    "inputValidation.errorBorder": "@colors.pomegranate",
+    "inputValidation.warningBackground": "@colors.velvet",
+    "inputValidation.warningBorder": "@colors.peach-velvet",
+    "inputValidation.infoBackground": "@colors.velvet",
+    "inputValidation.infoBorder": "@colors.verdigris",
+    "editorOverviewRuler.border": "@colors.crypt",
+    "editorBracketHighlight.foreground1": "@colors.carmine",
+    "editorBracketHighlight.foreground2": "@colors.verdigris",
+    "editorBracketHighlight.foreground3": "@colors.wisteria",
+    "editorBracketHighlight.foreground4": "@colors.absinthe",
+    "editorBracketHighlight.foreground5": "@colors.peach-velvet",
+    "editorBracketHighlight.foreground6": "@colors.champagne",
+    "editorBracketHighlight.unexpectedBracket.foreground": "@colors.pomegranate",
+    "progressBar.background": "@colors.carmine",
+    "debugToolBar.background": "@ui.sidebar",
+    "selection.background": "@colors.selection",
+    "terminal.selectionBackground": "@colors.selection",
+    "terminalCursor.foreground": "@colors.carmine",
+    "editorInlayHint.background": "@colors.velvet/80",
+    "editorInlayHint.foreground": "@colors.ash-mauve",
+    "editorCodeLens.foreground": "@colors.ash-mauve",
+    "editorLineNumber.dimmedForeground": "@ui.mauve/80",
+    "diffEditor.insertedLineBackground": "@colors.absinthe/15",
+    "diffEditor.removedLineBackground": "@colors.pomegranate/15",
+    "merge.currentContentBackground": "@colors.verdigris/25",
+    "merge.currentHeaderBackground": "@colors.verdigris/60",
+    "merge.incomingContentBackground": "@colors.wisteria/25",
+    "merge.incomingHeaderBackground": "@colors.wisteria/60",
+    "peekViewEditor.matchHighlightBackground": "@colors.carmine/30",
+    "peekViewResult.matchHighlightBackground": "@colors.carmine/30",
+    "peekViewResult.selectionBackground": "@colors.selection",
+    "tree.indentGuidesStroke": "@colors.velvet",
+    "icon.foreground": "@colors.ash-mauve",
+    "toolbar.hoverBackground": "@colors.velvet",
+    "toolbar.activeBackground": "@colors.selection",
+    "statusBarItem.errorBackground": "@colors.pomegranate",
+    "statusBarItem.errorForeground": "@colors.crypt",
+    "statusBarItem.warningBackground": "@colors.peach-velvet",
+    "statusBarItem.warningForeground": "@colors.crypt",
+    "statusBarItem.hoverBackground": "@colors.selection/80",
+    "keybindingLabel.background": "@colors.selection/80",
+    "keybindingLabel.foreground": "@colors.pearl",
+    "keybindingLabel.border": "@colors.velvet",
+    "keybindingLabel.bottomBorder": "@colors.crypt",
+    "banner.background": "@colors.velvet",
+    "banner.foreground": "@colors.pearl",
+    "banner.iconForeground": "@colors.wisteria",
+    "notificationCenterHeader.background": "@ui.sidebar",
+    "notificationToast.border": "@colors.velvet",
+    "input.placeholderForeground": "@colors.ash-mauve",
+    "editor.selectionForeground": "@colors.pearl"
+  },
+  "semanticTokenColors": {
+    "class": "@colors.verdigris",
+    "interface": "@colors.verdigris",
+    "struct": "@colors.verdigris",
+    "enum": "@colors.verdigris",
+    "type": "@colors.verdigris",
+    "typeParameter": "@colors.verdigris",
+    "namespace": "@colors.verdigris",
+    "function": "@colors.absinthe",
+    "method": "@colors.absinthe",
+    "decorator": "@colors.peach-velvet",
+    "macro": "@colors.carmine",
+    "keyword": "@colors.carmine",
+    "variable": "@colors.pearl",
+    "parameter": "@colors.pearl",
+    "property": "@colors.pearl",
+    "operator": "@colors.pearl",
+    "enumMember": "@colors.peach-velvet",
+    "number": "@colors.peach-velvet",
+    "string": "@colors.champagne",
+    "comment": {
+      "foreground": "@colors.ash-mauve",
+      "fontStyle": "italic"
+    },
+    "variable.defaultLibrary": {
+      "foreground": "@colors.wisteria",
+      "fontStyle": "italic"
+    }
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "foreground": "@colors.ash-mauve",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "keyword",
+        "keyword.control",
+        "keyword.operator.new",
+        "storage",
+        "storage.type",
+        "storage.modifier"
+      ],
+      "settings": {
+        "foreground": "@colors.carmine"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator"
+      ],
+      "settings": {
+        "foreground": "@colors.pearl"
+      }
+    },
+    {
+      "scope": [
+        "keyword.operator.new",
+        "keyword.operator.expression"
+      ],
+      "settings": {
+        "foreground": "@colors.carmine"
+      }
+    },
+    {
+      "scope": [
+        "variable.language",
+        "constant.language",
+        "variable.language.this",
+        "variable.language.super"
+      ],
+      "settings": {
+        "foreground": "@colors.wisteria",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.type",
+        "entity.name.class",
+        "entity.other.inherited-class",
+        "support.class",
+        "support.type"
+      ],
+      "settings": {
+        "foreground": "@colors.verdigris"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function",
+        "support.function",
+        "meta.function-call.generic"
+      ],
+      "settings": {
+        "foreground": "@colors.absinthe"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "string.quoted",
+        "string.template",
+        "punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "@colors.champagne"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric",
+        "constant.language.boolean"
+      ],
+      "settings": {
+        "foreground": "@colors.peach-velvet",
+        "fontStyle": ""
+      }
+    },
+    {
+      "scope": [
+        "invalid",
+        "invalid.illegal",
+        "invalid.deprecated"
+      ],
+      "settings": {
+        "foreground": "@colors.pomegranate"
+      }
+    },
+    {
+      "scope": [
+        "variable",
+        "variable.other",
+        "variable.parameter"
+      ],
+      "settings": {
+        "foreground": "@colors.pearl"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.tag",
+        "punctuation.definition.tag"
+      ],
+      "settings": {
+        "foreground": "@colors.carmine"
+      }
+    },
+    {
+      "scope": [
+        "entity.other.attribute-name"
+      ],
+      "settings": {
+        "foreground": "@colors.absinthe",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "meta.embedded",
+        "source.groovy.embedded"
+      ],
+      "settings": {
+        "foreground": "@colors.pearl"
+      }
+    },
+    {
+      "scope": [
+        "markup.heading"
+      ],
+      "settings": {
+        "foreground": "@colors.carmine",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "markup.bold"
+      ],
+      "settings": {
+        "foreground": "@colors.peach-velvet",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "markup.italic"
+      ],
+      "settings": {
+        "foreground": "@colors.wisteria",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "markup.inline.raw",
+        "markup.fenced_code"
+      ],
+      "settings": {
+        "foreground": "@colors.champagne"
+      }
+    },
+    {
+      "scope": [
+        "markup.quote"
+      ],
+      "settings": {
+        "foreground": "@colors.ash-mauve",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "markup.inserted"
+      ],
+      "settings": {
+        "foreground": "@colors.absinthe"
+      }
+    },
+    {
+      "scope": [
+        "markup.deleted"
+      ],
+      "settings": {
+        "foreground": "@colors.pomegranate"
+      }
+    },
+    {
+      "scope": [
+        "markup.underline.link",
+        "string.other.link"
+      ],
+      "settings": {
+        "foreground": "@colors.verdigris",
+        "fontStyle": "underline"
+      }
+    }
+  ]
+}

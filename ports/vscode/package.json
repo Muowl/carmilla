@@ -1,13 +1,14 @@
 {
   "name": "carmilla",
   "displayName": "Carmilla",
-  "description": "A warm dark theme with a boudoir/wine identity — rosé-vinho backgrounds and carmine, wisteria, absinthe and champagne accents.",
-  "version": "1.6.0",
+  "description": "A dark theme family with wine, amethyst and moonstone-blue backgrounds, warm syntax accents and mauve comments.",
+  "version": "1.7.0",
   "publisher": "muowl",
   "license": "MIT",
   "icon": "icon.png",
   "engines": {
-    "vscode": "^1.70.0"
+    "vscode": "^1.70.0",
+    "node": ">=22"
   },
   "categories": [
     "Themes"
@@ -23,7 +24,9 @@
     "amethyst",
     "teal",
     "vampire",
-    "boudoir"
+    "boudoir",
+    "blue",
+    "moonstone"
   ],
   "galleryBanner": {
     "color": "#2E1B2D",
@@ -48,11 +51,31 @@
         "label": "Carmilla Amethyst",
         "uiTheme": "vs-dark",
         "path": "./carmilla-amethyst.json"
+      },
+      {
+        "label": "Carmilla Moonstone",
+        "uiTheme": "vs-dark",
+        "path": "./carmilla-moonstone.json"
       }
     ]
   },
   "scripts": {
-    "package": "npx --yes @vscode/vsce package",
-    "publish": "npx --yes @vscode/vsce publish"
+    "generate": "node ../../scripts/generate.mjs",
+    "check": "node ../../scripts/generate.mjs --check",
+    "test": "npm run check && node --test ../../tests/*.test.mjs",
+    "preview": "npm run generate && node ../../scripts/preview.mjs --capture",
+    "package": "npm run generate && npm test && vsce package --no-dependencies",
+    "publish": "npm run generate && npm test && vsce publish --no-dependencies",
+    "test:showcase": "npm run check && node ../../scripts/preview.mjs",
+    "colors": "node ../../scripts/color-metrics.mjs",
+    "brand": "node ../../scripts/export-icon.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@iarna/toml": "2.2.5",
+    "@vscode/vsce": "4.0.0",
+    "playwright": "1.64.0",
+    "vscode-oniguruma": "2.0.1",
+    "vscode-textmate": "9.3.2"
   }
 }

@@ -4,12 +4,12 @@
 
 [meta]
 name = "Carmilla"
-description = "A warm dark theme with a boudoir/wine identity"
+description = "A dark theme family with wine, amethyst and moonstone-blue backgrounds"
 author = "muowl"
 license = "MIT"
 homepage = "https://muowl.dev/themes/carmilla/"
 repository = "https://github.com/Muowl/carmilla"
-palette-version = "1.6.0"
+palette-version = "1.7.0"
 
 # The 13 core tokens (see PALETTE.md for design rationale and WCAG figures).
 [colors]
@@ -26,6 +26,12 @@ champagne = "#EDD795"      # strings, template literals
 peach-velvet = "#FFAE8A"   # numbers, booleans
 pomegranate = "#E84B6E"    # errors, deletions, alerts
 ash-mauve = "#9E83A4"      # comments, disabled code
+
+# Structural UI tokens shared by the theme generator.
+[ui]
+sidebar = "#231522"
+mauve = "#6B4F6A"
+accent-hover = "#FF8BB0"
 
 # 16-color ANSI terminal palette (matches the VS Code port's terminal.ansi*).
 # Ready to feed terminal ports: Alacritty, kitty, Windows Terminal, etc.
@@ -68,3 +74,17 @@ velvet = "#35243A"         # replaces #3A2438
 selection = "#4C3952"      # replaces #523950
 sidebar = "#201523"        # replaces the deep side-bar surface #231522
 mauve = "#654F6B"          # replaces wine-mauve #6B4F6A (line numbers, ignored files)
+
+# Moonstone — Rem-inspired sky blue, tuned to Carmine's perceptual lightness.
+# Slate surfaces retain the base's OKLCH lightness, with lower chroma at ~260°.
+# This follows the same eight-token flavor contract; content colors are unchanged.
+[flavors.moonstone]
+name = "Carmilla Moonstone"
+accent = "#75A6D8"         # hair reference #90C2F5: hue/chroma retained, L reduced to ~0.71
+accent-hover = "#8ABCEF"   # same sky hue, lifted to L ~0.78
+crypt = "#0F1319"
+boudoir = "#1D232E"
+velvet = "#252D3B"
+selection = "#384355"
+sidebar = "#161B23"
+mauve = "#505B6C"

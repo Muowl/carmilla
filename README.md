@@ -1,121 +1,110 @@
-<h1 align="center">🥀 Carmilla</h1>
-
+<p align="center">
+  <img src="assets/brand/icon.png" alt="Carmilla Lua icon" width="96" height="96">
+</p>
+<h1 align="center">Carmilla</h1>
 <p align="center"><em>Crypt warmth for nights of code.</em></p>
-
 <p align="center">
-  An original dark theme with a <strong>boudoir/wine</strong> identity — a rosé-wine background and warm accents:
-  carmine, wisteria, absinthe mint, peach velvet and champagne.
+  A dark theme family for VS Code: cream text, mauve comments, and a choice of wine, violet or slate-blue backgrounds.
+</p>
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla">Install from the Marketplace</a> ·
+  <a href="https://muowl.dev/themes/carmilla/">Explore Carmilla</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
 </p>
 
-<p align="center">
-  <a href="https://muowl.dev/themes/carmilla/"><strong>🔗 See the live showcase</strong></a>
-</p>
+Carmilla pairs soft backgrounds with distinct colors for types, functions, strings and keywords. Each flavor changes the accent and surrounding surfaces while keeping the cream foreground and familiar syntax palette. The name pays tribute to Sheridan Le Fanu’s gothic novella *Carmilla* (1872).
 
-<p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla"><img src="https://img.shields.io/badge/VS_Code-Install_Carmilla-FF5FA2?style=flat-square&logo=visualstudiocode&logoColor=white&labelColor=2E1B2D" alt="Install from the VS Code Marketplace"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-D5A6FF?style=flat-square&labelColor=2E1B2D" alt="MIT license"></a>
-</p>
+## Choose your light
 
----
+| Theme | Accent | Atmosphere |
+|-------|--------|------------|
+| **Carmilla** | Carmine `#FF5FA2` | Rosé wine by candlelight |
+| **Carmilla Amethyst** | Amethyst `#C474D3` | The same room at violet dusk |
+| **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-> The name *Carmilla* is a tribute to Sheridan Le Fanu's gothic novella (1872), a classic of vampire literature.
+**Version 1.7.0 includes all three flavors and the Lua icon.** Install the generated VSIX to use this version while the Marketplace update is pending.
 
-## Why it exists
+## Install
 
-Most dark themes lean to the cold side of the spectrum (icy blues and purples). Carmilla does the opposite:
-**thermal coherence** — everything leans warm. The detail that defines its identity is the comments in
-**Ash Mauve**, which converse with the background instead of clashing with it.
-
-## Preview
-
-<p align="center">
-  <img src="assets/preview.png" alt="Carmilla theme showcase: palette, editor mockup and token map" width="720">
-</p>
-
-See it [live](https://muowl.dev/themes/carmilla/) or open [`docs/index.html`](docs/index.html) locally in your browser.
-
-## Ports
-
-Carmilla is one palette, ported to many platforms. Each port lives in its own directory under [`ports/`](ports/).
-
-| Platform | Status       | Directory / install                                                                 |
-|----------|--------------|--------------------------------------------------------------------------------------|
-| VS Code  | ✅ Published | [`ports/vscode`](ports/vscode) — [Marketplace](https://marketplace.visualstudio.com/items?itemName=muowl.carmilla) |
-| Zed      | 🕯️ Planned   | —                                                                                      |
-| Alacritty| 🕯️ Planned   | —                                                                                      |
-| Chrome   | 🕯️ Planned   | —                                                                                      |
-| GNOME Shell | 🕯️ Planned | —                                                                                     |
-
-Want Carmilla somewhere else? [Open an issue](https://github.com/Muowl/carmilla/issues) — or port it yourself
-from [`palette/carmilla.toml`](palette/carmilla.toml) and send a PR.
-
-## Palette
-
-| Token          | Hex        | Use                                              |
-|----------------|------------|--------------------------------------------------|
-| Crypt          | `#16101A`  | Deepest background — page, gutter                |
-| Boudoir        | `#2E1B2D`  | Main background — editor, panels                 |
-| Velvet         | `#3A2438`  | Elevated surface — cards, status bar             |
-| Selection      | `#523950`  | Current line, selection, ranges                  |
-| Pearl          | `#F5EADA`  | Primary text / foreground                        |
-| Carmine        | `#FF5FA2`  | Keywords, storage (`const`, `class`, `return`)   |
-| Wisteria       | `#D5A6FF`  | Language instances (`this`, `super`, `null`)     |
-| Verdigris      | `#5ED0D8`  | Classes, types, support                          |
-| Absinthe       | `#7AE0A6`  | Functions, methods                               |
-| Champagne      | `#EDD795`  | Strings, template literals                       |
-| Peach Velvet   | `#FFAE8A`  | Numbers, booleans                                |
-| Pomegranate    | `#E84B6E`  | Errors, deletions, alerts                        |
-| Ash Mauve      | `#9E83A4`  | Comments, disabled code                          |
-
-Full specification, design rationale and TextMate mapping in [`palette/PALETTE.md`](palette/PALETTE.md).
-The machine-readable source of truth (core tokens + ANSI terminal colors) is [`palette/carmilla.toml`](palette/carmilla.toml).
-
-## Flavors
-
-Flavors swap the signature accent **and** re-temperature the neutral backgrounds to match; the
-content colours stay constant, so a flavor reads as the same theme in a different light.
-
-| Flavor                | Accent                | Mood                                       |
-|-----------------------|-----------------------|--------------------------------------------|
-| **Carmilla** (base)   | Carmine `#FF5FA2`     | Rosé-wine boudoir by candlelight           |
-| **Carmilla Amethyst** | Amethyst `#C474D3`    | The same boudoir at dusk — violet twilight |
-
-Both ship in the VS Code extension; pick one under **Color Theme** (`Ctrl+K Ctrl+T`).
-Design rationale, contrast figures and known limitations in [`palette/PALETTE.md`](palette/PALETTE.md#flavors).
-(Two earlier variants, Cinnabar and Larimar, are preserved on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch.)
-
-## Installation (VS Code)
-
-### From the Marketplace
-
-Open the Extensions view in VS Code (`Ctrl+Shift+X`), search for **Carmilla**, and click **Install** — or run:
+Install **Carmilla** by **muowl** from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=muowl.carmilla), or run:
 
 ```sh
 code --install-extension muowl.carmilla
 ```
 
-Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
+Open the command palette, run **Preferences: Color Theme**, and select a Carmilla theme.
 
-### From a `.vsix` file
+To install the current source build, use Node.js 22 or newer and run from the repository root:
 
-1. Build the package from the port directory: `cd ports/vscode && npm run package` (uses [`@vscode/vsce`](https://github.com/microsoft/vscode-vsce) via `npx`, producing `carmilla-1.6.0.vsix`).
-2. In VS Code: command palette (`Ctrl+Shift+P`) → **Extensions: Install from VSIX...** → pick the generated `.vsix`.
-3. Activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
+```sh
+cd ports/vscode
+npm ci
+npm run package
+```
 
-### For development
+In VS Code, run **Extensions: Install from VSIX…**, select the generated `carmilla-*.vsix` in `ports/vscode/`, then choose your theme.
 
-Open [`ports/vscode/`](ports/vscode) in VS Code and press `F5` to launch an *Extension Development Host* window with the theme already loaded.
+## A closer look
 
-## Repository structure
+<p align="center">
+  <img src="assets/preview.png" alt="Carmilla: carmine keywords on a wine background" width="800">
+</p>
 
-| Path                    | Role                                                              |
-|-------------------------|-------------------------------------------------------------------|
-| `palette/PALETTE.md`    | Human source of truth — portable spec and design rationale        |
-| `palette/carmilla.toml` | Machine-readable palette — core tokens + ANSI terminal colors     |
-| `ports/vscode/`         | VS Code extension (UI + syntax + ANSI terminal + git)             |
-| `docs/`                 | Showcase original, arquivado — o site vive em [muowl.dev](https://muowl.dev/themes/carmilla/) |
-| `assets/`               | Shared brand assets (preview image)                               |
+<details>
+<summary><strong>Carmilla Amethyst</strong> — violet dusk</summary>
+
+<img src="assets/preview-amethyst.png" alt="Carmilla Amethyst: orchid keywords on a violet background" width="800">
+
+</details>
+
+<details>
+<summary><strong>Carmilla Moonstone</strong> — moonlit slate</summary>
+
+<img src="assets/preview-moonstone.png" alt="Carmilla Moonstone: sky-blue keywords on a slate background" width="800">
+
+</details>
+
+These previews are generated from the theme’s TextMate rules and a pinned TypeScript grammar. Language servers can refine highlighting in VS Code. The [local showcase](docs/index.html) lets you switch between all three flavors; the [live site](https://muowl.dev/themes/carmilla/) follows its own release schedule.
+
+## What is themed
+
+- Editor, tabs, sidebar, command palette, suggestions, notifications and chat surfaces.
+- TextMate syntax and semantic tokens, with warm comments and distinct type/function colors.
+- All 16 ANSI terminal colors, Git decorations, diffs and merge highlights.
+- Focus, placeholder and selection states checked for contrast in each flavor.
+
+Carmilla is a declarative color theme with no executable extension code. The [palette specification](palette/PALETTE.md) documents color choices, measured contrast and known limitations, including Python’s shared TextMate scope for `True`, `False` and `None`.
+
+## Develop and contribute
+
+Colors live in [`palette/carmilla.toml`](palette/carmilla.toml); VS Code mappings live in [`ports/vscode/theme.template.json`](ports/vscode/theme.template.json). Edit those sources, then regenerate the themes. Run these commands from `ports/vscode/` after `npm ci`:
+
+| Command | Purpose |
+|---------|---------|
+| `npm run generate` | Generate every theme, the packaged changelog and the showcase code sample |
+| `npm test` | Check generated files, contrast, ANSI colors, grammar behavior and Moonstone’s color constraints |
+| `npm run colors` | Inspect Moonstone’s OKLCH, contrast and color-vision simulation measurements |
+| `npm run test:showcase` | Check browser accessibility, mobile layouts and saved preferences |
+| `npm run preview` | Refresh the flavor preview images |
+| `npm run brand` | Export the approved Lua artwork for the extension and browser |
+| `npm run package` | Validate and build the VSIX |
+
+For browser commands, first run `npx playwright install chromium`, or set `CHROMIUM_PATH` to an existing Chromium executable. Open `ports/vscode/` in VS Code and press **F5** to launch the Extension Development Host, then select a Carmilla theme.
+
+Commit generated files with their sources. CI checks the themes and showcase, builds the VSIX, and verifies that the packaged changelog matches the root copy. Keep image exports together; see the [Lua asset notes](assets/brand/README.md).
+
+VS Code is the current port. Zed, Alacritty, Chrome and GNOME Shell are planned. To propose another port, [open an issue](https://github.com/Muowl/carmilla/issues) or start from the TOML palette. Earlier Cinnabar and Larimar variants are preserved on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch.
+
+## Repository guide
+
+| Path | Contents |
+|------|----------|
+| [`palette/`](palette/) | Color source, design rationale and contrast measurements |
+| [`ports/vscode/`](ports/vscode/) | Extension manifest, template and generated themes |
+| [`scripts/`](scripts/) · [`tests/`](tests/) | Generation, previews and validation |
+| [`assets/`](assets/) | Lua artwork and flavor previews |
+| [`docs/`](docs/) | Archived standalone showcase, maintained here for previews and checks |
 
 ## License
 
-[MIT](LICENSE). Every colour is original to this palette — no third-party attribution required.
+[MIT](LICENSE). Vendored development grammars retain their [upstream licenses](tests/grammars/README.md).

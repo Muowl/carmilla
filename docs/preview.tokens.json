@@ -1,0 +1,688 @@
+[
+  [
+    {
+      "text": "// Carmilla — warm accents over wine.",
+      "role": "ash-mauve",
+      "italic": true
+    }
+  ],
+  [
+    {
+      "text": "// TextMate preview; language servers may refine token colors.",
+      "role": "ash-mauve",
+      "italic": true
+    }
+  ],
+  [
+    {
+      "text": "class",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "Countess",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": " {",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "private",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " name: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "string",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "private",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " centuriesLived: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "number",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "constructor",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": "(name: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "string",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": ", age: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "number",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": ") {",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "        ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "this",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ".name = name;",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "        ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "this",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ".centuriesLived = age;",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    }",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "whisper",
+      "role": "absinthe",
+      "italic": false
+    },
+    {
+      "text": "(guest: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "string",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": "): ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "string",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": " {",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "        ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "return",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "`${",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": "this",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ".name",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "} whispers to ${",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": "guest",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "}`",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    }",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "getEra",
+      "role": "absinthe",
+      "italic": false
+    },
+    {
+      "text": "(): ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "string",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": " {",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "        ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "if",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " (",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "this",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ".centuriesLived > ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "5",
+      "role": "peach-velvet",
+      "italic": false
+    },
+    {
+      "text": ") ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "return",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "\"Ancient\"",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "        ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "if",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " (",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "this",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ".centuriesLived > ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "1",
+      "role": "peach-velvet",
+      "italic": false
+    },
+    {
+      "text": ") ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "return",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "\"Immortal\"",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "        ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "return",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "\"Newly turned\"",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "    }",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "}",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "const",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " carmilla = ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "new",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "Countess",
+      "role": "absinthe",
+      "italic": false
+    },
+    {
+      "text": "(",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "\"Mircalla Karnstein\"",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": ", ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "3",
+      "role": "peach-velvet",
+      "italic": false
+    },
+    {
+      "text": ");",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "const",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " awake: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "boolean",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": " = ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "true",
+      "role": "peach-velvet",
+      "italic": false
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "const",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " visitor: ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "string",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": " | ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "null",
+      "role": "verdigris",
+      "italic": false
+    },
+    {
+      "text": " = ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "null",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "const",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " absent = ",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "undefined",
+      "role": "wisteria",
+      "italic": true
+    },
+    {
+      "text": ";",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "if",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " (awake) console.",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "log",
+      "role": "absinthe",
+      "italic": false
+    },
+    {
+      "text": "(carmilla.",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "getEra",
+      "role": "absinthe",
+      "italic": false
+    },
+    {
+      "text": "());",
+      "role": "pearl",
+      "italic": false
+    }
+  ],
+  [
+    {
+      "text": "else",
+      "role": "carmine",
+      "italic": false
+    },
+    {
+      "text": " console.",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "error",
+      "role": "absinthe",
+      "italic": false
+    },
+    {
+      "text": "(",
+      "role": "pearl",
+      "italic": false
+    },
+    {
+      "text": "\"Still resting in the coffin\"",
+      "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": ");",
+      "role": "pearl",
+      "italic": false
+    }
+  ]
+]

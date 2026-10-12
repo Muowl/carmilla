@@ -11,15 +11,15 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Carmilla · Boudoir/wine dark theme">
     <meta property="og:description" content="An original dark theme with a boudoir/wine identity — rosé-wine background and warm accents. Crypt warmth for nights of code.">
-    <meta property="og:url" content="https://muowl.dev/">
-    <meta property="og:image" content="https://muowl.dev/og-image.png">
+    <meta property="og:url" content="https://muowl.dev/themes/carmilla/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Muowl/carmilla/main/docs/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Carmilla · Boudoir/wine dark theme">
     <meta name="twitter:description" content="An original dark theme with a boudoir/wine identity. Crypt warmth for nights of code.">
-    <meta name="twitter:image" content="https://muowl.dev/og-image.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Muowl/carmilla/main/docs/og-image.png">
 
-    <!-- Favicon — o ícone oficial da extensão (flor dentro do C) -->
-    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <!-- Lua — ícone da família Carmilla em rosa, ametista e azul Moonstone -->
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="icon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +47,7 @@
             --peach-velvet: #FFAE8A;
             --pomegranate:  #E84B6E;
             --ash-mauve:    #9E83A4;
+            --muted-text:   #B59CBB;
 
             --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
             --font-body:    'Inter', system-ui, -apple-system, sans-serif;
@@ -69,9 +70,26 @@
             --carmine-hover:#D38CDC;
         }
 
+        /* Moonstone — sky-blue accent over restrained slate; syntax colors stay warm. */
+        :root[data-flavor="moonstone"] {
+            --crypt:        #0F1319;
+            --crypt-rgb:    15, 19, 25;
+            --tabstrip:     #161B23;
+            --boudoir:      #1D232E;
+            --velvet:       #252D3B;
+            --velvet-rgb:   37, 45, 59;
+            --selection:    #384355;
+            --selection-rgb:56, 67, 85;
+            --carmine:      #75A6D8;
+            --carmine-rgb:  117, 166, 216;
+            --carmine-hover:#8ABCEF;
+        }
+
         /* Conteúdo alternado por flavor (hexes, nomes) */
-        [data-flavor="base"] .fl-amethyst { display: none; }
-        [data-flavor="amethyst"] .fl-base { display: none; }
+        .fl-base, .fl-amethyst, .fl-moonstone { display: none; }
+        [data-flavor="base"] .fl-base,
+        [data-flavor="amethyst"] .fl-amethyst,
+        [data-flavor="moonstone"] .fl-moonstone { display: inline; }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -130,7 +148,7 @@
             font-weight: 500;
             letter-spacing: 0.42em;
             text-transform: uppercase;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             margin-bottom: 1.5rem;
         }
 
@@ -264,7 +282,7 @@
 
         .section-subtitle {
             margin-left: 66px;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             font-style: italic;
             font-family: var(--font-display);
             font-size: 1.15rem;
@@ -322,7 +340,7 @@
         .swatch-name {
             font-family: var(--font-display);
             font-size: 1.35rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--pearl);
             margin-bottom: 0.25rem;
             letter-spacing: -0.01em;
@@ -330,7 +348,7 @@
 
         .swatch-role {
             font-size: 0.78rem;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             line-height: 1.4;
         }
 
@@ -372,7 +390,7 @@
             margin-left: 1rem;
             font-family: var(--font-mono);
             font-size: 0.78rem;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
         }
 
         .editor-titlebar .file strong {
@@ -391,9 +409,8 @@
             padding: 0.7rem 1.1rem;
             font-family: var(--font-mono);
             font-size: 0.78rem;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             border-right: 1px solid rgba(0,0,0,0.3);
-            cursor: pointer;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -415,7 +432,7 @@
 
         .editor-body {
             display: grid;
-            grid-template-columns: 50px 1fr;
+            grid-template-columns: 50px minmax(0, 1fr);
             min-height: 480px;
         }
 
@@ -424,8 +441,8 @@
             padding: 1.2rem 0;
             text-align: right;
             font-family: var(--font-mono);
-            font-size: 0.78rem;
-            color: rgba(158,131,164,0.5);
+            font-size: 0.88rem;
+            color: var(--muted-text);
             user-select: none;
             line-height: 1.65;
         }
@@ -513,7 +530,7 @@
             margin-left: auto;
             display: flex;
             gap: 1.2rem;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
         }
         .editor-statusbar .right span strong {
             color: var(--pearl);
@@ -523,7 +540,7 @@
         /* ============== TOKEN MAP ============== */
         .token-map {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
             gap: 0.6rem;
             background: var(--velvet);
             padding: 1.5rem;
@@ -532,7 +549,7 @@
         }
         .token-row {
             display: grid;
-            grid-template-columns: 14px 110px 1fr;
+            grid-template-columns: 14px minmax(0, 1fr);
             gap: 0.8rem;
             align-items: center;
             padding: 0.5rem 0.7rem;
@@ -550,9 +567,13 @@
             border-radius: 4px;
         }
         .token-name {
-            color: var(--ash-mauve);
+            color: var(--muted-text);
         }
         .token-sample {
+            grid-column: 2;
+            background: var(--crypt);
+            padding: 0.25rem 0.4rem;
+            border-radius: 4px;
             color: var(--pearl);
         }
 
@@ -572,7 +593,7 @@
             margin-bottom: 0.5rem;
         }
         footer .meta {
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             font-size: 0.85rem;
             margin-top: 1rem;
         }
@@ -598,7 +619,7 @@
             gap: 0.15rem;
             padding: 0.2rem;
             border-radius: 999px;
-            background: rgba(var(--velvet-rgb),0.72);
+            background: var(--velvet);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(var(--carmine-rgb),0.18);
         }
@@ -607,7 +628,7 @@
             font-size: 0.72rem;
             font-weight: 600;
             letter-spacing: 0.08em;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             background: transparent;
             border: none;
             cursor: pointer;
@@ -631,7 +652,7 @@
             gap: 0.15rem;
             padding: 0.2rem;
             border-radius: 999px;
-            background: rgba(var(--velvet-rgb),0.72);
+            background: var(--velvet);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(var(--carmine-rgb),0.18);
         }
@@ -640,7 +661,7 @@
             font-size: 0.72rem;
             font-weight: 600;
             letter-spacing: 0.08em;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             background: transparent;
             border: none;
             cursor: pointer;
@@ -673,7 +694,7 @@
         }
         .flavors-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
             gap: 1.2rem;
         }
         .flavor-card {
@@ -730,12 +751,15 @@
         .flavor-card .strip span { flex: 1; }
         .flavor-card .flavor-mood {
             font-size: 0.85rem;
-            color: var(--ash-mauve);
+            color: var(--muted-text);
             line-height: 1.55;
         }
         .flavor-card .flavor-hex {
             font-family: var(--font-mono);
             font-size: 0.78rem;
+            background: var(--crypt);
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
         }
 
         @media (max-width: 680px) {
@@ -749,10 +773,29 @@
             .section-num { min-width: auto; }
             .palette { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
             .swatch-color { height: 100px; }
-            .editor-body { grid-template-columns: 32px 1fr; }
-            .gutter .ln { padding: 0 0.4rem; font-size: 0.7rem; }
+            .editor-body { grid-template-columns: 32px minmax(0, 1fr); }
+            .gutter { font-size: 0.72rem; }
+            .gutter .ln { padding: 0 0.4rem; }
             pre { font-size: 0.72rem; }
             .editor-statusbar { flex-wrap: wrap; gap: 0.6rem; font-size: 0.65rem; }
+        }
+        .editor { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+        .editor-tabs { min-width: 0; overflow-x: auto; }
+        .code-area { min-width: 0; }
+        .editor-statusbar .right { flex-wrap: wrap; gap: 0.5rem 1rem; min-width: 0; }
+        :focus-visible { outline: 2px solid var(--carmine); outline-offset: 3px; }
+        @media (max-width: 680px) {
+            .flavor-switch { top: 3.8rem; max-width: calc(100vw - 2rem); }
+            .hero { padding-top: 7rem; }
+        }
+        @media (max-width: 380px) {
+            .flavor-switch { left: 0.5rem; }
+            .lang-switch { right: 0.5rem; }
+            .flavor-switch button, .lang-switch button { padding: 0.4rem; letter-spacing: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; }
         }
     </style>
 </head>
@@ -764,6 +807,7 @@
 <div class="flavor-switch" role="group" aria-label="Flavor">
     <button type="button" data-set-flavor="base">🥀 <span class="lang-pt">Vinho</span><span class="lang-en">Wine</span></button>
     <button type="button" data-set-flavor="amethyst">◆ <span class="lang-pt">Ametista</span><span class="lang-en">Amethyst</span></button>
+    <button type="button" data-set-flavor="moonstone">☾ Moonstone</button>
 </div>
 <div class="wrap">
 
@@ -774,7 +818,7 @@
         <div class="subtitle"><span class="lang-pt">calor de cripta para noites de código</span><span class="lang-en">crypt warmth for nights of code</span></div>
         <div class="ornament">❦</div>
         <p class="lead">
-            <span class="lang-pt">Treze cores destiladas em torno de um fundo rosado-vinho. Accents quentes — carmim, lavanda, mint absinto, pêssego veludo, champagne — sobre <em>Boudoir</em> <span style="color:var(--carmine)"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span></span>. Identidade própria, atmosfera de cripta vampírica.</span><span class="lang-en">Thirteen colours distilled around a rosé-wine background. Warm accents — carmine, wisteria, absinthe mint, peach velvet, champagne — over <em>Boudoir</em> <span style="color:var(--carmine)"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span></span>. An identity of its own, the atmosphere of a vampire crypt.</span>
+            <span class="lang-pt">Treze cores, três atmosferas: vinho à luz de velas, violeta ao crepúsculo e azul sob a lua. Texto creme, comentários mauve e accents de conteúdo preservam a identidade Carmilla sobre <em>Boudoir</em> <span style="color:var(--carmine)"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span><span class="fl-moonstone">#1D232E</span></span>. Identidade própria, atmosfera de cripta vampírica.</span><span class="lang-en">Thirteen colours, three atmospheres: candlelit wine, dusk violet and moonlit blue. Cream text, mauve comments and shared syntax accents preserve Carmilla’s identity over <em>Boudoir</em> <span style="color:var(--carmine)"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span><span class="fl-moonstone">#1D232E</span></span>. An identity of its own, the atmosphere of a vampire crypt.</span>
         </p>
         <div class="cta">
             <a class="btn btn-primary" href="https://marketplace.visualstudio.com/items?itemName=muowl.carmilla">
@@ -798,37 +842,37 @@
 
         <div class="palette">
             <div class="swatch">
-                <div class="swatch-color" style="background:var(--crypt)"><span class="swatch-hex"><span class="fl-base">#16101A</span><span class="fl-amethyst">#18101A</span></span></div>
+                <div class="swatch-color" style="background:var(--crypt)"><span class="swatch-hex"><span class="fl-base">#16101A</span><span class="fl-amethyst">#18101A</span><span class="fl-moonstone">#0F1319</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Crypt</div>
                     <div class="swatch-role"><span class="lang-pt">background mais profundo — página, gutter</span><span class="lang-en">deepest background — page, gutter</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:var(--boudoir)"><span class="swatch-hex"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span></span></div>
+                <div class="swatch-color" style="background:var(--boudoir)"><span class="swatch-hex"><span class="fl-base">#2E1B2D</span><span class="fl-amethyst">#2A1B2E</span><span class="fl-moonstone">#1D232E</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Boudoir</div>
                     <div class="swatch-role"><span class="lang-pt">background principal — editor, painéis</span><span class="lang-en">main background — editor, panels</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:var(--velvet)"><span class="swatch-hex"><span class="fl-base">#3A2438</span><span class="fl-amethyst">#35243A</span></span></div>
+                <div class="swatch-color" style="background:var(--velvet)"><span class="swatch-hex"><span class="fl-base">#3A2438</span><span class="fl-amethyst">#35243A</span><span class="fl-moonstone">#252D3B</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Velvet</div>
                     <div class="swatch-role"><span class="lang-pt">superfície elevada — cards, status bar</span><span class="lang-en">elevated surface — cards, status bar</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:var(--selection)"><span class="swatch-hex"><span class="fl-base">#523950</span><span class="fl-amethyst">#4C3952</span></span></div>
+                <div class="swatch-color" style="background:var(--selection)"><span class="swatch-hex"><span class="fl-base">#523950</span><span class="fl-amethyst">#4C3952</span><span class="fl-moonstone">#384355</span></span></div>
                 <div class="swatch-meta">
                     <div class="swatch-name">Selection</div>
                     <div class="swatch-role"><span class="lang-pt">linha atual, seleção, ranges</span><span class="lang-en">current line, selection, ranges</span></div>
                 </div>
             </div>
             <div class="swatch">
-                <div class="swatch-color" style="background:var(--carmine)"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)"><span class="fl-base">#FF5FA2</span><span class="fl-amethyst">#C474D3</span></span></div>
+                <div class="swatch-color" style="background:var(--carmine)"><span class="swatch-hex" style="background:rgba(22,16,26,0.7);color:var(--pearl)"><span class="fl-base">#FF5FA2</span><span class="fl-amethyst">#C474D3</span><span class="fl-moonstone">#75A6D8</span></span></div>
                 <div class="swatch-meta">
-                    <div class="swatch-name" style="color:var(--carmine)"><span class="fl-base">Carmine</span><span class="fl-amethyst">Amethyst</span></div>
+                    <div class="swatch-name" style="color:var(--carmine)"><span class="fl-base">Carmine</span><span class="fl-amethyst">Amethyst</span><span class="fl-moonstone">Moonstone</span></div>
                     <div class="swatch-role">keywords, storage — <code style="font-family:var(--font-mono);font-size:0.72rem;color:var(--carmine)">const, let, class, if, return</code></div>
                 </div>
             </div>
@@ -877,7 +921,7 @@
             <div class="swatch">
                 <div class="swatch-color" style="background:#9E83A4"><span class="swatch-hex">#9E83A4</span></div>
                 <div class="swatch-meta">
-                    <div class="swatch-name" style="color:#9E83A4">Ash Mauve</div>
+                    <div class="swatch-name" style="color:var(--muted-text)">Ash Mauve</div>
                     <div class="swatch-role"><span class="lang-pt">comentários — mauve quente que dialoga com o fundo</span><span class="lang-en">comments — a warm mauve that converses with the background</span></div>
                 </div>
             </div>
@@ -892,12 +936,12 @@
     </section>
 
     <!-- ============== EDITOR MOCKUP ============== -->
-    <section>
+    <section id="editor-preview">
         <div class="section-head">
             <div class="section-num">II.</div>
-            <h2 class="section-title"><span class="lang-pt">No editor</span><span class="lang-en">In the editor</span></h2>
+            <h2 class="section-title">Carmilla<span class="fl-amethyst"> Amethyst</span><span class="fl-moonstone"> Moonstone</span></h2>
         </div>
-        <p class="section-subtitle"><span class="lang-pt">como ela se comporta em código real</span><span class="lang-en">how it behaves in real code</span></p>
+        <p class="section-subtitle"><span class="lang-pt">prévia TextMate gerada com as regras do tema — não é uma captura do VS Code</span><span class="lang-en">TextMate preview generated from the theme rules — not a VS Code screenshot</span></p>
 
         <div class="editor">
             <div class="editor-titlebar">
@@ -912,80 +956,49 @@
                 <div class="editor-tab">README.md</div>
             </div>
             <div class="editor-body">
-                <div class="gutter">
-<div class="ln">1</div>
-<div class="ln">2</div>
-<div class="ln">3</div>
-<div class="ln">4</div>
-<div class="ln modified">5</div>
-<div class="ln modified">6</div>
-<div class="ln">7</div>
-<div class="ln">8</div>
-<div class="ln">9</div>
-<div class="ln">10</div>
-<div class="ln">11</div>
-<div class="ln">12</div>
-<div class="ln">13</div>
-<div class="ln">14</div>
-<div class="ln">15</div>
-<div class="ln">16</div>
-<div class="ln">17</div>
-<div class="ln">18</div>
-<div class="ln">19</div>
-<div class="ln">20</div>
-<div class="ln active">21</div>
-<div class="ln">22</div>
-<div class="ln">23</div>
-<div class="ln">24</div>
-<div class="ln added">25</div>
-<div class="ln added">26</div>
-<div class="ln added">27</div>
-<div class="ln added">28</div>
-<div class="ln added">29</div>
-                </div>
-                <div class="code-area">
-<pre><span class="c lang-pt">// Carmilla — paleta autoral, accents quentes sobre vinho</span><span class="c lang-en">// Carmilla — an original palette, warm accents over wine</span>
-<span class="c lang-pt">// Comentários em ash-mauve dialogam com o boudoir do fundo.</span><span class="c lang-en">// Comments in ash-mauve converse with the boudoir background.</span>
-
-<span class="k">import</span> { <span class="t">Slayer</span> } <span class="k">from</span> <span class="s">"./hunters"</span><span class="punc">;</span>
-
-<span class="k">class</span> <span class="t">Countess</span> <span class="k">extends</span> <span class="t">Immortal</span> <span class="punc">{</span>
-    <span class="k">private readonly</span> <span class="p">name</span><span class="punc">:</span> <span class="t">string</span><span class="punc">;</span>
-    <span class="k">private</span> <span class="p">centuriesLived</span><span class="punc">:</span> <span class="t">number</span><span class="punc">;</span>
-
-    <span class="f">constructor</span><span class="punc">(</span><span class="p">name</span><span class="punc">:</span> <span class="t">string</span><span class="punc">,</span> <span class="p">age</span><span class="punc">:</span> <span class="t">number</span><span class="punc">)</span> <span class="punc">{</span>
-        <span class="k">super</span><span class="punc">()</span><span class="punc">;</span>
-        <span class="i">this</span><span class="punc">.</span><span class="p">name</span> <span class="punc">=</span> <span class="p">name</span><span class="punc">;</span>
-        <span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">=</span> <span class="p">age</span><span class="punc">;</span>
-    <span class="punc">}</span>
-
-    <span class="f">whisper</span><span class="punc">(</span><span class="p">guest</span><span class="punc">:</span> <span class="t">string</span><span class="punc">)</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span>
-        <span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">+=</span> <span class="n">0.01</span><span class="punc">;</span>
-        <span class="k">return</span> <span class="s">`🥀 ${</span><span class="i">this</span><span class="punc">.</span><span class="p">name</span><span class="s lang-pt">} sussurra ao ouvido de ${</span><span class="s lang-en">} whispers to ${</span><span class="p">guest</span><span class="s">}`</span><span class="punc">;</span>
-    <span class="punc">}</span>
-
-    <span class="f">getEra</span><span class="punc">()</span><span class="punc">:</span> <span class="t">string</span> <span class="punc">{</span><div class="current-line">        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">5</span><span class="punc">)</span> <span class="k">return</span> <span class="s lang-pt">"🕯️ Antiga das antigas"</span><span class="s lang-en">"🕯️ Ancient of ancients"</span><span class="punc">;</span></div>        <span class="k">if</span> <span class="punc">(</span><span class="i">this</span><span class="punc">.</span><span class="p">centuriesLived</span> <span class="punc">&gt;</span> <span class="n">1</span><span class="punc">)</span> <span class="k">return</span> <span class="s lang-pt">"🌙 Imortal madura"</span><span class="s lang-en">"🌙 A mature immortal"</span><span class="punc">;</span>
-        <span class="k">return</span> <span class="s lang-pt">"🩸 Recém-virada"</span><span class="s lang-en">"🩸 Newly turned"</span><span class="punc">;</span>
-    <span class="punc">}</span>
-<span class="punc">}</span>
-
-<span class="k">const</span> <span class="p">carmilla</span> <span class="punc">=</span> <span class="k">new</span> <span class="t">Countess</span><span class="punc">(</span><span class="s">"Mircalla Karnstein"</span><span class="punc">,</span> <span class="n">3</span><span class="punc">)</span><span class="punc">;</span>
-<span class="k">const</span> <span class="p">awake</span><span class="punc">:</span> <span class="t">boolean</span> <span class="punc">=</span> <span class="n">true</span><span class="punc">;</span>
-<span class="k">if</span> <span class="punc">(</span><span class="p">awake</span><span class="punc">)</span> <span class="p">console</span><span class="punc">.</span><span class="f">log</span><span class="punc">(</span><span class="p">carmilla</span><span class="punc">.</span><span class="f">getEra</span><span class="punc">()</span><span class="punc">)</span><span class="punc">;</span>
-<span class="k">else</span> <span class="p">console</span><span class="punc">.</span><span class="err">error</span><span class="punc">(</span><span class="s lang-pt">"❌ ainda repousa no caixão"</span><span class="s lang-en">"❌ still resting in the coffin"</span><span class="punc">)</span><span class="punc">;</span></pre>
-                </div>
+<!-- GENERATED SAMPLE START -->
+<div class="gutter" aria-hidden="true"><div class="ln">1</div><div class="ln">2</div><div class="ln">3</div><div class="ln">4</div><div class="ln">5</div><div class="ln">6</div><div class="ln">7</div><div class="ln">8</div><div class="ln">9</div><div class="ln">10</div><div class="ln">11</div><div class="ln">12</div><div class="ln">13</div><div class="ln">14</div><div class="ln">15</div><div class="ln">16</div><div class="ln">17</div><div class="ln">18</div><div class="ln">19</div><div class="ln">20</div><div class="ln">21</div><div class="ln">22</div><div class="ln">23</div><div class="ln">24</div><div class="ln">25</div><div class="ln">26</div><div class="ln">27</div><div class="ln">28</div></div>
+<div class="code-area" tabindex="0" aria-label="TypeScript preview"><pre><code><span style="color:#9E83A4;font-style:italic">// Carmilla — warm accents over wine.</span>
+<span style="color:#9E83A4;font-style:italic">// TextMate preview; language servers may refine token colors.</span>
+<span style="color:var(--carmine)">class</span><span style="color:#F5EADA"> </span><span style="color:#5ED0D8">Countess</span><span style="color:#F5EADA"> {</span>
+<span style="color:#F5EADA">    </span><span style="color:var(--carmine)">private</span><span style="color:#F5EADA"> name: </span><span style="color:#5ED0D8">string</span><span style="color:#F5EADA">;</span>
+<span style="color:#F5EADA">    </span><span style="color:var(--carmine)">private</span><span style="color:#F5EADA"> centuriesLived: </span><span style="color:#5ED0D8">number</span><span style="color:#F5EADA">;</span>
+<span style="color:#F5EADA"></span>
+<span style="color:#F5EADA">    </span><span style="color:var(--carmine)">constructor</span><span style="color:#F5EADA">(name: </span><span style="color:#5ED0D8">string</span><span style="color:#F5EADA">, age: </span><span style="color:#5ED0D8">number</span><span style="color:#F5EADA">) {</span>
+<span style="color:#F5EADA">        </span><span style="color:#D5A6FF;font-style:italic">this</span><span style="color:#F5EADA">.name = name;</span>
+<span style="color:#F5EADA">        </span><span style="color:#D5A6FF;font-style:italic">this</span><span style="color:#F5EADA">.centuriesLived = age;</span>
+<span style="color:#F5EADA">    }</span>
+<span style="color:#F5EADA"></span>
+<span style="color:#F5EADA">    </span><span style="color:#7AE0A6">whisper</span><span style="color:#F5EADA">(guest: </span><span style="color:#5ED0D8">string</span><span style="color:#F5EADA">): </span><span style="color:#5ED0D8">string</span><span style="color:#F5EADA"> {</span>
+<span style="color:#F5EADA">        </span><span style="color:var(--carmine)">return</span><span style="color:#F5EADA"> </span><span style="color:#EDD795">`${</span><span style="color:#D5A6FF;font-style:italic">this</span><span style="color:#F5EADA">.name</span><span style="color:#EDD795">} whispers to ${</span><span style="color:#F5EADA">guest</span><span style="color:#EDD795">}`</span><span style="color:#F5EADA">;</span>
+<span style="color:#F5EADA">    }</span>
+<span style="color:#F5EADA"></span>
+<span style="color:#F5EADA">    </span><span style="color:#7AE0A6">getEra</span><span style="color:#F5EADA">(): </span><span style="color:#5ED0D8">string</span><span style="color:#F5EADA"> {</span>
+<span style="color:#F5EADA">        </span><span style="color:var(--carmine)">if</span><span style="color:#F5EADA"> (</span><span style="color:#D5A6FF;font-style:italic">this</span><span style="color:#F5EADA">.centuriesLived &gt; </span><span style="color:#FFAE8A">5</span><span style="color:#F5EADA">) </span><span style="color:var(--carmine)">return</span><span style="color:#F5EADA"> </span><span style="color:#EDD795">&quot;Ancient&quot;</span><span style="color:#F5EADA">;</span>
+<span style="color:#F5EADA">        </span><span style="color:var(--carmine)">if</span><span style="color:#F5EADA"> (</span><span style="color:#D5A6FF;font-style:italic">this</span><span style="color:#F5EADA">.centuriesLived &gt; </span><span style="color:#FFAE8A">1</span><span style="color:#F5EADA">) </span><span style="color:var(--carmine)">return</span><span style="color:#F5EADA"> </span><span style="color:#EDD795">&quot;Immortal&quot;</span><span style="color:#F5EADA">;</span>
+<span style="color:#F5EADA">        </span><span style="color:var(--carmine)">return</span><span style="color:#F5EADA"> </span><span style="color:#EDD795">&quot;Newly turned&quot;</span><span style="color:#F5EADA">;</span>
+<span style="color:#F5EADA">    }</span>
+<span style="color:#F5EADA">}</span>
+<span style="color:#F5EADA"></span>
+<span style="color:var(--carmine)">const</span><span style="color:#F5EADA"> carmilla = </span><span style="color:var(--carmine)">new</span><span style="color:#F5EADA"> </span><span style="color:#7AE0A6">Countess</span><span style="color:#F5EADA">(</span><span style="color:#EDD795">&quot;Mircalla Karnstein&quot;</span><span style="color:#F5EADA">, </span><span style="color:#FFAE8A">3</span><span style="color:#F5EADA">);</span>
+<span style="color:var(--carmine)">const</span><span style="color:#F5EADA"> awake: </span><span style="color:#5ED0D8">boolean</span><span style="color:#F5EADA"> = </span><span style="color:#FFAE8A">true</span><span style="color:#F5EADA">;</span>
+<span style="color:var(--carmine)">const</span><span style="color:#F5EADA"> visitor: </span><span style="color:#5ED0D8">string</span><span style="color:#F5EADA"> | </span><span style="color:#5ED0D8">null</span><span style="color:#F5EADA"> = </span><span style="color:#D5A6FF;font-style:italic">null</span><span style="color:#F5EADA">;</span>
+<span style="color:var(--carmine)">const</span><span style="color:#F5EADA"> absent = </span><span style="color:#D5A6FF;font-style:italic">undefined</span><span style="color:#F5EADA">;</span>
+<span style="color:var(--carmine)">if</span><span style="color:#F5EADA"> (awake) console.</span><span style="color:#7AE0A6">log</span><span style="color:#F5EADA">(carmilla.</span><span style="color:#7AE0A6">getEra</span><span style="color:#F5EADA">());</span>
+<span style="color:var(--carmine)">else</span><span style="color:#F5EADA"> console.</span><span style="color:#7AE0A6">error</span><span style="color:#F5EADA">(</span><span style="color:#EDD795">&quot;Still resting in the coffin&quot;</span><span style="color:#F5EADA">);</span></code></pre></div>
+<!-- GENERATED SAMPLE END -->
             </div>
             <div class="editor-statusbar">
                 <span class="branch">⎇ main</span>
-                <span>↑ 2 ↓ 0</span>
-                <span style="color:var(--pomegranate);">● 0 errors</span>
-                <span style="color:var(--peach-velvet);">▲ 1 warning</span>
+                <span>TextMate preview</span>
+
+
                 <div class="right">
-                    <span>Ln <strong>21</strong>, Col <strong>9</strong></span>
+
                     <span>Spaces: <strong>4</strong></span>
                     <span>UTF-8</span>
                     <span><strong>TypeScript</strong></span>
-                    <span>🥀 <strong style="color:var(--carmine);">Carmilla<span class="fl-amethyst"> Amethyst</span></strong></span>
+                    <span>🥀 <strong style="color:var(--carmine);">Carmilla<span class="fl-amethyst"> Amethyst</span><span class="fl-moonstone"> Moonstone</span></strong></span>
                 </div>
             </div>
         </div>
@@ -1000,13 +1013,13 @@
         <p class="section-subtitle"><span class="lang-pt">cada token, sua cor, seu papel</span><span class="lang-en">each token, its colour, its role</span></p>
 
         <div class="token-map">
-            <div class="token-row"><span class="token-dot" style="background:var(--carmine)"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:var(--carmine)">const</span> x <span style="color:var(--carmine)">=</span> <span style="color:#EDD795">"…"</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:var(--carmine)"></span><span class="token-name">keyword</span><span class="token-sample"><span style="color:var(--carmine)">const</span> x <span style="color:var(--pearl)">=</span> <span style="color:#EDD795">"…"</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#D5A6FF"></span><span class="token-name">variable.lang</span><span class="token-sample"><span style="color:#D5A6FF;font-style:italic">this</span>.name</span></div>
             <div class="token-row"><span class="token-dot" style="background:#5ED0D8"></span><span class="token-name">entity.type</span><span class="token-sample">: <span style="color:#5ED0D8">string</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#7AE0A6"></span><span class="token-name">entity.function</span><span class="token-sample"><span style="color:#7AE0A6">log</span>()</span></div>
             <div class="token-row"><span class="token-dot" style="background:#EDD795"></span><span class="token-name">string</span><span class="token-sample"><span style="color:#EDD795">"Carmilla"</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#FFAE8A"></span><span class="token-name">constant.numeric</span><span class="token-sample"><span style="color:#FFAE8A">42</span></span></div>
-            <div class="token-row"><span class="token-dot" style="background:#E84B6E"></span><span class="token-name">invalid</span><span class="token-sample"><span style="color:#E84B6E">undefined_var</span></span></div>
+            <div class="token-row"><span class="token-dot" style="background:#E84B6E"></span><span class="token-name">invalid</span><span class="token-sample"><span style="color:#E84B6E">invalid token</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#9E83A4"></span><span class="token-name">comment</span><span class="token-sample"><span style="color:#9E83A4;font-style:italic">// ash mauve</span></span></div>
             <div class="token-row"><span class="token-dot" style="background:#F5EADA"></span><span class="token-name">variable</span><span class="token-sample"><span style="color:#F5EADA">guest</span></span></div>
         </div>
@@ -1022,6 +1035,10 @@
 
         <p class="flavors-lead">
             <span class="lang-pt">Um flavor troca o accent de assinatura e re-temperatura os fundos neutros; as cores de conteúdo — Pearl, os tons de sintaxe, os comentários em Ash Mauve — permanecem intocadas. O <strong>Amethyst</strong> nasceu de uma inspiração orquídea <code>#7A4186</code>: o matiz foi mantido exato (OKLCH ≈ 320°) e elevado até a legibilidade — ≈ 5.2:1 (AA) sobre seu Boudoir — enquanto os fundos vinho giram de 303° para 286° com saturação e luminosidade idênticas. Escolha um flavor abaixo e veja a página inteira mudar de luz.</span><span class="lang-en">A flavor swaps the signature accent and re-temperatures the neutral backgrounds; the content colours — Pearl, the syntax hues, the Ash-Mauve comments — stay untouched. <strong>Amethyst</strong> was born from an orchid inspiration, <code>#7A4186</code>: its hue was kept exact (OKLCH ≈ 320°) and lifted into legibility — ≈ 5.2:1 (AA) on its Boudoir — while the wine backgrounds rotate from 303° to 286° at identical saturation and lightness. Pick a flavor below and watch the whole page change its light.</span>
+        </p>
+
+        <p class="flavors-lead">
+            <span class="lang-pt"><strong>Moonstone</strong> parte do azul-céu do cabelo da Rem: a amostra <code>#90C2F5</code> foi escurecida para <code>#75A6D8</code>, mantendo matiz e intensidade de cor. O destaque fica em 6,16:1 sobre o editor. Os fundos preservam a luminosidade perceptual do Carmilla com menos saturação e um matiz de ardósia; Pearl, Ash Mauve e as cores de conteúdo continuam iguais.</span><span class="lang-en"><strong>Moonstone</strong> starts from the sky blue of Rem’s hair: the sample <code>#90C2F5</code> was darkened to <code>#75A6D8</code>, retaining hue and chroma. The accent reaches 6.16:1 on the editor. Slate backgrounds retain Carmilla’s perceptual lightness with reduced chroma; Pearl, Ash Mauve and the content colors stay unchanged.</span>
         </p>
 
         <div class="flavors-grid">
@@ -1059,6 +1076,23 @@
                     <span class="lang-pt">O mesmo boudoir ao crepúsculo — violeta, accent ametista </span><span class="lang-en">The same boudoir at dusk — violet, amethyst accent </span><span class="flavor-hex" style="color:#C474D3">#C474D3</span>
                 </div>
             </button>
+            <button type="button" class="flavor-card" data-set-flavor="moonstone">
+                <div class="flavor-top">
+                    <span class="flavor-name">Carmilla Moonstone</span>
+                    <span class="flavor-state"><span class="lang-pt">ativo</span><span class="lang-en">active</span></span>
+                </div>
+                <div class="strip" aria-hidden="true">
+                    <span style="background:#0F1319"></span>
+                    <span style="background:#1D232E"></span>
+                    <span style="background:#252D3B"></span>
+                    <span style="background:#384355"></span>
+                    <span style="background:#75A6D8"></span>
+                    <span style="background:#8ABCEF"></span>
+                </div>
+                <div class="flavor-mood">
+                    <span class="lang-pt">O boudoir sob a lua — azul inspirado na Rem sobre ardósia discreta. Prévia da próxima versão. </span><span class="lang-en">The boudoir in moonlight — Rem-inspired blue over restrained slate. Preview of the next release. </span><span class="flavor-hex" style="color:#75A6D8">#75A6D8</span>
+                </div>
+            </button>
         </div>
     </section>
 
@@ -1067,7 +1101,7 @@
         <div class="ornament">❦</div>
         <div class="signature">Carmilla</div>
         <div class="meta">
-            <span class="lang-pt">v1.6 · 13 tokens · 2 flavors · disponível no VS Code Marketplace</span><span class="lang-en">v1.6 · 13 tokens · 2 flavors · available on the VS Code Marketplace</span> <br>
+            <span class="lang-pt">13 tokens · 3 flavors · Moonstone em prévia</span><span class="lang-en">13 tokens · 3 flavors · Moonstone preview</span> <br>
             <a href="https://github.com/Muowl/carmilla" style="color:var(--carmine);text-decoration:none;">github.com/Muowl/carmilla</a>
         </div>
     </footer>
@@ -1078,16 +1112,24 @@
     (function () {
         var root = document.documentElement;
 
+        function readPreference(key) {
+            try { return localStorage.getItem(key); } catch (_) { return null; }
+        }
+        function savePreference(key, value) {
+            try { localStorage.setItem(key, value); } catch (_) { /* Controls still work without persistence. */ }
+        }
+
         // Idioma
         var langButtons = document.querySelectorAll('.lang-switch button');
-        applyLang(localStorage.getItem('carmilla-lang') || 'pt');
+        applyLang(readPreference('carmilla-lang'));
         langButtons.forEach(function (b) {
             b.addEventListener('click', function () { applyLang(b.dataset.setLang); });
         });
         function applyLang(lang) {
+            lang = lang === 'en' ? 'en' : 'pt';
             root.dataset.lang = lang;
             root.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
-            localStorage.setItem('carmilla-lang', lang);
+            savePreference('carmilla-lang', lang);
             langButtons.forEach(function (b) {
                 var on = b.dataset.setLang === lang;
                 b.classList.toggle('active', on);
@@ -1098,14 +1140,15 @@
         // Flavor — troca as variáveis CSS da página inteira (contrato de flavor ao vivo)
         var flavorButtons = document.querySelectorAll('[data-set-flavor]');
         var themeMeta = document.querySelector('meta[name="theme-color"]');
-        applyFlavor(localStorage.getItem('carmilla-flavor') || 'base');
+        applyFlavor(readPreference('carmilla-flavor'));
         flavorButtons.forEach(function (b) {
             b.addEventListener('click', function () { applyFlavor(b.dataset.setFlavor); });
         });
         function applyFlavor(flavor) {
+            flavor = ['base', 'amethyst', 'moonstone'].indexOf(flavor) >= 0 ? flavor : 'base';
             root.dataset.flavor = flavor;
-            localStorage.setItem('carmilla-flavor', flavor);
-            if (themeMeta) themeMeta.setAttribute('content', flavor === 'amethyst' ? '#18101A' : '#16101A');
+            savePreference('carmilla-flavor', flavor);
+            if (themeMeta) themeMeta.setAttribute('content', { base: '#16101A', amethyst: '#18101A', moonstone: '#0F1319' }[flavor]);
             flavorButtons.forEach(function (b) {
                 var on = b.dataset.setFlavor === flavor;
                 b.classList.toggle('active', on);
