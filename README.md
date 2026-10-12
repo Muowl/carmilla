@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/brand/icon.png" alt="Carmilla Arco icon" width="96" height="96">
+  <img src="assets/brand/icon.png" alt="Carmilla Lua icon" width="96" height="96">
 </p>
 <h1 align="center">Carmilla</h1>
 <p align="center"><em>Crypt warmth for nights of code.</em></p>
@@ -22,7 +22,7 @@ Carmilla pairs soft backgrounds with distinct colors for types, functions, strin
 | **Carmilla Amethyst** | Amethyst `#C474D3` | The same room at violet dusk |
 | **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-**Moonstone and the Arco icon are included in source builds for the next release.** Install the VSIX built from this branch to try them before Marketplace publication.
+**Moonstone and the Lua icon are included in source builds for the next release.** Install the VSIX built from this branch to try them before Marketplace publication.
 
 ## Install
 
@@ -86,12 +86,12 @@ Colors live in [`palette/carmilla.toml`](palette/carmilla.toml); VS Code mapping
 | `npm run colors` | Inspect Moonstone’s OKLCH, contrast and color-vision simulation measurements |
 | `npm run test:showcase` | Check browser accessibility, mobile layouts and saved preferences |
 | `npm run preview` | Refresh the flavor preview images |
-| `npm run brand` | Export the approved Arco artwork for the extension and browser |
+| `npm run brand` | Export the approved Lua artwork for the extension and browser |
 | `npm run package` | Validate and build the VSIX |
 
 For browser commands, first run `npx playwright install chromium`, or set `CHROMIUM_PATH` to an existing Chromium executable. Open `ports/vscode/` in VS Code and press **F5** to launch the Extension Development Host, then select a Carmilla theme.
 
-Commit generated files with their sources. CI checks the themes and showcase, builds the VSIX, and verifies that the packaged changelog matches the root copy. Keep image exports together; see the [Arco asset notes](assets/brand/README.md).
+Commit generated files with their sources. CI checks the themes and showcase, builds the VSIX, and verifies that the packaged changelog matches the root copy. Keep image exports together; see the [Lua asset notes](assets/brand/README.md).
 
 VS Code is the current port. Zed, Alacritty, Chrome and GNOME Shell are planned. To propose another port, [open an issue](https://github.com/Muowl/carmilla/issues) or start from the TOML palette. Earlier Cinnabar and Larimar variants are preserved on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch.
 
@@ -102,7 +102,7 @@ VS Code is the current port. Zed, Alacritty, Chrome and GNOME Shell are planned.
 | [`palette/`](palette/) | Color source, design rationale and contrast measurements |
 | [`ports/vscode/`](ports/vscode/) | Extension manifest, template and generated themes |
 | [`scripts/`](scripts/) · [`tests/`](tests/) | Generation, previews and validation |
-| [`assets/`](assets/) | Arco artwork and flavor previews |
+| [`assets/`](assets/) | Lua artwork and flavor previews |
 | [`docs/`](docs/) | Archived standalone showcase, maintained here for previews and checks |
 
 ## License

@@ -1,6 +1,6 @@
-# Carmilla · Arco
+# Carmilla · Lua
 
-Arco is the approved Carmilla icon: an open, rounded C with a Carmine → Amethyst → Moonstone gradient. A fine pink/blue fringe adds a restrained chromatic aberration effect. The broad stroke and empty center keep the mark readable at Marketplace sizes.
+Lua is the approved Carmilla icon: a broad crescent with tapered tips with a Carmine → Amethyst → Moonstone gradient. A fine pink/blue fringe adds a restrained chromatic aberration effect. The broad crescent and generous cutout keep the mark readable at Marketplace sizes.
 
 - `icon-source.png` is the approved full-resolution artwork.
 - `icon.png` is the 256 × 256 export used in the repository README.

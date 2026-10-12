@@ -6,7 +6,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 ## [Unreleased]
 
 ### Changed
-- **Arco icon** — a minimal open C joins Carmine, Amethyst and Moonstone in one gradient, with subtle chromatic fringes. Updated Marketplace, README and browser assets, including a dedicated 32px favicon.
+- **Lua icon** — a minimal crescent joins Carmine, Amethyst and Moonstone in one gradient, with subtle chromatic fringes. Updated Marketplace, README and browser assets, including a dedicated 32px favicon.
 - Repository and Marketplace READMEs now lead with installation and flavor choice, with clearer source-build availability and focused development instructions.
 
 ### Fixed

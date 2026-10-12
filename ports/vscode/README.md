@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Muowl/carmilla/main/ports/vscode/icon.png" alt="Carmilla Arco icon" width="96" height="96">
+  <img src="https://raw.githubusercontent.com/Muowl/carmilla/main/ports/vscode/icon.png" alt="Carmilla Lua icon" width="96" height="96">
 </p>
 <h1 align="center">Carmilla</h1>
 <p align="center"><em>Crypt warmth for nights of code.</em></p>
@@ -32,7 +32,7 @@ code --install-extension muowl.carmilla
 | **Carmilla Amethyst** | Amethyst `#C474D3` | Soft violet dusk |
 | **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-Moonstone and the Arco icon are included in source builds for the next release. Until Marketplace publication, follow the [VSIX installation instructions](https://github.com/Muowl/carmilla#install) to try the current source build.
+Moonstone and the Lua icon are included in source builds for the next release. Until Marketplace publication, follow the [VSIX installation instructions](https://github.com/Muowl/carmilla#install) to try the current source build.
 
 ## Preview
 
