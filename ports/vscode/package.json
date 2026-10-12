@@ -67,7 +67,8 @@
     "package": "npm run generate && npm test && vsce package --no-dependencies",
     "publish": "npm run generate && npm test && vsce publish --no-dependencies",
     "test:showcase": "npm run check && node ../../scripts/preview.mjs",
-    "colors": "node ../../scripts/color-metrics.mjs"
+    "colors": "node ../../scripts/color-metrics.mjs",
+    "brand": "node ../../scripts/export-icon.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
