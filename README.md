@@ -22,8 +22,8 @@
 
 ## Why it exists
 
-Most dark themes lean to the cold side of the spectrum (icy blues and purples). Carmilla does the opposite:
-**thermal coherence** — everything leans warm. The detail that defines its identity is the comments in
+The Carmilla base palette favors warm wine backgrounds and cream text. Its flavors carry that
+content palette into different lighting, from violet dusk to Moonstone’s restrained blue slate. The detail that defines its identity is the comments in
 **Ash Mauve**, which converse with the background instead of clashing with it.
 
 ## Preview
@@ -31,6 +31,7 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
 <p align="center">
   <img src="assets/preview.png" alt="Carmilla TextMate preview with a TypeScript sample" width="720">
   <img src="assets/preview-amethyst.png" alt="Carmilla Amethyst TextMate preview with the same TypeScript sample" width="720">
+  <img src="assets/preview-moonstone.png" alt="Carmilla Moonstone TextMate preview: sky-blue accent over slate backgrounds" width="720">
 </p>
 
 These are generated TextMate previews, not VS Code screenshots. They use the shipped theme rules and a pinned VS Code TypeScript grammar; language servers may refine highlighting in the editor.
@@ -82,8 +83,9 @@ content colours stay constant, so a flavor reads as the same theme in a differen
 |-----------------------|-----------------------|--------------------------------------------|
 | **Carmilla** (base)   | Carmine `#FF5FA2`     | Rosé-wine boudoir by candlelight           |
 | **Carmilla Amethyst** | Amethyst `#C474D3`    | The same boudoir at dusk — violet twilight |
+| **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over restrained moonlit slate |
 
-Both ship in the VS Code extension; pick one under **Color Theme** (`Ctrl+K Ctrl+T`).
+All three are included in source builds; pick one under **Color Theme** (`Ctrl+K Ctrl+T`). **Moonstone is new for the next release** and can be installed from a locally built VSIX before Marketplace publication.
 Design rationale, contrast figures and known limitations in [`palette/PALETTE.md`](palette/PALETTE.md#flavors).
 (Two earlier variants, Cinnabar and Larimar, are preserved on the [`flavors`](https://github.com/Muowl/carmilla/tree/flavors) branch.)
 
@@ -110,17 +112,18 @@ Then activate it under **Color Theme** (`Ctrl+K Ctrl+T`) → **Carmilla**.
 Run `npm ci` in `ports/vscode/`. Edit [`palette/carmilla.toml`](palette/carmilla.toml) for colors and [`ports/vscode/theme.template.json`](ports/vscode/theme.template.json) for VS Code mappings. Then run:
 
 ```sh
-npm run generate       # both themes, packaged changelog and TextMate sample
+npm run generate       # all themes, packaged changelog and TextMate sample
 npm test               # generated-file, contrast, palette and grammar checks
 npx playwright install chromium
 npm run test:showcase  # accessibility, mobile layout and storage behavior
-npm run preview        # regenerate both preview images
+npm run preview        # regenerate all flavor preview images
+npm run colors         # Moonstone color rationale and measured contrasts
 npm run package        # validate and build the VSIX
 ```
 
 Commands above run from `ports/vscode/`. Set `CHROMIUM_PATH` to use an existing Chromium executable instead of Playwright's bundled browser. Browser checks and captures block external fonts for reproducibility.
 
-Open `ports/vscode/` in VS Code and press `F5` to launch the *Extension Development Host*, then select **Carmilla** or **Carmilla Amethyst** under **Color Theme**. Generated theme JSONs and the port's changelog should be committed with their sources. CI validates them before packaging.
+Open `ports/vscode/` in VS Code and press `F5` to launch the *Extension Development Host*, then select **Carmilla**, **Carmilla Amethyst** or **Carmilla Moonstone** under **Color Theme**. Generated theme JSONs and the port's changelog should be committed with their sources. CI validates them before packaging.
 
 Python's TextMate grammar gives `True`, `False` and `None` one shared scope, so they all use Wisteria; see the [documented grammar limitation](palette/PALETTE.md#known-limitations).
 

@@ -12,9 +12,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 - Archived showcase controls work when storage is blocked and recover from invalid saved preferences. Secondary text, keyboard focus, narrow layouts and reduced-motion support improved.
 
 ### Added
-- A shared theme template and TOML-driven generation for both VS Code themes, with pinned build tooling and a lockfile.
+- **Carmilla Moonstone** — Rem-inspired sky-blue accent `#75A6D8` (hover `#8ABCEF`) over restrained slate surfaces. The accent preserves the sampled hue/chroma at Carmine's perceptual lightness; content colors remain unchanged. Includes a generated theme, showcase selector, preview image, documented color rationale and checks for all three flavors.
+- A shared theme template and TOML-driven generation for all VS Code themes, with pinned build tooling and a lockfile.
 - CI checks generated files, contrast, ANSI mapping, actual TypeScript/Python TextMate tokenization, browser accessibility and VSIX contents.
-- Reproducible previews of both flavors, generated with the theme's TextMate rules. The Python grammar's shared boolean/None scope is documented explicitly.
+- Reproducible previews of all flavors, generated with the theme's TextMate rules. The Python grammar's shared boolean/None scope is documented explicitly.
 
 ## [1.6.0] — 2026-07-12
 

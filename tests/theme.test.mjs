@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { buildTheme, contrast, palette, read, manifest } from '../scripts/lib.mjs';
 
-for (const flavor of [undefined, 'amethyst']) {
+for (const flavor of [undefined, ...Object.keys(palette.flavors)]) {
   const theme = buildTheme(flavor);
   const c = theme.colors;
   test(`${theme.name}: readable text and focus states`, () => {
@@ -31,8 +31,8 @@ for (const flavor of [undefined, 'amethyst']) {
     }
   });
 }
-test('extension contributes both generated themes without executable entrypoints', () => {
-  assert.equal(manifest.contributes.themes.length, 2);
+test('extension contributes every generated theme without executable entrypoints', () => {
+  assert.deepEqual(manifest.contributes.themes.map(t => t.path).sort(), ['./carmilla.json', ...Object.keys(palette.flavors).map(f => `./carmilla-${f}.json`)].sort());
   for (const contribution of manifest.contributes.themes) {
     const theme = JSON.parse(read(`ports/vscode/${contribution.path.replace('./', '')}`));
     assert.equal(theme.name, contribution.label);

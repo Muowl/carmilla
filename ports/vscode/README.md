@@ -17,8 +17,8 @@
 
 ## Why it exists
 
-Most dark themes lean to the cold side of the spectrum (icy blues and purples). Carmilla does the opposite:
-**thermal coherence** — everything leans warm. The detail that defines its identity is the comments in
+The Carmilla base palette favors warm wine backgrounds and cream text. Its flavors carry that
+content palette into different lighting, from violet dusk to Moonstone’s restrained blue slate. The detail that defines its identity is the comments in
 **Ash Mauve**, which converse with the background instead of clashing with it.
 
 ## Preview
@@ -26,6 +26,7 @@ Most dark themes lean to the cold side of the spectrum (icy blues and purples). 
 <p align="center">
   <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview.png" alt="Carmilla TextMate preview" width="720">
   <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview-amethyst.png" alt="Carmilla Amethyst TextMate preview" width="720">
+  <img src="https://github.com/Muowl/carmilla/raw/main/assets/preview-moonstone.png" alt="Carmilla Moonstone TextMate preview" width="720">
 </p>
 
 Generated from the shipped TextMate rules and a pinned TypeScript grammar; these are previews, not VS Code screenshots. Language servers can refine highlighting. Python's TextMate fallback gives `True`, `False` and `None` the same scope, so all three use Wisteria.
@@ -53,11 +54,13 @@ Full specification, design rationale and TextMate mapping in
 
 ## Flavors
 
-The extension ships two themes. **Carmilla** is the rosé-wine base. **Carmilla Amethyst** is a
+The source build includes three themes. **Carmilla** is the rosé-wine base. **Carmilla Amethyst** is a
 violet reading of it — the signature accent becomes an orchid purple, Amethyst `#C474D3`
 (hover `#D38CDC`), and the wine backgrounds rotate to dusk violet (editor `#2A1B2E`) at identical
 lightness, so every contrast figure carries over. The content colours stay constant across
 flavors: a flavor reads as the same theme in a different light.
+
+**Carmilla Moonstone** introduces a Rem-inspired sky blue `#75A6D8` over restrained slate backgrounds (editor `#1D232E`). Its accent retains the hue and chroma of a hair-color sample, with reduced lightness to fit Carmilla's visual hierarchy. Pearl, mauve comments and the other syntax colors stay unchanged. Accent contrast is 6.16:1, Pearl 13.26:1 and comments 4.68:1 on the editor. Moonstone is available in source builds for the next release; use a locally built VSIX before Marketplace publication.
 
 ## Installation
 

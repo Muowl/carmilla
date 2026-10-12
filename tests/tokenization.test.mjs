@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { buildTheme, palette } from '../scripts/lib.mjs';
 import { tokenize } from '../scripts/tokenize.mjs';
 
-for (const flavor of [undefined, 'amethyst']) {
+for (const flavor of [undefined, ...Object.keys(palette.flavors)]) {
   const theme = buildTheme(flavor);
   test(`${theme.name}: TypeScript language constants, functions and operators`, async () => {
     const lines = await tokenize(theme, 'source.ts', 'const a = null; const b = undefined; const c = true; console.error(42);');

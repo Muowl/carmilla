@@ -1,11 +1,11 @@
 import { writeFileSync } from 'node:fs';
-import { buildTheme, root, read } from './lib.mjs';
+import { buildTheme, root, read, palette } from './lib.mjs';
 import { renderSample } from './tokenize.mjs';
 
 const check = process.argv.includes('--check');
 const outputs = new Map([
   ['ports/vscode/carmilla.json', JSON.stringify(buildTheme(), null, 2) + '\n'],
-  ['ports/vscode/carmilla-amethyst.json', JSON.stringify(buildTheme('amethyst'), null, 2) + '\n'],
+  ...Object.keys(palette.flavors).map(flavor => [`ports/vscode/carmilla-${flavor}.json`, JSON.stringify(buildTheme(flavor), null, 2) + '\n']),
   ['ports/vscode/CHANGELOG.md', read('CHANGELOG.md')],
 ]);
 const start = '<!-- GENERATED SAMPLE START -->';
