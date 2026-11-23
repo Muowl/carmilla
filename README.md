@@ -22,8 +22,6 @@ Carmilla pairs soft backgrounds with distinct colors for types, functions, strin
 | **Carmilla Amethyst** | Amethyst `#C474D3` | The same room at violet dusk |
 | **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-**Version 1.7.0 includes all three flavors and the Lua icon.** Install the generated VSIX to use this version while the Marketplace update is pending.
-
 ## Install
 
 Install **Carmilla** by **muowl** from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=muowl.carmilla), or run:

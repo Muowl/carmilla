@@ -127,7 +127,7 @@ Measured sRGB contrast on Boudoir: **Pearl 13.26:1**, **Moonstone 6.16:1**, **As
 
 **Known limitations.** In a Machado severity-1.0 protanopia simulation, Moonstone and Wisteria approach one another (100 × OKLab distance ≈5.98, versus ≈14.51 without simulation). Wisteria's higher lightness and italic styling where applied provide additional cues. Moonstone versus Verdigris remains ≈9.83–11.47 in the three simulated deficiencies, but these distances are comparisons, not universal discrimination thresholds. The inherited Absinthe/Champagne ambiguity remains. As with other flavors, the accent occupies the ANSI magenta slot; software using color names as semantics will show blue there.
 
-Theme file: `../ports/vscode/carmilla-moonstone.json`. Moonstone is included in source builds for the next release; adding it to this repository does not publish it to the Marketplace.
+Theme file: `../ports/vscode/carmilla-moonstone.json`. Moonstone shipped in 1.7.0.
 
 ## TextMate mapping (summary)
 
