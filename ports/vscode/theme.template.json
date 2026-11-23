@@ -255,7 +255,7 @@
     "function": "@colors.absinthe",
     "method": "@colors.absinthe",
     "decorator": "@colors.peach-velvet",
-    "macro": "@colors.carmine",
+    "macro": "@colors.absinthe",
     "keyword": "@colors.carmine",
     "variable": "@colors.pearl",
     "parameter": "@colors.pearl",
@@ -271,13 +271,39 @@
     "variable.defaultLibrary": {
       "foreground": "@colors.wisteria",
       "fontStyle": "italic"
-    }
+    },
+    "newOperator": "@colors.carmine",
+    "boolean": {
+      "foreground": "@colors.peach-velvet",
+      "fontStyle": ""
+    },
+    "annotation": "@colors.peach-velvet",
+    "lifetime": "@colors.verdigris",
+    "stringEscapeCharacter": "@colors.peach-velvet",
+    "selfKeyword": {
+      "foreground": "@colors.wisteria",
+      "fontStyle": "italic"
+    },
+    "selfTypeKeyword": {
+      "foreground": "@colors.wisteria",
+      "fontStyle": "italic"
+    },
+    "selfParameter": {
+      "foreground": "@colors.wisteria",
+      "fontStyle": "italic"
+    },
+    "clsParameter": {
+      "foreground": "@colors.wisteria",
+      "fontStyle": "italic"
+    },
+    "*.decorator": "@colors.peach-velvet"
   },
   "tokenColors": [
     {
       "scope": [
         "comment",
-        "punctuation.definition.comment"
+        "punctuation.definition.comment",
+        "support.other.excluded"
       ],
       "settings": {
         "foreground": "@colors.ash-mauve",
@@ -299,7 +325,10 @@
     },
     {
       "scope": [
-        "keyword.operator"
+        "keyword.operator",
+        "keyword.control.ternary",
+        "storage.modifier.import punctuation.separator",
+        "storage.modifier.package punctuation.separator"
       ],
       "settings": {
         "foreground": "@colors.pearl"
@@ -308,7 +337,18 @@
     {
       "scope": [
         "keyword.operator.new",
-        "keyword.operator.expression"
+        "keyword.operator.expression",
+        "keyword.operator.cast",
+        "keyword.operator.sizeof",
+        "keyword.operator.alignof",
+        "keyword.operator.alignas",
+        "keyword.operator.typeid",
+        "keyword.operator.noexcept",
+        "keyword.operator.delete",
+        "keyword.operator.functionlike",
+        "keyword.operator.wordlike",
+        "keyword.operator.instanceof",
+        "keyword.operator.logical.python"
       ],
       "settings": {
         "foreground": "@colors.carmine"
@@ -319,7 +359,8 @@
         "variable.language",
         "constant.language",
         "variable.language.this",
-        "variable.language.super"
+        "variable.language.super",
+        "variable.parameter.function.language.special"
       ],
       "settings": {
         "foreground": "@colors.wisteria",
@@ -332,7 +373,16 @@
         "entity.name.class",
         "entity.other.inherited-class",
         "support.class",
-        "support.type"
+        "support.type",
+        "entity.name.namespace",
+        "entity.name.scope-resolution",
+        "storage.type.java",
+        "storage.type.generic.java",
+        "storage.type.object.array.java",
+        "storage.modifier.import.java",
+        "storage.modifier.package.java",
+        "storage.modifier.lifetime",
+        "punctuation.definition.lifetime"
       ],
       "settings": {
         "foreground": "@colors.verdigris"
@@ -353,7 +403,9 @@
         "string",
         "string.quoted",
         "string.template",
-        "punctuation.definition.string"
+        "punctuation.definition.string",
+        "storage.type.string.python",
+        "string.regexp keyword.other"
       ],
       "settings": {
         "foreground": "@colors.champagne"
@@ -361,12 +413,73 @@
     },
     {
       "scope": [
+        "constant.character.escape",
+        "constant.other.placeholder",
+        "constant.character.format.placeholder",
+        "storage.type.format.python",
+        "punctuation.definition.template-expression",
+        "punctuation.definition.interpolation",
+        "meta.interpolation.rust"
+      ],
+      "settings": {
+        "foreground": "@colors.peach-velvet"
+      }
+    },
+    {
+      "scope": [
+        "string.quoted.docstring",
+        "string.quoted.docstring punctuation.definition.string"
+      ],
+      "settings": {
+        "foreground": "@colors.ash-mauve",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
         "constant.numeric",
-        "constant.language.boolean"
+        "constant.language.boolean",
+        "constant.language.bool",
+        "constant.language.true",
+        "constant.language.false",
+        "keyword.other.unit",
+        "storage.type.number.python",
+        "storage.type.numeric.bigint"
       ],
       "settings": {
         "foreground": "@colors.peach-velvet",
         "fontStyle": ""
+      }
+    },
+    {
+      "scope": [
+        "variable.other.enummember",
+        "constant.other.enum",
+        "entity.name.variable.enum-member",
+        "entity.name.type.option.rust",
+        "entity.name.type.result.rust"
+      ],
+      "settings": {
+        "foreground": "@colors.peach-velvet",
+        "fontStyle": ""
+      }
+    },
+    {
+      "scope": [
+        "punctuation.decorator",
+        "punctuation.definition.decorator",
+        "entity.name.function.decorator",
+        "meta.function.decorator support.type",
+        "storage.type.annotation",
+        "punctuation.definition.annotation",
+        "meta.attribute.rust",
+        "meta.attribute.rust entity.name.type",
+        "entity.other.attribute",
+        "support.other.attribute",
+        "punctuation.section.attribute"
+      ],
+      "settings": {
+        "foreground": "@colors.peach-velvet"
       }
     },
     {

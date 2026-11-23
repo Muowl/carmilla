@@ -32,7 +32,7 @@ code --install-extension muowl.carmilla
 | **Carmilla Amethyst** | Amethyst `#C474D3` | Soft violet dusk |
 | **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-Version 1.7.0 includes all three flavors and the Lua icon. Choose one under **Preferences: Color Theme** (`Ctrl+K Ctrl+T`).
+Version 1.8.0 includes all three flavors and the Lua icon. Choose one under **Preferences: Color Theme** (`Ctrl+K Ctrl+T`).
 
 ## Preview
 
@@ -53,12 +53,12 @@ Previews are generated from the theme’s TextMate rules and a TypeScript gramma
 ## Thoughtful details
 
 - A consistent palette across the editor, sidebar, tabs, command palette, suggestions, notifications and chat.
-- TextMate and semantic highlighting, plus all 16 ANSI terminal colors.
+- TextMate and semantic highlighting checked in Rust, Java, C, C++, C#, Python and TypeScript, plus all 16 ANSI terminal colors.
 - Git decorations, diffs and merge highlights that fit the surrounding interface.
 - Focus, placeholder and selected-text colors checked for contrast in each flavor.
 - A declarative theme with no executable extension code.
 
-The [palette specification](https://github.com/Muowl/carmilla/blob/main/palette/PALETTE.md) explains the color choices, measured contrast and known limitations. Python’s TextMate fallback gives `True`, `False` and `None` the same scope, so all three use Wisteria.
+The [palette specification](https://github.com/Muowl/carmilla/blob/main/palette/PALETTE.md) explains the color choices, measured contrast and known limitations. The Python, Java and C grammars give booleans and null the same scope, so both use Wisteria there.
 
 Named after Sheridan Le Fanu’s gothic novella *Carmilla* (1872).
 

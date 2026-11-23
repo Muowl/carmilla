@@ -235,8 +235,13 @@
       "italic": false
     },
     {
-      "text": "`${",
+      "text": "`",
       "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": "${",
+      "role": "peach-velvet",
       "italic": false
     },
     {
@@ -250,8 +255,18 @@
       "italic": false
     },
     {
-      "text": "} whispers to ${",
+      "text": "}",
+      "role": "peach-velvet",
+      "italic": false
+    },
+    {
+      "text": " whispers to ",
       "role": "champagne",
+      "italic": false
+    },
+    {
+      "text": "${",
+      "role": "peach-velvet",
       "italic": false
     },
     {
@@ -260,7 +275,12 @@
       "italic": false
     },
     {
-      "text": "}`",
+      "text": "}",
+      "role": "peach-velvet",
+      "italic": false
+    },
+    {
+      "text": "`",
       "role": "champagne",
       "italic": false
     },

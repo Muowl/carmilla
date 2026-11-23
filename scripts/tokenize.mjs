@@ -11,7 +11,7 @@ export async function tokenize(theme, scope, source) {
     theme: { settings: [{ settings: { foreground: theme.colors['editor.foreground'], background: theme.colors['editor.background'] } }, ...theme.tokenColors] },
     onigLib: Promise.resolve({ createOnigScanner: patterns => new onig.OnigScanner(patterns), createOnigString: text => new onig.OnigString(text) }),
     loadGrammar: async name => {
-      const file = { 'source.ts': 'typescript', 'source.python': 'python' }[name];
+      const file = { 'source.ts': 'typescript', 'source.python': 'python', 'source.rust': 'rust', 'source.java': 'java', 'source.c': 'c', 'source.cpp': 'cpp', 'source.cs': 'csharp' }[name];
       return file ? tm.parseRawGrammar(read(`tests/grammars/${file}.json`), `${file}.json`) : null;
     },
   });
