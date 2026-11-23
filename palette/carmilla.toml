@@ -9,7 +9,7 @@ author = "muowl"
 license = "MIT"
 homepage = "https://muowl.dev/themes/carmilla/"
 repository = "https://github.com/Muowl/carmilla"
-palette-version = "1.7.0"
+palette-version = "1.8.0"
 
 # The 13 core tokens (see PALETTE.md for design rationale and WCAG figures).
 [colors]

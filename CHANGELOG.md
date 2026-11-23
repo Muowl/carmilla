@@ -3,7 +3,7 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [1.8.0] — 2026-11-23
 
 ### Fixed
 - **Java** — type references (`String`, `List<Integer>`, generic parameters) and `import`/`package` paths no longer use the keyword color; they use Verdigris, as the Java language server does. Annotations use Peach Velvet, and enum constants match semantic `enumMember`.

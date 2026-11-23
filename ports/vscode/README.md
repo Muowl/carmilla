@@ -32,7 +32,7 @@ code --install-extension muowl.carmilla
 | **Carmilla Amethyst** | Amethyst `#C474D3` | Soft violet dusk |
 | **Carmilla Moonstone** | Moonstone `#75A6D8` | Rem-inspired sky blue over quiet slate |
 
-Version 1.7.0 includes all three flavors and the Lua icon. Choose one under **Preferences: Color Theme** (`Ctrl+K Ctrl+T`).
+Version 1.8.0 includes all three flavors and the Lua icon. Choose one under **Preferences: Color Theme** (`Ctrl+K Ctrl+T`).
 
 ## Preview
 
