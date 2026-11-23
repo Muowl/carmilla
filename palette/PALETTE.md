@@ -18,13 +18,13 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 | `selection`      | `#523950`  | Current line, selection, range highlight                   |
 | `pearl`          | `#F5EADA`  | Primary text / foreground / punctuation                    |
 | `carmine`        | `#FF5FA2`  | Keywords, storage (`const`, `let`, `class`, `if`, `return`)|
-| `wisteria`       | `#D5A6FF`  | Language instances (`this`, `super`, `null`, `undefined`)  |
-| `verdigris`      | `#5ED0D8`  | Classes, types, support                                    |
-| `absinthe`       | `#7AE0A6`  | Functions, methods, function declarations                  |
+| `wisteria`       | `#D5A6FF`  | Language instances (`this`, `self`, `super`, `null`)       |
+| `verdigris`      | `#5ED0D8`  | Classes, types, namespaces, lifetimes, support             |
+| `absinthe`       | `#7AE0A6`  | Functions, methods, macros                                 |
 | `champagne`      | `#EDD795`  | Strings, template literals                                 |
-| `peach-velvet`   | `#FFAE8A`  | Numbers, booleans                                          |
+| `peach-velvet`   | `#FFAE8A`  | Numbers, booleans, enum members, escapes, decorators       |
 | `pomegranate`    | `#E84B6E`  | Errors, deletions, alerts                                  |
-| `ash-mauve`      | `#9E83A4`  | Comments, disabled code                                    |
+| `ash-mauve`      | `#9E83A4`  | Comments, docstrings, disabled code                        |
 
 ## Design principles
 
@@ -34,12 +34,23 @@ Inspired by a boudoir / vampire-crypt atmosphere — restrained, original, with 
 4. **Less electric green.** Absinthe `#7AE0A6` is an elegant mint, far from the usual neon green.
 5. **WCAG contrast.** Pearl on Boudoir ≈ 13.5:1 (AAA). Carmine on Boudoir ≈ 5.7:1 (AA). Ash Mauve on Boudoir ≈ 4.8:1 (AA for comments, deliberately subtle).
 6. **Types ≠ functions, even for colorblind eyes.** Verdigris `#5ED0D8` sits at a true teal (OKLCH hue ≈ 202°), a full 45° from Absinthe's mint — the pair stays distinguishable under protanopia, deuteranopia and tritanopia, where a mint-on-mint pairing would collapse.
+7. **One role, one color, in every language.** A construct keeps its color across TypeScript, Python, Rust, Java, C, C++ and C#, and when a language server starts. Semantic rules are written to resolve to the same color as the TextMate scope for the same construct, so code does not recolor seconds after a file opens. Where a grammar or a language server forces a different classification, the exception is listed under Known limitations.
+8. **Peach Velvet marks literals and metadata.** Numbers, booleans and enum members are values; escapes, format placeholders and interpolation boundaries are special sequences inside strings; decorators, annotations and attributes describe code without being called by it. Peach separates from Champagne by 100 × OKLab distance ≈10.1 (≈5.9 under deuteranopia), so escapes stay visible inside strings without competing with keywords.
 
 ## Known limitations
 
 The WCAG figures above describe individual foreground/background pairs, not blanket conformance of the editor. Focus borders use the opaque accent (at least 3:1 against inputs); placeholders use opaque Ash Mauve (at least 4.5:1). Selected editor text uses Pearl, temporarily replacing syntax colors to retain legibility. Decorative guides and inactive line numbers remain deliberately subdued.
 
-**Python TextMate fallback:** the bundled MagicPython grammar assigns the same `constant.language.python` scope to `True`, `False` and `None`. All three therefore use Wisteria. A color theme cannot distinguish their spelling within that shared scope. Booleans use Peach Velvet in grammars that expose `constant.language.boolean`, including TypeScript; language servers may further refine classifications. The pinned grammar fixtures and tests preserve this documented exception.
+**Shared boolean/null scopes:** three bundled grammars give booleans and the null value one scope: MagicPython (`True`, `False`, `None` → `constant.language.python`), Java (`true`, `false`, `null` → `constant.language.java`) and C (`true`, `false`, `NULL` → `constant.language.c`). All of them therefore use Wisteria. A color theme cannot distinguish their spelling within that shared scope. Booleans use Peach Velvet in grammars that name them separately: TypeScript, Rust, C++ and C#. Pylance and the Java language server do not emit tokens for these literals, so the exception remains with semantic highlighting on. The pinned grammar fixtures and tests preserve it.
+
+**Classifications set by language servers:** semantic tokens replace TextMate colors, so a few constructs follow the server's classification instead of the theme's role:
+
+- C# (Roslyn) reports `this`, `base`, `null`, `true` and `false` as keywords. With semantic highlighting on, they take the accent color instead of Wisteria or Peach Velvet. Built-in types such as `int` and `string` are keywords in both layers.
+- In C, `true`, `false` and `NULL` usually come from `<stdbool.h>` and `<stddef.h>`. clangd and the C/C++ extension report them as macros, so they use Absinthe with semantic highlighting on.
+- The TypeScript server reports a decorator's name as a function, so `@Injectable()` shows a Peach `@` followed by an Absinthe name.
+- C# attributes are classes for Roslyn, so `[Serializable]` uses Verdigris in both layers.
+- Java, C, C++ and C# keep primitive types (`int`, `char`, `bool`) in the keyword color, as their grammars and servers classify them. Rust, TypeScript and Python report them as types, so they use Verdigris.
+- Without a language server, TextMate cannot know whether an identifier names a type, an enum member or a constant in every position. Java's `Era.ANCIENT` and C's user-defined struct names stay Pearl until the server classifies them.
 
 Under **protanopia** (≈1% of men), two pairs lose most of their hue separation: Carmine × Ash Mauve (keywords vs comments) and Absinthe × Champagne (functions vs strings). Both are left as-is deliberately: comments are italicized full lines and strings are quote-delimited, so a non-color channel always disambiguates — and "fixing" them would mean sacrificing two pillars of the theme's identity.
 
@@ -132,17 +143,28 @@ Theme file: `../ports/vscode/carmilla-moonstone.json`. Moonstone shipped in 1.7.
 ## TextMate mapping (summary)
 
 ```
-comment                                  → ash-mauve  (italic)
-keyword, storage, keyword.control        → carmine
-variable.language, constant.language     → wisteria
+comment, string.quoted.docstring         → ash-mauve  (italic)
+keyword, storage, keyword.control,
+word operators (sizeof, static_cast,
+instanceof, Python and/or/not/is)        → carmine
+variable.language, constant.language     → wisteria   (italic)
 entity.name.type, entity.name.class,
-support.class, support.type              → verdigris
-entity.name.function, support.function   → absinthe
-string, string.template                  → champagne
-constant.numeric, constant.language.boolean → peach-velvet
+entity.name.namespace, support.class,
+support.type, Java type references,
+Rust lifetimes                           → verdigris
+entity.name.function, support.function,
+Rust and preprocessor macros             → absinthe
+string, string.template, string prefixes → champagne
+constant.numeric, number prefixes and
+suffixes, booleans, enum members         → peach-velvet
+escapes, format placeholders,
+interpolation boundaries, decorators,
+annotations, attributes                  → peach-velvet
 invalid, invalid.illegal                 → pomegranate
-text, punctuation, source                → pearl
+operators, punctuation, variables        → pearl
 ```
+
+Semantic token rules mirror this table. They also cover token types specific to language servers: rust-analyzer (`boolean`, `lifetime`, `selfKeyword`, `selfTypeKeyword`), Pylance (`selfParameter`, `clsParameter` and the `decorator` modifier), the Java language server (`annotation`), the C# extension (`stringEscapeCharacter`) and the C/C++ extension (`newOperator`). `tests/languages.test.mjs` checks each of these rules against the TextMate color of the same construct.
 
 ## Files
 

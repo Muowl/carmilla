@@ -67,11 +67,11 @@ These previews are generated from the theme’s TextMate rules and a pinned Type
 ## What is themed
 
 - Editor, tabs, sidebar, command palette, suggestions, notifications and chat surfaces.
-- TextMate syntax and semantic tokens, with warm comments and distinct type/function colors.
+- TextMate syntax and semantic tokens, with warm comments and distinct type/function colors. Rust, Java, C, C++, C#, Python and TypeScript are checked against VS Code’s grammars, and semantic rules keep the same colors when a language server starts.
 - All 16 ANSI terminal colors, Git decorations, diffs and merge highlights.
 - Focus, placeholder and selection states checked for contrast in each flavor.
 
-Carmilla is a declarative color theme with no executable extension code. The [palette specification](palette/PALETTE.md) documents color choices, measured contrast and known limitations, including Python’s shared TextMate scope for `True`, `False` and `None`.
+Carmilla is a declarative color theme with no executable extension code. The [palette specification](palette/PALETTE.md) documents color choices, measured contrast and known limitations, including the shared TextMate scope that Python, Java and C give booleans and null.
 
 ## Develop and contribute
 
@@ -80,7 +80,7 @@ Colors live in [`palette/carmilla.toml`](palette/carmilla.toml); VS Code mapping
 | Command | Purpose |
 |---------|---------|
 | `npm run generate` | Generate every theme, the packaged changelog and the showcase code sample |
-| `npm test` | Check generated files, contrast, ANSI colors, grammar behavior and Moonstone’s color constraints |
+| `npm test` | Check generated files, contrast, ANSI colors, grammar behavior in seven languages and Moonstone’s color constraints |
 | `npm run colors` | Inspect Moonstone’s OKLCH, contrast and color-vision simulation measurements |
 | `npm run test:showcase` | Check browser accessibility, mobile layouts and saved preferences |
 | `npm run preview` | Refresh the flavor preview images |

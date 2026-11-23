@@ -3,6 +3,25 @@
 All notable changes to the Carmilla theme are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased]
+
+### Fixed
+- **Java** — type references (`String`, `List<Integer>`, generic parameters) and `import`/`package` paths no longer use the keyword color; they use Verdigris, as the Java language server does. Annotations use Peach Velvet, and enum constants match semantic `enumMember`.
+- **Rust** — `true`/`false` use Peach Velvet instead of Wisteria. Macros such as `println!` no longer split into an accent name and an Absinthe `!` under rust-analyzer. `self`, `Self` and lifetimes keep their TextMate colors when rust-analyzer starts, and `use` paths color namespaces.
+- **Python** — `self` and `cls` use Wisteria in signatures and with Pylance. Decorators use Peach Velvet in both layers (Pylance reports them as a modifier). `and`, `or`, `not` and `is` use the keyword color; string prefixes stay with their string.
+- **C/C++** — hexadecimal prefixes and numeric suffixes (`0x`, `2.0f`) no longer use the keyword color. `sizeof`, `static_cast`, `typeid`, `noexcept` and `delete` read as keywords, C++ booleans use Peach Velvet, and `new` keeps the keyword color with the C/C++ extension. Namespaces, scope qualifiers, enum members and `[[attributes]]` have their own colors.
+- **C#** — enum member declarations match semantic `enumMember`, and inactive `#if` regions reported by the C# extension use Ash Mauve, the documented color for disabled code.
+- **TypeScript** — BigInt suffixes, regex flags and enum member declarations follow their literal or member color.
+
+### Changed
+- Escapes, format placeholders (`%s`, `{}`) and interpolation boundaries (`${ }`, `{ }`) use Peach Velvet inside Champagne strings, so they stand out without competing with keywords.
+- Python docstrings use Ash Mauve italics, like doc comments in the other languages.
+- Semantic `macro` uses Absinthe to match the TextMate colors of Rust and C/C++ macros.
+- `PALETTE.md` documents the cross-language principle and the classifications that language servers impose.
+
+### Added
+- Vendored Rust, Java, C, C++ and C# grammars with tests for each language and for agreement between semantic and TextMate colors.
+
 ## [1.7.0] — 2026-10-12
 
 ### Changed

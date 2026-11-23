@@ -19,13 +19,13 @@ velvet = "#3A2438"         # elevated surface — cards, status bar
 selection = "#523950"      # current line, selection, ranges
 pearl = "#F5EADA"          # primary text / foreground / punctuation
 carmine = "#FF5FA2"        # keywords, storage
-wisteria = "#D5A6FF"       # language instances (this, super, null)
-verdigris = "#5ED0D8"      # classes, types, support
-absinthe = "#7AE0A6"       # functions, methods
+wisteria = "#D5A6FF"       # language instances (this, self, super, null)
+verdigris = "#5ED0D8"      # classes, types, namespaces, lifetimes
+absinthe = "#7AE0A6"       # functions, methods, macros
 champagne = "#EDD795"      # strings, template literals
-peach-velvet = "#FFAE8A"   # numbers, booleans
+peach-velvet = "#FFAE8A"   # numbers, booleans, enum members, escapes, decorators
 pomegranate = "#E84B6E"    # errors, deletions, alerts
-ash-mauve = "#9E83A4"      # comments, disabled code
+ash-mauve = "#9E83A4"      # comments, docstrings, disabled code
 
 # Structural UI tokens shared by the theme generator.
 [ui]
